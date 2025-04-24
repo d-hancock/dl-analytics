@@ -1,14 +1,12 @@
--- Model: int_fct_drug_revenue
--- Location: models/intermediate/
--- Materialization: view
--- Purpose: Calculate total drug revenue within the period.
--- Inputs:
---   - stg_drug_sales: Staging table for drug sales data.
--- Outputs:
---   - drug_revenue: Total calculated drug revenue.
+-- Intermediate Fact Table: Drug Revenue
+-- Joins and derives metrics related to drug revenue
+-- Each row represents a unique transaction event
 
-CREATE OR REPLACE VIEW int_fct_drug_revenue AS
-SELECT
-    SUM(quantity * unit_price) - SUM(discount_amt) + SUM(tax_amt) AS drug_revenue
-FROM
-    stg_drug_sales;
+SELECT 
+    transaction_date, -- Date of the transaction
+    item_sku AS product_id, -- Drug or supply item identifier
+    quantity, -- Quantity sold
+    unit_price, -- Price per unit
+    discount_amt, -- Discount applied
+    tax_amt -- Tax applied
+FROM stg_inventory_item_location_quantity;

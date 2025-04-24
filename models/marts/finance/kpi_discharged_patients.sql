@@ -1,9 +1,10 @@
 -- KPI: Discharged Patients
--- Purpose: Calculate the total number of discharged patients.
--- Inputs: int_fct_discharges
-CREATE OR REPLACE VIEW marts.finance.kpi_discharged_patients AS
-SELECT
-    calendar_date,
-    discharged_patients
-FROM
-    int_fct_discharges;
+-- Provides the count of distinct patients discharged within a given period
+-- Each row represents a unique combination of calendar date and location
+
+SELECT 
+    calendar_date, -- Day-level date
+    location_id, -- Facility or branch identifier
+    COUNT(DISTINCT patient_id) AS discharged_patients -- Total number of discharged patients
+FROM fct_discharges
+GROUP BY calendar_date, location_id;

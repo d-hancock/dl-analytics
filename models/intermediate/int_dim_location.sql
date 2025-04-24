@@ -1,16 +1,8 @@
--- Model: int_dim_location
--- Location: models/intermediate/
--- Materialization: view
--- Purpose: Centralized location dimension providing facility or branch attributes.
--- Inputs:
---   - stg_party: Staging table containing raw location data.
--- Outputs:
---   - location_id: Unique identifier for each location.
---   - location_name: Human-readable name for each location.
+-- Intermediate Location Dimension
+-- Enriches raw location data with additional attributes for reporting
+-- Each row represents a unique location
 
-CREATE OR REPLACE VIEW int_dim_location AS
-SELECT DISTINCT
-    location_id,
-    location_name
-FROM
-    stg_party;
+SELECT 
+    location_id, -- Facility or branch identifier
+    location_name -- Facility or branch name
+FROM stg_facility_dimension;

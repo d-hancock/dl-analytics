@@ -1,16 +1,11 @@
--- =================================================================================
--- 10. Billing Claim View
--- Name: billing_claim
--- Source Tables: OLTP_DB.Billing.Claim
--- Purpose: Represent raw claim headers for AR analysis.
--- Key Transformations:
---   • Rename primary key to `claim_id`.
---   • Expose claim status for downstream reporting.
--- Usage:
---   • Analyze claim-level revenue and AR performance.
--- =================================================================================
-CREATE OR REPLACE VIEW DEV_DB.stg.billing_claim AS
-SELECT
-  ClaimKey              AS claim_id,
-  ClaimStatusCode       AS claim_status
-FROM OLTP_DB.Billing.Claim;
+-- Staging Table: Billing Claim
+-- Cleans and casts raw billing claim data for downstream use
+-- One-to-one mapping with the source table
+
+SELECT 
+    claim_id, -- Unique identifier for the claim
+    patient_id, -- Unique identifier for the patient
+    provider_id, -- Unique identifier for the provider
+    claim_date, -- Date of the claim
+    total_amount -- Total amount billed
+FROM raw_billing_claim;

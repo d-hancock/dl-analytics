@@ -1,16 +1,8 @@
--- Model: int_dim_payer
--- Location: models/intermediate/
--- Materialization: view
--- Purpose: Centralized payer dimension providing insurance program attributes.
--- Inputs:
---   - stg_patient_policy: Staging table containing patient policy data.
--- Outputs:
---   - payer_id: Unique identifier for payers.
---   - payer_name: Name of the insurance program.
+-- Intermediate Payer Dimension
+-- Enriches raw payer data with additional attributes for reporting
+-- Each row represents a unique payer
 
-CREATE OR REPLACE VIEW int_dim_payer AS
-SELECT DISTINCT
-    insurance_program_id AS payer_id,
-    insurance_program_name AS payer_name
-FROM
-    stg_patient_policy;
+SELECT 
+    insurance_program_id AS payer_id, -- Insurance program identifier
+    insurance_program_name AS payer_name -- Insurance program name
+FROM stg_payer_dimension;

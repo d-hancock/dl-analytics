@@ -1,16 +1,10 @@
--- =================================================================================
--- 14. Encounter Discharge Summary View
--- Name: encounter_discharge_summary
--- Source Tables: CareTend_OC.Encounter.DischargeSummary
--- Purpose: Summarize discharge records, capturing final outcomes by encounter.
--- Key Transformations:
---   • Rename primary key to `discharge_summary_id`.
---   • Expose discharge reason for downstream reporting.
--- Usage:
---   • Analyze discharge outcomes for operational and clinical metrics.
--- =================================================================================
-CREATE OR REPLACE VIEW DEV_DB.stg.encounter_discharge_summary AS
-SELECT
-  SummaryID             AS discharge_summary_id,
-  DischargeReason       AS discharge_reason
-FROM CareTend_OC.Encounter.DischargeSummary;
+-- Staging Table: Encounter Discharge Summary
+-- Cleans and casts raw discharge summary data for downstream use
+-- One-to-one mapping with the source table
+
+SELECT 
+    discharge_id, -- Unique identifier for the discharge event
+    patient_id, -- Unique identifier for the patient
+    discharge_date, -- Date of discharge
+    discharge_status -- Status of the discharge
+FROM raw_encounter_discharge_summary;

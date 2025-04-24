@@ -1,23 +1,9 @@
--- Model: int_fct_expected_revenue
--- Location: models/intermediate/
--- Materialization: view
--- Purpose: Calculate expected revenue per day within the period.
--- Inputs:
---   - stg_revenue: Staging table for revenue data.
---   - int_dim_date: Dimension table for calendar dates.
--- Outputs:
---   - expected_revenue_per_day: Average revenue per calendar day.
+-- Intermediate Fact Table: Expected Revenue
+-- Joins and derives metrics related to expected revenue
+-- Each row represents a unique contract event
 
-CREATE OR REPLACE VIEW int_fct_expected_revenue AS
-SELECT
-    SUM(total_revenue) / COUNT(DISTINCT calendar_date) AS expected_revenue_per_day
-FROM
-    (
-        SELECT
-            calendar_date,
-            SUM(contracted_revenue) AS total_revenue
-        FROM
-            stg_revenue
-        GROUP BY
-            calendar_date
-    );
+SELECT 
+    revenue_date, -- Date of the expected revenue
+    contract_id, -- Unique identifier for the contract
+    contracted_revenue -- Expected revenue amount
+FROM stg_invoice_claim_item_link;

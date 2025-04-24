@@ -1,5 +1,5 @@
--- Intermediate Date Dimension
--- Enriches raw date data with fiscal period attributes and other derived fields
+-- Finalized date dimension for marts or presentation layers
+-- Provides date-related attributes for reporting and analysis
 -- Each row represents a unique calendar date
 
 SELECT 
@@ -7,4 +7,4 @@ SELECT
     fiscal_period_key, -- Surrogate for fiscal period
     period_start_date, -- Start date of the fiscal period
     period_end_date -- End date of the fiscal period
-FROM stg_date_dimension;
+FROM int_dim_date;

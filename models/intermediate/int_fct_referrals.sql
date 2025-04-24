@@ -1,28 +1,9 @@
--- Model: int_fct_referrals
--- Location: models/intermediate/
--- Materialization: view
--- Purpose: Count of referrals with a "Pending" status within the period.
--- Inputs:
---   - stg_referrals: Staging table for referral data.
---   - int_dim_date: Dimension table for period start and end dates.
--- Outputs:
---   - referrals: Count of referrals with a "Pending" status.
+-- Intermediate Fact Table: Referrals
+-- Joins and derives metrics related to referrals
+-- Each row represents a unique referral event
 
-CREATE OR REPLACE VIEW int_fct_referrals AS
-SELECT
-    COUNT(referral_id) AS referrals
-FROM
-    stg_referrals
-WHERE
-    referral_status = 'Pending'
-    AND referral_date BETWEEN (
-        SELECT
-            period_start_date
-        FROM
-            int_dim_date
-    ) AND (
-        SELECT
-            period_end_date
-        FROM
-            int_dim_date
-    );
+SELECT 
+    referral_date, -- Date of the referral
+    referral_id, -- Unique identifier for the referral
+    referral_status -- Status of the referral
+FROM stg_encounter_patient_order;

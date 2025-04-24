@@ -1,16 +1,12 @@
--- =================================================================================
--- 11. Billing Claim Item View
--- Name: billing_claim_item
--- Source Tables: OLTP_DB.Billing.ClaimItem
--- Purpose: Provide claim line item details for service-level AR.
--- Key Transformations:
---   • Rename primary key to `claim_item_id`.
---   • Expose billed amount for revenue calculations.
--- Usage:
---   • Analyze service-level revenue and AR performance.
--- =================================================================================
-CREATE OR REPLACE VIEW DEV_DB.stg.billing_claim_item AS
-SELECT
-  ClaimItemKey          AS claim_item_id,
-  BilledAmount          AS billed_amount
-FROM OLTP_DB.Billing.ClaimItem;
+-- Staging Table: Billing Claim Item
+-- Cleans and casts raw billing claim item data for downstream use
+-- One-to-one mapping with the source table
+
+SELECT 
+    claim_item_id, -- Unique identifier for the claim item
+    claim_id, -- Associated claim identifier
+    item_code, -- Code for the billed item
+    item_description, -- Description of the billed item
+    quantity, -- Quantity of the item billed
+    unit_price -- Price per unit of the item
+FROM raw_billing_claim_item;

@@ -1,9 +1,10 @@
 -- KPI: Drug Revenue
--- Purpose: Calculate the total drug revenue.
--- Inputs: int_fct_drug_revenue
-CREATE OR REPLACE VIEW marts.finance.kpi_drug_revenue AS
-SELECT
-    calendar_date,
-    drug_revenue
-FROM
-    int_fct_drug_revenue;
+-- Provides the total revenue from drug sales within a given period
+-- Each row represents a unique combination of calendar date and product
+
+SELECT 
+    calendar_date, -- Day-level date
+    product_id, -- Drug or supply item identifier
+    SUM(drug_revenue) AS total_drug_revenue -- Total revenue from drug sales
+FROM fct_drug_revenue
+GROUP BY calendar_date, product_id;

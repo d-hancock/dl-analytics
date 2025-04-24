@@ -1,16 +1,8 @@
--- Model: int_dim_therapy
--- Location: models/intermediate/
--- Materialization: view
--- Purpose: Centralized therapy dimension providing therapy code and name attributes.
--- Inputs:
---   - therapy_lookup: Lookup table for therapy details.
--- Outputs:
---   - therapy_code: Unique code for therapies (e.g., HcPc).
---   - therapy_name: Human-readable name for therapies.
+-- Intermediate Therapy Dimension
+-- Enriches raw therapy data with additional attributes for reporting
+-- Each row represents a unique therapy type
 
-CREATE OR REPLACE VIEW int_dim_therapy AS
-SELECT DISTINCT
-    therapy_code,
-    therapy_name
-FROM
-    therapy_lookup;
+SELECT 
+    therapy_code, -- Therapy type code (e.g., HcPc)
+    therapy_name -- Therapy type name
+FROM stg_encounter_patient_order;
