@@ -1,28 +1,24 @@
 -- =================================================================================
 -- Intermediate Provider Dimension View
 -- Name: int_provider_dimension
--- Source Tables: OLTP_DB.Patient.Patient, OLTP_DB.Common.Party, OLTP_DB.Patient.PatientPolicy
--- Purpose: Flatten provider demographic and primary policy lookup.
+-- Source Tables: OLTP_DB.Provider.Provider, OLTP_DB.Common.Party
+-- Purpose: Flatten provider demographic and associated information.
 -- Key Transformations:
 --   	• Rename primary keys to `provider_id` and `party_id`.
---   	• Cast `BirthDate` to DATE for consistency.
---   	• Join patient policies to expose primary insurance policy.
+--   	• Cast relevant dates to DATE for consistency.
+--   	• Include provider specialty and status information.
 -- Usage:
 --   	• Join to claims, invoices, and encounters for provider-level KPIs.
 -- =================================================================================
 CREATE OR REPLACE VIEW DEV_DB.int.provider_dimension AS
 SELECT
-  p.PatientKey           AS provider_id,
+  p.ProviderKey          AS provider_id,
   pr.PartyKey            AS party_id,
   pr.FirstName           AS first_name,
   pr.LastName            AS last_name,
-  CAST(p.BirthDate AS DATE)        AS birth_date,
-  pr.GenderCode          AS gender,
-  p.Status               AS status,
-  pol.PolicyKey          AS primary_insurance_policy_id
-FROM OLTP_DB.Patient.Patient p
+  p.NPI                  AS npi_number,
+  p.SpecialtyCode        AS specialty,
+  CASE WHEN p.IsActive = 'Y' THEN TRUE ELSE FALSE END AS is_active
+FROM OLTP_DB.Provider.Provider p
 JOIN OLTP_DB.Common.Party pr
-  ON p.PartyKey = pr.PartyKey
-LEFT JOIN OLTP_DB.Patient.PatientPolicy pol
-  ON p.PatientKey = pol.PatientKey
- AND pol.IsPrimary = 1;
+  ON p.PartyKey = pr.PartyKey;
