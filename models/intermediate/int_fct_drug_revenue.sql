@@ -25,4 +25,4 @@ SELECT
 FROM DEV_DB.stg.billing_claim_item ci
 JOIN DEV_DB.stg.billing_claim c ON ci.claim_id = c.claim_id
 WHERE ci.record_status = 1
-AND c.record_status = 1;
+AND c.record_status = 1;a

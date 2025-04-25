@@ -1,10 +1,11 @@
 -- Staging Table: Patient Encounter
--- Cleans and casts raw patient encounter data for downstream use
--- One-to-one mapping with the source table
+-- Maps patient encounter data from OLTP Patient.PatientReferrals table
+-- Based on schema_mapping_before_after.md which shows the correct mapping from Encounter.PatientEncounter to Patient.PatientReferrals
 
 SELECT 
-    encounter_id, -- Unique identifier for the encounter
-    patient_id, -- Unique identifier for the patient
-    encounter_date, -- Date of the encounter
-    encounter_type -- Type of the encounter
-FROM raw_patient_encounter;
+    Id as encounter_id, -- Unique identifier for the encounter/referral
+    Patient_Id as patient_id, -- Unique identifier for the patient
+    ReferralDate as encounter_date, -- Date of the referral (equivalent to encounter date)
+    ReferralSource_Id as encounter_type -- Source of the referral (used as encounter type)
+FROM Patient.PatientReferrals
+WHERE RecStatus = 1; -- Only include active records
