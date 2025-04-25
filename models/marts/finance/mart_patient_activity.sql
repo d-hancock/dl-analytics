@@ -3,15 +3,20 @@
 -- Name: mart_patient_activity
 -- Source Tables:
 --   • dim_date - Date dimension for time-based analysis
---   • fct_discharges - Fact table with patient discharge data
+--   • kpi_discharged_patients - KPI table with discharge metrics
 --   • dim_location - Location dimension for facility analysis
---   • fct_new_starts - Fact table with new patient start events
---   • fct_referrals - Fact table with referral events
+--   • kpi_new_starts - KPI table with new patient start metrics
+--   • kpi_referrals - KPI table with referral metrics
 --   • dim_product - Product dimension for drug/item analysis
 --   • dim_therapy - Therapy dimension for treatment type analysis
 -- Purpose:
 --   Provide a consolidated view of patient activity metrics including discharges,
---   new starts, and referrals for financial and operational analysis.
+--   new starts, and referrals for financial and operational analysis with complete time series.
+-- Key Transformations:
+--   • Start with the date spine to ensure complete time series
+--   • Cross join with dimensions to ensure all combinations are present
+--   • Left join to KPI tables for metrics
+--   • Use COALESCE to handle missing values
 -- Key Metrics:
 --   • discharged_patients - Count of patients discharged in the period
 --   • new_starts - Count of new patients starting treatment
@@ -22,6 +27,20 @@
 --   • Enable trend analysis of patient flow and acquisition
 -- Grain: One row per calendar_date × location × product × therapy
 -- =================================================================================
+
+-- Get all locations, products, and therapies to ensure complete dimensional coverage
+WITH locations AS (
+    SELECT DISTINCT location_id, location_name 
+    FROM dim_location
+),
+products AS (
+    SELECT DISTINCT product_id, product_name 
+    FROM dim_product
+),
+therapies AS (
+    SELECT DISTINCT therapy_code, therapy_name 
+    FROM dim_therapy
+)
 
 SELECT 
     d.calendar_date,           -- Day-level date for time-based analysis
@@ -34,24 +53,18 @@ SELECT
     p.product_name,            -- Readable product name
     t.therapy_code,            -- Treatment type code
     t.therapy_name,            -- Readable treatment type
-    COALESCE(fd.discharge_count, 0) AS discharged_patients, -- Total patient discharges
-    COALESCE(fn.new_start_count, 0) AS new_starts,         -- Total new patient starts
-    COALESCE(fr.referral_count, 0) AS referrals            -- Total patient referrals
+    COALESCE(dp.discharged_patients, 0) AS discharged_patients,  -- Total patient discharges
+    COALESCE(ns.new_starts, 0) AS new_starts,                    -- Total new patient starts
+    COALESCE(r.referrals, 0) AS referrals                        -- Total patient referrals
 FROM dim_date d
-LEFT JOIN fct_discharges fd ON d.calendar_date = fd.discharge_date
-LEFT JOIN dim_location l ON fd.location_id = l.location_id
-LEFT JOIN fct_new_starts fn ON d.calendar_date = fn.start_date AND fn.location_id = l.location_id
-LEFT JOIN fct_referrals fr ON d.calendar_date = fr.referral_date AND fr.location_id = l.location_id
-LEFT JOIN dim_product p ON p.product_id IS NOT NULL -- Join all products 
-LEFT JOIN dim_therapy t ON t.therapy_code IS NOT NULL -- Join all therapy types
-GROUP BY 
-    d.calendar_date, 
-    d.fiscal_period_key,
-    d.period_start_date, 
-    d.period_end_date,
-    l.location_id, 
-    l.location_name,
-    p.product_id, 
-    p.product_name,
-    t.therapy_code, 
-    t.therapy_name;
+CROSS JOIN locations l
+CROSS JOIN products p
+CROSS JOIN therapies t
+LEFT JOIN kpi_discharged_patients dp 
+    ON d.calendar_date = dp.calendar_date
+    AND l.location_id = dp.location_id
+LEFT JOIN kpi_new_starts ns 
+    ON d.calendar_date = ns.calendar_date
+    AND l.location_id = ns.location_id
+LEFT JOIN kpi_referrals r 
+    ON d.calendar_date = r.calendar_date;

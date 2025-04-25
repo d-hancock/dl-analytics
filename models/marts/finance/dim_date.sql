@@ -17,8 +17,22 @@
 -- =================================================================================
 
 SELECT 
-    calendar_date,              -- Primary key, represents a specific day
-    fiscal_period_key,          -- Business key for fiscal period grouping
-    period_start_date,          -- First day of the period containing this date
-    period_end_date             -- Last day of the period containing this date
+    date_id AS calendar_date,    -- Primary key, represents a specific day
+    date_day,                    -- Raw calendar date
+    fiscal_period_key,           -- Business key for fiscal period grouping
+    day_name,                    -- Name of the day (Monday, Tuesday, etc.)
+    day_of_month,                -- Day number within month (1-31)
+    day_of_week,                 -- Day number within week (0=Sunday, 1=Monday, etc.)
+    day_of_year,                 -- Day number within year (1-366)
+    week_of_year,                -- Week number within year
+    month_number,                -- Month number (1-12)
+    month_name,                  -- Month name (January, February, etc.)
+    quarter_number,              -- Quarter number (1-4)
+    year_number,                 -- Year number
+    is_current_day,              -- Flag for current date
+    is_current_month,            -- Flag for dates in current month
+    is_weekday,                  -- Flag for weekday vs weekend
+    -- Derived period date ranges (placeholders until fiscal periods populated)
+    DATEADD(DAY, 1-day_of_month, date_day) AS period_start_date,  -- First day of month
+    LAST_DAY(date_day) AS period_end_date  -- Last day of month
 FROM int_dim_date;              -- Source intermediate dimension table

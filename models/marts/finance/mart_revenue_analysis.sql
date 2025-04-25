@@ -9,7 +9,12 @@
 --   • fct_expected_revenue - Fact table with expected revenue metrics
 -- Purpose: 
 --   Provide a consolidated view of actual drug revenue and expected revenue
---   metrics for financial analysis and reporting
+--   metrics for financial analysis and reporting with complete time series
+-- Key Transformations:
+--   • Start with the date spine to ensure complete time series
+--   • Cross join with locations and products to ensure all combinations
+--   • Left join to fact tables for metrics
+--   • Calculate revenue metrics with COALESCE to handle missing data
 -- Key Metrics:
 --   • drug_revenue - Total revenue from drug sales in the period
 --   • expected_revenue_per_day - Average expected revenue per day
@@ -20,6 +25,16 @@
 -- Grain: One row per calendar_date × location × product
 -- =================================================================================
 
+-- Get all locations and products to ensure complete dimensional coverage
+WITH locations AS (
+    SELECT DISTINCT location_id, location_name 
+    FROM dim_location
+),
+products AS (
+    SELECT DISTINCT product_id, product_name 
+    FROM dim_product
+)
+
 SELECT 
     d.calendar_date,              -- Day-level date for time series analysis
     d.fiscal_period_key,          -- Fiscal period for financial reporting
@@ -29,14 +44,17 @@ SELECT
     l.location_name,              -- Readable facility name
     p.product_id,                 -- Drug or supply item identifier
     p.product_name,               -- Readable product name
-    SUM(f.drug_revenue) AS drug_revenue,  -- Total drug sales revenue
-    e.expected_revenue_per_day    -- Budgeted daily revenue target
+    COALESCE(SUM(f.drug_revenue), 0) AS drug_revenue,  -- Total drug sales revenue
+    COALESCE(e.expected_revenue_per_day, 0) AS expected_revenue_per_day  -- Budgeted daily revenue target
 FROM dim_date d
-JOIN fct_drug_revenue f ON d.calendar_date = f.transaction_date
-JOIN dim_location l ON f.location_id = l.location_id
-JOIN dim_product p ON f.product_id = p.product_id
-LEFT JOIN fct_expected_revenue e ON d.calendar_date = e.revenue_date 
-                                 AND l.location_id = e.location_id
+CROSS JOIN locations l
+CROSS JOIN products p
+LEFT JOIN fct_drug_revenue f 
+    ON d.calendar_date = f.transaction_date
+    AND l.location_id = f.location_id
+    AND p.product_id = f.product_id
+LEFT JOIN kpi_expected_revenue_per_day e 
+    ON d.calendar_date = e.calendar_date
 GROUP BY 
     d.calendar_date, 
     d.fiscal_period_key,
