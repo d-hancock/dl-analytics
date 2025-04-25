@@ -1,12 +1,11 @@
 -- =================================================================================
 -- Intermediate Fact Table: Discharges
 -- Name: int_fct_discharges
--- Source Tables: stg_encounter_discharge_summary
+-- Source Tables: stg.discharge_summary, stg.patient_dimension
 -- Purpose: Consolidate patient discharge data for patient activity analysis
 -- Key Transformations:
---   • Retain discharge_date for period assignment in marts
---   • Retain patient_id for patient-specific discharge metrics
---   • Include location_id for facility-level discharge analysis
+--   • Join with patient_dimension to get patient team information
+--   • Include discharge status and reason information
 -- Usage:
 --   • Feed into finance.fct_discharges for aggregated discharge metrics
 --   • Support calculation of "Discharged Patients" KPI metric
@@ -15,9 +14,22 @@
 --   • A discharge is counted on the date it occurred
 --   • Each patient may have multiple discharges over time
 -- =================================================================================
-
+CREATE OR REPLACE VIEW DEV_DB.int.fct_discharges AS
 SELECT 
-    discharge_date,     -- Date of discharge (for date dimension joins)
-    patient_id,         -- Patient identifier (for patient dimension joins)
-    location_id         -- Facility identifier (for location dimension joins)
-FROM stg_encounter_discharge_summary; -- Source staging table
+    ds.discharge_id,
+    ds.patient_encounter_id,
+    ds.discharge_date,
+    ds.discharge_status_id,
+    ds.patient_status_id,
+    ds.discharge_reason_id,
+    ds.discharge_acuity_id,
+    p.patient_id,
+    p.team_id
+FROM DEV_DB.stg.discharge_summary ds
+JOIN DEV_DB.stg.patient_dimension p 
+    ON ds.patient_encounter_id IN (
+        SELECT po.order_id 
+        FROM DEV_DB.stg.patient_orders po 
+        WHERE po.patient_id = p.patient_id
+    )
+WHERE ds.record_status = 1;

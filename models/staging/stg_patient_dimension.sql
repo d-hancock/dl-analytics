@@ -1,28 +1,29 @@
 -- =================================================================================
 -- 2. Consolidated Patient Dimension View
 -- Name: patient_dimension
--- Source Tables: OLTP_DB.Patient.Patient, OLTP_DB.Common.Party, OLTP_DB.Patient.PatientPolicy
--- Purpose: Flatten patient demographic and primary policy lookup.
+-- Source Tables: OLTP_DB.Patient.Patient
+-- Purpose: Flatten patient demographic data.
 -- Key Transformations:
---   • Rename primary keys to `patient_id` and `party_id`.
---   • Cast `BirthDate` to DATE for consistency.
---   • Join patient policies to expose primary insurance policy.
+--   • Rename primary key to `patient_id`.
+--   • Cast date fields to DATE for consistency.
+--   • Expose relevant patient attributes.
 -- Usage:
 --   • Join to claims, invoices, and encounters for patient-level KPIs.
 -- =================================================================================
 CREATE OR REPLACE VIEW DEV_DB.stg.patient_dimension AS
 SELECT
-  p.PatientKey           AS patient_id,
-  pr.PartyKey            AS party_id,
-  pr.FirstName           AS first_name,
-  pr.LastName            AS last_name,
-  CAST(p.BirthDate AS DATE)        AS birth_date,
-  pr.GenderCode          AS gender,
-  p.Status               AS status,
-  pol.PolicyKey          AS primary_insurance_policy_id
+  p.Id                     AS patient_id,
+  p.MedicalRecordNo        AS medical_record_number,
+  p.DateOfBirth            AS birth_date,
+  p.Gender_Id              AS gender_id,
+  p.ReferralDate           AS referral_date,
+  p.PrimaryRN_Id           AS primary_rn_id,
+  p.CodeStatus_Id          AS code_status_id,
+  p.PatientDateOfDeath     AS date_of_death,
+  p.Team_Id                AS team_id,
+  p.InsuranceCoordinator_Id AS insurance_coordinator_id,
+  p.AdvanceDirectives      AS advance_directives,
+  p.InformationComplete    AS information_complete,
+  p.RecStatus              AS record_status
 FROM OLTP_DB.Patient.Patient p
-JOIN OLTP_DB.Common.Party pr
-  ON p.PartyKey = pr.PartyKey
-LEFT JOIN OLTP_DB.Patient.PatientPolicy pol
-  ON p.PatientKey = pol.PatientKey
- AND pol.IsPrimary = 1;
+WHERE p.RecStatus = 1;

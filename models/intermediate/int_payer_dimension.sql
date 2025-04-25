@@ -1,21 +1,23 @@
 -- =================================================================================
 -- Intermediate Payer Dimension View
 -- Name: int_payer_dimension
--- Source Tables: OLTP_DB.Insurance.Carrier
+-- Source Tables: stg.payer_dimension
 -- Purpose: Normalize payer lookup for revenue and claims analysis.
 -- Key Transformations:
---   	• Rename primary key to `payer_id`.
---   	• Add boolean flag for active status.
---   	• Include effective and termination dates for coverage tracking.
+--   • Use refactored staging views with corrected schema references
+--   • Standardize payer attributes for reporting
 -- Usage:
---   	• Join to claims and invoices for payer-level revenue analysis.
+--   • Join to claims and invoices for payer-level revenue analysis.
 -- =================================================================================
 CREATE OR REPLACE VIEW DEV_DB.int.payer_dimension AS
 SELECT
-  c.CarrierKey        AS payer_id,
-  c.CarrierName       AS payer_name,
-  c.CarrierTypeCode   AS payer_type,
-  CASE WHEN c.IsActive = 'Y' THEN TRUE ELSE FALSE END AS is_active,
-  c.EffectiveDate     AS effective_date,
-  c.TerminationDate   AS termination_date
-FROM OLTP_DB.Insurance.Carrier c;
+  pd.payer_id,
+  pd.payer_name,
+  pd.carrier_type_id,
+  pd.payor_type_id,
+  pd.identifier,
+  pd.use_medicare_rules,
+  pd.is_supplementary,
+  pd.is_always_billed_for_denial,
+  pd.is_medicare_cba_provider
+FROM DEV_DB.stg.payer_dimension pd;

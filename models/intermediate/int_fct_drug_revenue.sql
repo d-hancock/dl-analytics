@@ -1,24 +1,28 @@
 -- =================================================================================
 -- Intermediate Fact Table: Drug Revenue
 -- Name: int_fct_drug_revenue
--- Source Tables: stg_inventory_item_location_quantity
+-- Source Tables: stg.billing_claim_item, stg.billing_claim
 -- Purpose: Consolidate drug revenue transactions and enable downstream revenue analysis
 -- Key Transformations:
---   • Map product item_sku to standard product_id for consistent joins
---   • Retain location_id for proper dimensional analysis
---   • Include all revenue calculation components (quantity, unit_price, discounts, taxes)
+--   • Use correct claim item and claim tables for revenue analysis
+--   • Include proper revenue-related fields from the documented schema
 -- Usage:
 --   • Feed into finance.fct_drug_revenue for aggregated revenue analysis
 --   • Support calculation of "Drug Revenue" KPI metric
--- Grain: One row per product transaction event
+-- Grain: One row per drug claim item
 -- =================================================================================
-
+CREATE OR REPLACE VIEW DEV_DB.int.fct_drug_revenue AS
 SELECT 
-    transaction_date,    -- Date of the transaction (to join with date dimension)
-    item_sku AS product_id,  -- Map SKU to standard product ID to join with product dimension
-    location_id,         -- Retain location ID for location dimension joining
-    quantity,            -- Quantity sold in this transaction
-    unit_price,          -- Price per unit for revenue calculation
-    discount_amt,        -- Discount amount to be subtracted from revenue
-    tax_amt              -- Tax amount to be added to revenue
-FROM stg_inventory_item_location_quantity;  -- Source staging table
+    ci.claim_item_id,
+    ci.claim_id,
+    ci.inventory_item_id AS product_id,
+    c.patient_id,
+    c.carrier_id AS payer_id,
+    ci.service_from_date AS transaction_date,
+    ci.quantity,
+    ci.unit_price,
+    ci.total_expected_price AS total_price
+FROM DEV_DB.stg.billing_claim_item ci
+JOIN DEV_DB.stg.billing_claim c ON ci.claim_id = c.claim_id
+WHERE ci.record_status = 1
+AND c.record_status = 1;

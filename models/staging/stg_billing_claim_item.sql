@@ -1,12 +1,25 @@
--- Staging Table: Billing Claim Item
--- Cleans and casts raw billing claim item data for downstream use
--- One-to-one mapping with the source table
-
-SELECT 
-    claim_item_id, -- Unique identifier for the claim item
-    claim_id, -- Associated claim identifier
-    item_code, -- Code for the billed item
-    item_description, -- Description of the billed item
-    quantity, -- Quantity of the item billed
-    unit_price -- Price per unit of the item
-FROM raw_billing_claim_item;
+-- =================================================================================
+-- Billing Claim Item View
+-- Name: stg_billing_claim_item
+-- Source Tables: OLTP_DB.Billing.ClaimItem
+-- Purpose: Extract claim line items for revenue analysis
+-- Key Transformations:
+--   • Rename columns to use standard naming conventions
+--   • Filter for active records only
+-- Usage:
+--   • Detailed claim item analysis for revenue metrics
+-- =================================================================================
+CREATE OR REPLACE VIEW DEV_DB.stg.billing_claim_item AS
+SELECT
+    Id                   AS claim_item_id,
+    Claim_Id             AS claim_id,
+    Invoice_Id           AS invoice_id, 
+    InventoryItem_Id     AS inventory_item_id,
+    Quantity,
+    ExpectedPrice        AS unit_price,
+    TotalExpectedPrice   AS total_expected_price,
+    ServiceFromDate      AS service_from_date,
+    ServiceToDate        AS service_to_date,
+    RecStatus            AS record_status
+FROM OLTP_DB.Billing.ClaimItem
+WHERE RecStatus = 1;

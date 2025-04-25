@@ -1,28 +1,32 @@
 -- =================================================================================
 -- Intermediate Patient Dimension View
 -- Name: int_patient_dimension
--- Source Tables: OLTP_DB.Patient.Patient, OLTP_DB.Common.Party, OLTP_DB.Patient.PatientPolicy
+-- Source Tables: stg.patient_dimension, stg.patient_policy, stg.payer_dimension
 -- Purpose: Flatten patient demographic and primary policy lookup.
 -- Key Transformations:
---   	• Rename primary keys to `patient_id` and `party_id`.
---   	• Cast `BirthDate` to DATE for consistency.
---   	• Join patient policies to expose primary insurance policy.
+--   • Use refactored staging views with corrected schema references
+--   • Join to payer dimension for insurance information
 -- Usage:
---   	• Join to claims, invoices, and encounters for patient-level KPIs.
+--   • Join to claims, invoices, and encounters for patient-level KPIs.
 -- =================================================================================
 CREATE OR REPLACE VIEW DEV_DB.int.patient_dimension AS
 SELECT
-  p.PatientKey           AS patient_id,
-  pr.PartyKey            AS party_id,
-  pr.FirstName           AS first_name,
-  pr.LastName            AS last_name,
-  CAST(p.BirthDate AS DATE)        AS birth_date,
-  pr.GenderCode          AS gender,
-  p.Status               AS status,
-  pol.PolicyKey          AS primary_insurance_policy_id
-FROM OLTP_DB.Patient.Patient p
-JOIN OLTP_DB.Common.Party pr
-  ON p.PartyKey = pr.PartyKey
-LEFT JOIN OLTP_DB.Patient.PatientPolicy pol
-  ON p.PatientKey = pol.PatientKey
- AND pol.IsPrimary = 1;
+  p.patient_id,
+  p.medical_record_number,
+  p.birth_date,
+  p.referral_date,
+  p.gender_id,
+  p.date_of_death,
+  p.team_id,
+  p.insurance_coordinator_id,
+  p.advance_directives,
+  p.record_status,
+  pp.patient_policy_id,
+  pp.carrier_id,
+  pd.payer_name AS primary_insurance_name
+FROM DEV_DB.stg.patient_dimension p
+LEFT JOIN DEV_DB.stg.patient_policy pp
+  ON p.patient_id = pp.patient_id
+LEFT JOIN DEV_DB.stg.payer_dimension pd
+  ON pp.carrier_id = pd.payer_id
+WHERE p.record_status = 1;

@@ -1,28 +1,19 @@
 -- =================================================================================
--- 2. Consolidated Patient Dimension View
--- Name: patient_dimension
--- Source Tables: OLTP_DB.Patient.Patient, OLTP_DB.Common.Party, OLTP_DB.Patient.PatientPolicy
--- Purpose: Flatten patient demographic and primary policy lookup.
+-- 3. Provider Dimension View
+-- Name: provider_dimension
+-- Source Tables: OLTP_DB.Provider.Provider
+-- Purpose: Provider information for analysis.
 -- Key Transformations:
---   • Rename primary keys to `patient_id` and `party_id`.
---   • Cast `BirthDate` to DATE for consistency.
---   • Join patient policies to expose primary insurance policy.
+--   • Rename primary key to `provider_id`.
+--   • Expose provider attributes.
 -- Usage:
---   • Join to claims, invoices, and encounters for patient-level KPIs.
+--   • Join to claims, orders, and encounters for provider-level metrics.
 -- =================================================================================
-CREATE OR REPLACE VIEW DEV_DB.stg.patient_dimension AS
+CREATE OR REPLACE VIEW DEV_DB.stg.provider_dimension AS
 SELECT
-  p.PatientKey           AS patient_id,
-  pr.PartyKey            AS party_id,
-  pr.FirstName           AS first_name,
-  pr.LastName            AS last_name,
-  CAST(p.BirthDate AS DATE)        AS birth_date,
-  pr.GenderCode          AS gender,
-  p.Status               AS status,
-  pol.PolicyKey          AS primary_insurance_policy_id
-FROM OLTP_DB.Patient.Patient p
-JOIN OLTP_DB.Common.Party pr
-  ON p.PartyKey = pr.PartyKey
-LEFT JOIN OLTP_DB.Patient.PatientPolicy pol
-  ON p.PatientKey = pol.PatientKey
- AND pol.IsPrimary = 1;
+  p.Id                AS provider_id,
+  p.ProviderName      AS provider_name,
+  p.NPI               AS provider_npi,
+  p.IsActive          AS is_active,
+  p.ProviderType_Id   AS provider_type_id
+FROM OLTP_DB.Provider.Provider p;
