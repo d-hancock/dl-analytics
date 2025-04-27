@@ -29,13 +29,5 @@ SELECT
         WHEN therapy_type_id = 3 THEN 'DME'
         WHEN therapy_type_id = 4 THEN 'Respiratory'
         ELSE 'Other'
-    END AS therapy_category,
-    
-    -- Derive therapy class
-    CASE 
-        WHEN therapy_type_id IN (1, 2) THEN 'Drug'
-        WHEN therapy_type_id IN (3, 4) THEN 'Equipment'
-        ELSE 'Other'
     END AS therapy_class
-    
 FROM therapy_types;

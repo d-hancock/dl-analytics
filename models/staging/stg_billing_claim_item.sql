@@ -15,7 +15,7 @@ SELECT
     Claim_Id             AS claim_id,
     Invoice_Id           AS invoice_id, 
     InventoryItem_Id     AS inventory_item_id,
-    Quantity,
+    Quantity             AS quantity,
     ExpectedPrice        AS unit_price,
     TotalExpectedPrice   AS total_expected_price,
     ServiceFromDate      AS service_from_date,

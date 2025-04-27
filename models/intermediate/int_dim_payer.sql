@@ -28,4 +28,5 @@ SELECT
     use_medicare_rules,
     is_supplementary,
     is_medicare_cba_provider
-FROM DEV_DB.stg.payer_dimension;
+FROM DEV_DB.stg.payer_dimension
+WHERE record_status = 1;

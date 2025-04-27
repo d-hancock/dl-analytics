@@ -21,6 +21,13 @@ SELECT
   c.IsSupplementary             AS is_supplementary,
   c.IsAlwaysBilledForDenial     AS is_always_billed_for_denial,
   c.IsMedicareCBAProvider       AS is_medicare_cba_provider,
+  c.DefaultCategory_Id          AS default_category_id,
+  c.ANSI_Id                     AS ansi_id,
+  c.RelTypeCode_Id              AS rel_type_code_id,
+  c.PreferredFormat_Id          AS preferred_format_id,
+  c.IsAcceptAssignmentMandatory AS is_accept_assignment_mandatory,
   c.CreatedDate                 AS created_date,
-  c.ModifiedDate                AS modified_date
-FROM OLTP_DB.Insurance.Carrier c;
+  c.ModifiedDate                AS modified_date,
+  c.RecStatus                   AS record_status
+FROM OLTP_DB.Insurance.Carrier c
+WHERE c.RecStatus = 1;

@@ -22,6 +22,17 @@ SELECT
     InventoryItem_Id          AS inventory_item_id,
     InventoryItemType_Id      AS inventory_item_type_id,
     Provider_Id               AS provider_id,
+    OrderSource_Id            AS order_source_id,
+    PatientEncounter_Id       AS patient_encounter_id,
+    BillingProvider_Id        AS billing_provider_id,
+    ReferringProvider_Id      AS referring_provider_id,
+    RefillsAllowed            AS refills_allowed,
+    RefillsUsed               AS refills_used,
+    LastFillDate              AS last_fill_date,
+    CreatedBy                 AS created_by,
+    CreatedDate               AS created_date,
+    ModifiedBy                AS modified_by,
+    ModifiedDate              AS modified_date,
     Record_Status_Id          AS record_status
 FROM OLTP_DB.Prescription.PatientOrder
 WHERE Record_Status_Id = 1;

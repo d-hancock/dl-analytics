@@ -25,6 +25,7 @@ SELECT
 FROM DEV_DB.stg.patient_dimension p
 LEFT JOIN DEV_DB.stg.patient_orders po ON p.patient_id = po.patient_id
 WHERE p.record_status = 1
+  AND (po.record_status = 1 OR po.record_status IS NULL)
 GROUP BY 
     p.patient_id,
     p.medical_record_number,

@@ -2,6 +2,7 @@
 -- Cleans and casts discharge summary data from Encounter.DischargeSummary for downstream use
 -- Maps OLTP DB fields to analytics naming conventions
 
+CREATE OR REPLACE VIEW DEV_DB.stg.encounter_discharge_summary AS
 SELECT 
     Id as discharge_id, -- Unique identifier for the discharge event
     PatientEncounter_Id as patient_encounter_id, -- Unique identifier for the patient encounter (renamed to match downstream)
@@ -13,4 +14,5 @@ SELECT
     CreatedDate as created_date, -- Record creation timestamp
     ModifiedDate as modified_date, -- Record modification timestamp
     RecStatus as record_status -- Record status flag (renamed to match downstream)
-FROM Encounter.DischargeSummary;
+FROM OLTP_DB.Encounter.DischargeSummary
+WHERE RecStatus = 1;

@@ -26,10 +26,12 @@ SELECT
     p.patient_id,
     p.team_id
 FROM DEV_DB.stg.discharge_summary ds
-JOIN DEV_DB.stg.patient_dimension p 
+JOIN DEV_DB.stg.patient_dimension p
     ON ds.patient_encounter_id IN (
-        SELECT po.order_id 
-        FROM DEV_DB.stg.patient_orders po 
-        WHERE po.patient_id = p.patient_id
+        SELECT pe.encounter_id 
+        FROM DEV_DB.stg.encounter_patient_encounter pe 
+        WHERE pe.patient_id = p.patient_id
+        AND pe.record_status = 1
     )
-WHERE ds.record_status = 1;
+WHERE ds.record_status = 1
+AND p.record_status = 1;

@@ -24,6 +24,15 @@ SELECT
   p.InsuranceCoordinator_Id AS insurance_coordinator_id,
   p.AdvanceDirectives      AS advance_directives,
   p.InformationComplete    AS information_complete,
+  p.Person_Id              AS person_id,
+  p.PatientStatus_Id       AS patient_status_id,
+  p.MaritalStatus_Id       AS marital_status_id,
+  p.Language_Id            AS language_id,
+  p.IsReferable            AS is_referable,
+  p.CreatedBy              AS created_by,
+  p.CreatedDate            AS created_date,
+  p.ModifiedBy             AS modified_by,
+  p.ModifiedDate           AS modified_date,
   p.RecStatus              AS record_status
 FROM OLTP_DB.Patient.Patient p
 WHERE p.RecStatus = 1;

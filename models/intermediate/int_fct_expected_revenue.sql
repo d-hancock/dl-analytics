@@ -16,9 +16,9 @@ CREATE OR REPLACE VIEW DEV_DB.int.fct_expected_revenue AS
 SELECT 
     c.claim_id,
     ci.claim_item_id,
-    c.service_from_date AS revenue_date,
+    ci.service_from_date AS revenue_date,
     c.patient_id,
-    c.carrier_id AS payer_id,
+    c.patient_policy_id,
     ci.inventory_item_id AS product_id,
     ci.quantity,
     ci.unit_price,

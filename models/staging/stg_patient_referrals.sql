@@ -18,7 +18,13 @@ SELECT
     ReferralDate              AS referral_date,
     ReferralResponseDate      AS response_date,
     ResponseStatus_Id         AS response_status_id,
+    ProviderType_Id           AS provider_type_id,
+    Provider_Id               AS provider_id,
+    DiagnosisCode_Id          AS diagnosis_code_id,
+    Notes                     AS notes,
+    CreatedBy                 AS created_by,
     CreatedDate               AS created_date,
+    ModifiedBy                AS modified_by,
     ModifiedDate              AS modified_date,
     RecStatus                 AS record_status
 FROM OLTP_DB.Patient.PatientReferrals

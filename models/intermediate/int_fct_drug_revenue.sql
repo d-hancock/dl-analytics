@@ -17,7 +17,8 @@ SELECT
     ci.claim_id,
     ci.inventory_item_id AS product_id,
     c.patient_id,
-    c.carrier_id AS payer_id,
+    c.patient_policy_id, 
+    c.billing_provider_id,
     ci.service_from_date AS transaction_date,
     ci.quantity,
     ci.unit_price,
@@ -25,4 +26,4 @@ SELECT
 FROM DEV_DB.stg.billing_claim_item ci
 JOIN DEV_DB.stg.billing_claim c ON ci.claim_id = c.claim_id
 WHERE ci.record_status = 1
-AND c.record_status = 1;a
+AND c.record_status = 1;

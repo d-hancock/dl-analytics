@@ -27,6 +27,9 @@ SELECT
 FROM DEV_DB.stg.patient_dimension p
 LEFT JOIN DEV_DB.stg.patient_policy pp
   ON p.patient_id = pp.patient_id
+  AND pp.record_status = 1
+  AND pp.insurance_sequence_id = 1 -- Primary insurance
 LEFT JOIN DEV_DB.stg.payer_dimension pd
   ON pp.carrier_id = pd.payer_id
+  AND pd.record_status = 1
 WHERE p.record_status = 1;

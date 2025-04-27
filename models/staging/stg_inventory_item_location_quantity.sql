@@ -11,6 +11,11 @@
 -- =================================================================================
 CREATE OR REPLACE VIEW DEV_DB.stg.inventory_item_location_quantity AS
 SELECT
-  InventoryItemLocationQuantityKey AS item_location_quantity_id,
-  OnHandQuantity                  AS on_hand_quantity
+  Id                            AS item_location_quantity_id,
+  InventoryItemLocation_Id      AS inventory_item_location_id,
+  LotInformation_Id             AS lot_information_id,
+  Quantity                      AS quantity,
+  AvailableQuantity             AS available_quantity,
+  RequestedQuantity             AS requested_quantity,
+  UnitsPerVial                  AS units_per_vial
 FROM OLTP_DB.Inventory.InventoryItemLocationQuantity;

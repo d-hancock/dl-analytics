@@ -13,12 +13,12 @@ CREATE OR REPLACE VIEW DEV_DB.int.dim_date AS
 SELECT
     date_id,
     calendar_date,
-    day_of_week_name,
+    day_of_week AS day_of_week_name,
     day_of_month,
     day_of_year,
     month_id,
     quarter_id,
-    year_id,
+    YEAR(calendar_date) AS year_id,
     
     -- Derive fiscal year fields (assuming fiscal year starts in October)
     CASE
@@ -37,5 +37,4 @@ SELECT
         WHEN MONTH(calendar_date) BETWEEN 4 AND 6 THEN 3
         WHEN MONTH(calendar_date) BETWEEN 7 AND 9 THEN 4
     END AS fiscal_quarter
-    
 FROM DEV_DB.stg.date_dimension;

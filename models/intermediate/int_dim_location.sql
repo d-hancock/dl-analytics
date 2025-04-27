@@ -15,6 +15,7 @@ SELECT
     company_id,
     location_id AS physical_location_id,
     facility_name AS location_name,
+    is_active,
     
     -- Derive region field (example - would need to be based on actual data)
     CASE 
@@ -22,5 +23,5 @@ SELECT
         WHEN facility_id % 3 = 1 THEN 'Central'
         WHEN facility_id % 3 = 2 THEN 'West'
     END AS region
-    
-FROM DEV_DB.stg.facility_dimension;
+FROM DEV_DB.stg.facility_dimension
+WHERE record_status = 1;

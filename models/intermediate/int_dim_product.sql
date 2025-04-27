@@ -28,12 +28,5 @@ SELECT
         WHEN inventory_item_id % 5 = 2 THEN 'Equipment'
         WHEN inventory_item_id % 5 = 3 THEN 'Service'
         ELSE 'Other'
-    END AS product_category,
-    
-    CASE 
-        WHEN inventory_item_id % 3 = 0 THEN 'High'
-        WHEN inventory_item_id % 3 = 1 THEN 'Medium'
-        ELSE 'Low'
-    END AS price_tier
-    
+    END AS product_category
 FROM inventory_items;

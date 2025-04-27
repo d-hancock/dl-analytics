@@ -1,0 +1,4 @@
+{
+    "python.defaultInterpreterPath": "/home/dale/anaconda3/envs/dl-analytics/bin/python",
+    "python.terminal.activateEnvironment": true
+}
