@@ -1,0 +1,45 @@
+# OLTP Documentation Helper
+
+## Context
+When working with SQL files in this project, it's important to understand the structure of the OLTP source tables referenced in queries. This project uses the CareTend OLTP database as a source for the analytics data warehouse.
+
+## Instructions
+
+1. When a SQL file references OLTP tables (usually prefixed with `OLTP_DB.` or having schema names like `Patient.`, `Billing.`, `Common.`, etc.), AUTOMATICALLY run the extract.py script to retrieve the table definition:
+   ```
+   python notes/extract.py "[Schema].[TableName]"
+   ```
+
+2. When helping with SQL models that reference OLTP source tables, ALWAYS call the extract.py script to understand the source table structure before providing guidance.
+
+3. Include key information about tables when explaining SQL files:
+   - Primary key fields
+   - Foreign key relationships
+   - Important columns and their data types
+   - Any known business rules or constraints
+
+4. For SQL files with patterns like `SELECT * FROM OLTP_DB.Patient.Patient`, extract the actual table name (`[Patient].[Patient]`) and run:
+   ```
+   python notes/extract.py "[Patient].[Patient]"
+   ```
+
+5. When creating or modifying staging models, automatically run extract.py to understand source tables and ensure correct field mappings.
+
+6. If a file references multiple OLTP tables, extract documentation for all relevant tables to understand relationships.
+
+7. For complex queries or joins, use the table documentation to validate join conditions and ensure they use appropriate keys.
+
+8. If the extract.py script returns "Table not found", refer to the all_table_definitions.csv file which contains pre-extracted documentation.
+
+## Example Assistant Behavior
+
+When working with a staging file like `stg_patient_dimension.sql` that references `OLTP_DB.Patient.Patient`:
+
+1. Run `python notes/extract.py "[Patient].[Patient]"` to get the table structure
+2. Analyze the column definitions from the output
+3. Reference foreign key relationships in your explanations
+4. When suggesting changes, base them on the actual source table structure
+
+## Available Resources
+- Table documentation extraction tool: notes/extract.py
+- Pre-extracted table definitions: notes/all_table_definitions.csv

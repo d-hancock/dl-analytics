@@ -1,0 +1,26 @@
+TableName,PageNumber,Definition,ExtractedDate
+[Provider].[Provider],403,"Columns Unique
+PK_ErxHubMessage Id True
+Name Columns
+FK_ErxHubMessage_
+Company Company_Id->[Common].[Company].[Id]
+FK_ErxHubMessage_ErxDigital
+SignatureStatus ErxDigitalSignatureStatus_Id->
+[Lookups].[ErxDigital-
+SignatureStatus].[Id]
+FK_ErxHubMessage_ErxMatchStatus_Patient PatientMatchStatus_Id->[Lookups].[ErxMatchStatus].[Id]
+FK_ErxHubMessage_ErxMatchStatus_Provider ProviderMatchStatus_Id->
+[Lookups].[ErxMatchStatus].[Id]
+FK_ErxHubMessage_ErxStatus Status_Id->[Lookups].[ErxStatus].[Id]
+FK_ErxHubMessage_ErxTransaction
+Type ErxTransactionType_Id->[Lookups].[ErxTransaction-
+Type].[Id]
+FK_ErxHubMessage_Patient Patient_Id->[Patient].[Patient].[Id]
+FK_ErxHubMessage_PatientOrder PatientOrder_Id->[Prescription].[PatientOrder].[Id]
+FK_ErxHubMessage_Provider Provider_Id->[Provider].[Provider].[Id]
+CareTend OLTP DB Data Dictionary 
+2016 R2 SP1 
+CTDOLTPDBDD 
+Copyright© 2017 - Mediware Information Systems, Inc.
+                                 Proprietary and Confidential
+",2025-04-27 14:37:01

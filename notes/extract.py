@@ -9,9 +9,12 @@ import csv
 import os.path
 from datetime import datetime
 
-PDF = "CareTend Data Dictionary OLTP DB.pdf"
+# Better PDF path handling with more descriptive error messages
+PDF_FILENAME = "CareTend Data Dictionary OLTP DB.pdf"
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PDF = os.path.join(SCRIPT_DIR, PDF_FILENAME)
 PAGE_OFFSET = 2  # PDF page 3 corresponds to document page 1 (offset of 2)
-CACHE_FILE = "table_definitions_cache.csv"
+CACHE_FILE = os.path.join(SCRIPT_DIR, "table_definitions_cache.csv")
 
 def find_table_of_contents(reader):
     """Find and parse the Table of Contents to get table names and their page numbers"""
@@ -200,9 +203,12 @@ def grab(table, debug=False):
     """
     print(f"Searching for table: {table}")
     
-    # Check if PDF exists
+    # Check if PDF exists with better error messaging
     if not os.path.exists(PDF):
-        print(f"Error: PDF file '{PDF}' not found in {os.getcwd()}")
+        print(f"Error: PDF file '{PDF_FILENAME}' not found in '{SCRIPT_DIR}'")
+        print(f"Please ensure the PDF file exists in the notes directory.")
+        print(f"Current working directory: {os.getcwd()}")
+        print(f"Script directory: {SCRIPT_DIR}")
         return False
     
     # First check the cache
