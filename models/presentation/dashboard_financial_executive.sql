@@ -2,13 +2,15 @@
 -- Presentation Layer: Financial Executive Dashboard
 -- Name: dashboard_financial_executive
 -- Source Tables: 
---   • dim_date - Date dimension for time-based analysis and filtering
---   • mart_patient_activity - Consolidated patient metrics (discharges, starts, referrals)  
---   • mart_revenue_analysis - Consolidated revenue metrics
---   • dim_location - Location dimension for facility filtering
---   • dim_product - Product dimension for drug/item filtering
---   • dim_therapy - Therapy dimension for treatment category filtering
---   • dim_payer - Payer dimension for insurance provider filtering
+--   • int.dim_date - Date dimension for time-based analysis and filtering
+--   • finance.fct_patient_activity - Consolidated patient metrics (discharges, starts, referrals)  
+--   • finance.fct_revenue - Consolidated revenue metrics
+--   • finance.kpi_patient_metrics - Pre-aggregated patient KPIs
+--   • finance.kpi_revenue_metrics - Pre-aggregated revenue KPIs
+--   • int.dim_location - Location dimension for facility filtering
+--   • int.dim_product - Product dimension for drug/item filtering
+--   • int.dim_therapy - Therapy dimension for treatment category filtering
+--   • int.dim_payer - Payer dimension for insurance provider filtering
 -- Purpose: 
 --   Provide a consolidated, presentation-ready dataset for the financial
 --   executive dashboard with all key financial and operational metrics.
@@ -28,52 +30,102 @@
 -- Get all payers to ensure complete dimensional coverage
 WITH payers AS (
     SELECT DISTINCT payer_id, payer_name 
-    FROM dim_payer
+    FROM DEV_DB.int.dim_payer
+),
+
+-- Get KPI metrics at period level for efficient aggregation
+period_metrics AS (
+    SELECT
+        rm.fiscal_period_key,
+        rm.location_id,
+        rm.product_id,
+        rm.therapy_type_id AS therapy_id,
+        rm.payer_id,
+        rm.total_expected_revenue,
+        rm.drug_revenue,
+        rm.total_expected_revenue_per_day AS expected_revenue_per_day
+    FROM DEV_DB.marts.finance.kpi_revenue_metrics rm
+    
+    UNION ALL
+    
+    SELECT
+        pm.fiscal_period_key,
+        pm.location_id,
+        NULL AS product_id,
+        pm.therapy_type_id AS therapy_id,
+        NULL AS payer_id,
+        0 AS total_expected_revenue,
+        0 AS drug_revenue,
+        0 AS expected_revenue_per_day
+    FROM DEV_DB.marts.finance.kpi_patient_metrics pm
+    WHERE NOT EXISTS (
+        -- Only include patient metrics that don't already have revenue metrics
+        SELECT 1 FROM DEV_DB.marts.finance.kpi_revenue_metrics rm
+        WHERE pm.fiscal_period_key = rm.fiscal_period_key
+        AND pm.location_id = rm.location_id
+        AND pm.therapy_type_id = rm.therapy_type_id
+    )
 )
 
 SELECT 
     d.calendar_date,           -- Day-level date for time-based analysis
     d.fiscal_period_key,       -- Fiscal period for financial reporting periods
-    d.period_start_date,       -- Start date of fiscal period for date range calculations
-    d.period_end_date,         -- End date of fiscal period for date range calculations
+    d.fiscal_year,             -- Fiscal year for annual comparison
+    d.fiscal_quarter,          -- Fiscal quarter for quarterly analysis
+    d.fiscal_month,            -- Fiscal month for monthly trends
     
-    -- Dimension attributes (using dimension table values preferentially, falling back to mart values)
-    COALESCE(l.location_id, ma.location_id, ra.location_id) AS location_id,            
-    COALESCE(l.location_name, ma.location_name, ra.location_name) AS location_name,            
-    COALESCE(p.product_id, ma.product_id, ra.product_id) AS product_id,                
-    COALESCE(p.product_name, ma.product_name, ra.product_name) AS product_name,                
-    COALESCE(t.therapy_code, ma.therapy_code) AS therapy_code,            
-    COALESCE(t.therapy_name, ma.therapy_name) AS therapy_name,            
+    -- Dimension attributes (using dimension table values)
+    COALESCE(l.location_id, pa.location_id, fr.location_id) AS location_id,            
+    l.location_name,            
+    COALESCE(p.product_id, fr.product_id) AS product_id,                
+    p.product_name,                
+    COALESCE(t.therapy_type_id, pa.therapy_type_id) AS therapy_id,            
+    t.therapy_class AS therapy_name,            
     py.payer_id,            
     py.payer_name,          
     
-    -- KPI metrics (using COALESCE to ensure zero values instead of nulls)
-    COALESCE(ma.discharged_patients, 0) AS discharged_patients,    
-    COALESCE(ma.new_starts, 0) AS new_starts,             
-    COALESCE(ma.referrals, 0) AS referrals,              
-    COALESCE(ra.expected_revenue_per_day, 0) AS expected_revenue_per_day,
-    COALESCE(ra.drug_revenue, 0) AS drug_revenue            
+    -- Patient KPI metrics (from fct_patient_activity)
+    COALESCE(pa.discharged_patients, 0) AS discharged_patients,    
+    COALESCE(pa.new_starts, 0) AS new_starts,             
+    COALESCE(pa.referrals, 0) AS referrals,          
+    
+    -- Revenue KPI metrics (from fct_revenue)    
+    COALESCE(fr.drug_revenue, 0) AS drug_revenue,
+    COALESCE(fr.total_revenue, 0) AS total_expected_revenue,
+    COALESCE(fr.total_revenue_per_day, 0) AS expected_revenue_per_day,
+    
+    -- Pre-aggregated KPI metrics (for efficient filtering)
+    COALESCE(pm.total_expected_revenue, 0) AS period_total_expected_revenue,
+    COALESCE(pm.drug_revenue, 0) AS period_drug_revenue,
+    COALESCE(pm.expected_revenue_per_day, 0) AS period_expected_revenue_per_day
 
-FROM dim_date d
+FROM DEV_DB.int.dim_date d
 
--- Join to both marts using calendar_date
-LEFT JOIN mart_patient_activity ma 
-    ON d.calendar_date = ma.calendar_date
-LEFT JOIN mart_revenue_analysis ra 
-    ON d.calendar_date = ra.calendar_date 
-    -- Join conditions when location and product exist in both marts
-    AND (ma.location_id = ra.location_id OR ma.location_id IS NULL OR ra.location_id IS NULL)
-    AND (ma.product_id = ra.product_id OR ma.product_id IS NULL OR ra.product_id IS NULL)
+-- Join to detailed facts for daily analysis
+LEFT JOIN DEV_DB.marts.finance.fct_patient_activity pa 
+    ON d.calendar_date = pa.calendar_date
+LEFT JOIN DEV_DB.marts.finance.fct_revenue fr 
+    ON d.calendar_date = fr.calendar_date 
+    -- Join conditions when location and product exist in both facts
+    AND (pa.location_id = fr.location_id OR pa.location_id IS NULL OR fr.location_id IS NULL)
+    AND (pa.therapy_type_id = fr.therapy_type_id OR pa.therapy_type_id IS NULL OR fr.therapy_type_id IS NULL)
 
--- Join to dimensions for preferred attribute values
-LEFT JOIN dim_location l 
-    ON COALESCE(ma.location_id, ra.location_id) = l.location_id
-LEFT JOIN dim_product p 
-    ON COALESCE(ma.product_id, ra.product_id) = p.product_id
-LEFT JOIN dim_therapy t 
-    ON ma.therapy_code = t.therapy_code
+-- Join to pre-aggregated metrics for period-level KPIs
+LEFT JOIN period_metrics pm
+    ON d.fiscal_period_key = pm.fiscal_period_key
+    AND COALESCE(pa.location_id, fr.location_id) = pm.location_id
+    AND COALESCE(fr.product_id, pm.product_id) = pm.product_id
+    AND COALESCE(pa.therapy_type_id, fr.therapy_type_id, pm.therapy_id) = pm.therapy_id
+    AND COALESCE(fr.payer_id, pm.payer_id) = pm.payer_id
+
+-- Join to dimensions for attribute values
+LEFT JOIN DEV_DB.int.dim_location l 
+    ON COALESCE(pa.location_id, fr.location_id, pm.location_id) = l.location_id
+LEFT JOIN DEV_DB.int.dim_product p 
+    ON COALESCE(fr.product_id, pm.product_id) = p.product_id
+LEFT JOIN DEV_DB.int.dim_therapy t 
+    ON COALESCE(pa.therapy_type_id, fr.therapy_type_id, pm.therapy_id) = t.therapy_type_id
 CROSS JOIN payers py  -- Join all payers for complete dimensional coverage
 
 -- Filter to current fiscal year - can be adjusted as needed
-WHERE d.calendar_date BETWEEN DATEADD(YEAR, 2025 - EXTRACT(YEAR FROM CURRENT_DATE()), DATE_TRUNC('YEAR', CURRENT_DATE())) 
-                          AND DATEADD(YEAR, 2025 - EXTRACT(YEAR FROM CURRENT_DATE()) + 1, DATE_TRUNC('YEAR', CURRENT_DATE())) - 1;
+WHERE d.fiscal_year = 2025;

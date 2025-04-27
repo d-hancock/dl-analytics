@@ -11,7 +11,7 @@ Our analytics data model follows a multi-layered approach:
 1. **Staging Layer** (`stg_*`): Direct 1:1 representation of source tables with minimal transformations
 2. **Intermediate Layer** (`int_*`): Business logic transformations and dimensional modeling
 3. **Marts Layer** (`finance.*`): Purpose-built views for specific business domains
-4. **Presentation Layer**: Final views used for dashboards and reporting
+4. **Presentation Layer** (`dashboard_*`): Final views used for dashboards and reporting
 
 ## Core Source Tables
 
@@ -93,6 +93,42 @@ The following OLTP DB tables serve as the foundation for our analytics model:
 - Grain: One row per claim line item with expected revenue
 - Key metrics: Expected revenue by date, payer, product
 
+## Marts Layer Tables
+
+The marts layer consists of consolidated, domain-specific tables that bridge the gap between intermediate facts and presentation layer. The finance mart includes:
+
+### Revenue Facts Table (`finance.fct_revenue`)
+- Source: `int_fct_drug_revenue`, `int_fct_expected_revenue`
+- Grain: One row per calendar_date × product × patient × payer
+- Key metrics: Drug revenue, non-drug revenue, total revenue, revenue per day
+- Dimensions: Time, product, therapy, location, payer
+
+### Patient Activity Facts Table (`finance.fct_patient_activity`)
+- Source: `int_fct_referrals`, `int_fct_new_starts`, `int_fct_discharges`
+- Grain: One row per calendar_date × location × therapy type
+- Key metrics: Referrals, new starts, discharges, net patient change
+- Dimensions: Time, location, therapy type
+
+### Revenue KPI Table (`finance.kpi_revenue_metrics`)
+- Source: `finance.fct_revenue`
+- Grain: One row per fiscal_period × location × product × therapy × payer
+- Key metrics: Aggregated revenue metrics, period-over-period comparisons, growth rates
+- Purpose: Pre-aggregated metrics for dashboard KPIs
+
+### Patient KPI Table (`finance.kpi_patient_metrics`)
+- Source: `finance.fct_patient_activity`
+- Grain: One row per fiscal_period × location × therapy type
+- Key metrics: Aggregated patient metrics, referral-to-start conversion rate, growth rates
+- Purpose: Pre-aggregated metrics for dashboard KPIs
+
+## Presentation Layer
+
+### Financial Executive Dashboard View (`dashboard_financial_executive`)
+- Source: Combines `finance.fct_revenue`, `finance.fct_patient_activity`, `finance.kpi_revenue_metrics`, and `finance.kpi_patient_metrics`
+- Grain: One row per calendar_date × location × product × therapy × payer
+- Key features: Time-filtered, dimension-complete, pre-aggregated KPIs
+- Purpose: Primary source for financial executive Tableau dashboard
+
 ## Key Performance Indicators (KPIs)
 
 Our data model supports these core business KPIs:
@@ -102,6 +138,9 @@ Our data model supports these core business KPIs:
 3. **Discharged Patients**: Count of patient discharges by period
 4. **Drug Revenue**: Revenue from drug-related claims
 5. **Expected Revenue Per Day**: Daily expected revenue forecasts
+6. **Total Expected Revenue**: Total revenue expected to be collected
+7. **Net Patient Change**: New starts minus discharges by period
+8. **Referral to Start Conversion Rate**: Percentage of referrals that convert to new starts
 
 ## Schema Naming Conventions
 
@@ -118,3 +157,5 @@ Our data model supports these core business KPIs:
 3. Use appropriate date dimensions for time-based analysis
 4. Refer to intermediate layer views for reusable business logic
 5. Use mart layer views for domain-specific analysis
+6. For dashboard creation, use the presentation layer views
+7. For KPI metrics, leverage pre-aggregated KPI tables in the marts layer

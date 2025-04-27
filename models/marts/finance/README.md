@@ -16,31 +16,60 @@ The finance marts have been updated to align with the refactored intermediate la
 - KPI calculations have been updated to use the proper source columns
 - Aggregations and metrics now reflect the true data schema
 
-## Key Dimensions
-- `dim_date`: Calendar and fiscal time periods for analysis
-- `dim_location`: Facilities and locations with regional grouping
-- `dim_payer`: Payer information with categorization for revenue analysis
-- `dim_product`: Product catalog for revenue and inventory analysis
-- `dim_therapy`: Therapy types for clinical and revenue analysis
+## Current Mart Layer Tables
 
-## Core Facts
-- `fct_referrals`: Referral activity for patient acquisition analysis
-- `fct_new_starts`: New patient start metrics for growth analysis
-- `fct_discharges`: Patient discharge data for patient activity tracking
-- `fct_drug_revenue`: Drug revenue data for financial analysis
-- `fct_expected_revenue`: Expected revenue projections for forecasting
+### Facts
+- `fct_revenue`: Consolidated revenue facts from drug and expected revenue
+  - Combines data from `int_fct_drug_revenue` and `int_fct_expected_revenue`
+  - Daily grain with dimensional coverage for location, product, therapy, and payer
+  - Core metrics: drug_revenue, non_drug_revenue, total_revenue, revenue_per_day
 
-## Key KPIs
-- `kpi_referrals`: Referral count trends and metrics
-- `kpi_new_starts`: New patient acquisition performance
-- `kpi_discharged_patients`: Patient discharge trends
-- `kpi_drug_revenue`: Drug revenue performance metrics
-- `kpi_expected_revenue_per_day`: Daily revenue expectations
+- `fct_patient_activity`: Consolidated patient activity metrics
+  - Combines data from `int_fct_referrals`, `int_fct_new_starts`, and `int_fct_discharges`
+  - Daily grain with consistent dimensional attributes
+  - Core metrics: referrals, new_starts, discharged_patients, net_patient_change
 
-## Consolidated Marts
-- `mart_patient_activity`: Combined view of patient referrals, starts, and discharges
-- `mart_revenue_analysis`: Consolidated revenue metrics across products and payers
+### KPIs
+- `kpi_revenue_metrics`: Pre-aggregated revenue KPIs for dashboard consumption
+  - Period-level aggregations (daily, monthly, quarterly, yearly)
+  - Period-over-period comparisons and growth calculations
+  - Optimized for KPI card displays and trend charts
 
-## Example
-- `fct_discharges.sql`: Summable grain-level fact table for discharges.
-- `kpi_drug_revenue.sql`: Pre-aggregated metric for drug revenue.
+- `kpi_patient_metrics`: Pre-aggregated patient KPIs for dashboard consumption
+  - Aggregated patient metrics with conversion rates and growth calculations
+  - Period-level metrics for dashboard KPIs
+  - Patient activity trends and comparisons
+
+## Usage
+
+These mart layer tables serve as the foundation for the presentation layer. The `dashboard_financial_executive` view in the presentation layer consumes these tables to create a consolidated dataset for the financial executive dashboard.
+
+### How to Use
+
+When building reports or dashboards:
+1. For detailed analysis, use the fact tables (`fct_revenue`, `fct_patient_activity`)
+2. For KPI reporting, use the pre-aggregated KPI tables (`kpi_revenue_metrics`, `kpi_patient_metrics`)
+3. For dashboard creation, use the presentation layer views that consume these mart tables
+
+### Dimensional Analysis
+
+All facts and KPIs support analysis across these key dimensions:
+- Time (calendar_date, fiscal_year, fiscal_quarter, fiscal_month)
+- Location (location_id, location_name, region)
+- Product (product_id, product_name, product_category)
+- Therapy (therapy_type_id, therapy_class)
+- Payer (payer_id, payer_name, payer_category)
+
+## Analytical Requirements Coverage
+
+These mart tables fulfill the analytical requirements specified in `/documentation/analytics_requirements_mapping.md`, providing all required metrics for:
+- Revenue & Margin metrics (Total Expected Revenue, Drug Revenue, Revenue/Day)
+- Patient Demographics (Referrals, New Starts, Discharged Patients)
+
+## Maintenance
+
+When updating these models:
+1. Ensure all dimensional joins are maintained
+2. Validate KPI calculations against source data
+3. Update documentation when calculations change
+4. Run tests to ensure data consistency
