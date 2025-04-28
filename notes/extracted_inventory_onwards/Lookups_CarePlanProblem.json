@@ -1,0 +1,14 @@
+{
+  "table_name": "Lookups.CarePlanProblem",
+  "schema": "Lookups",
+  "table": "CarePlanProblem",
+  "doc_page": 577,
+  "pdf_page": 575,
+  "raw_text": "[Lookups].[CarePlanProblem]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId int 4 False 500001 - 1\nName varchar(255) 255 False\nDescription varchar(1000) 1000 True\nIsActive bit 1 False ((1))\nCarePlanDiscipline_Id int 4 False\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_CarePlanProblem Id True 90\nUQ_CarePlanProblemName Name True 80\nForeign Keys\nName Columns\nFK_CarePlanProblem_CarePlanDiscipline CarePlanDiscipline_Id->[Lookups].[CarePlanDiscipline].[Id]\nPage 577 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId int 4 False 500001 - 1\nName varchar(255) 255 False\nDescription varchar(1000) 1000 True\nIsActive bit 1 False ((1))\nCarePlanDiscipline_Id int 4 False",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_CarePlanProblem Id True 90\nUQ_CarePlanProblemName Name True 80",
+  "fk_section": "Name Columns\nFK_CarePlanProblem_CarePlanDiscipline CarePlanDiscipline_Id->[Lookups].[CarePlanDiscipline].[Id]\nPage 577 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

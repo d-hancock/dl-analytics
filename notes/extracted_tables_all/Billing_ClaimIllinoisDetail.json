@@ -1,0 +1,14 @@
+{
+  "table_name": "Billing.ClaimIllinoisDetail",
+  "schema": "Billing",
+  "table": "ClaimIllinoisDetail",
+  "doc_page": 97,
+  "pdf_page": 99,
+  "raw_text": "[Billing].[ClaimIllinoisDetail]\nColumns\nKey Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nIllinoisSectionNo int 4 True\nIllinoisTPLStatus_Id int 4 True\nIllinoisTPLAmount numeric(19,5) 9 True\nIllinoisTPLCode_Id int 4 True\nIllinoisTPLDate datetime2 8 True\nIllinoisTPLName varchar(25) 25 True\nIllinoisPayee int 4 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_IllinoisClaim Id True 80\nIX_Billing_ClaimIllinoisDetail_IllinoisTPLCode_Id_Illinois- Illinois-\nTPLCode TPLCode_Id\nIX_Billing_ClaimIllinoisDetail_IllinoisTPLStatus_Id_Illinois- Illinois-\nTPLStatus TPLStatus_Id\nForeign Keys\nName Columns\nFK_IllinoisClaim_Claim Id->[Billing].[Claim].[Id]\nFK_IllinoisClaim_IllCode IllinoisTPLCode_Id->[Lookups].[IllinoisTPLCode].[Id]\nFK_IllinoisClaim_IllStatus IllinoisTPLStatus_Id->[Lookups].[IllinoisTPLStatus].[Id]\nPage 97 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Key Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nIllinoisSectionNo int 4 True\nIllinoisTPLStatus_Id int 4 True\nIllinoisTPLAmount numeric(19,5) 9 True\nIllinoisTPLCode_Id int 4 True\nIllinoisTPLDate datetime2 8 True\nIllinoisTPLName varchar(25) 25 True\nIllinoisPayee int 4 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_IllinoisClaim Id True 80\nIX_Billing_ClaimIllinoisDetail_IllinoisTPLCode_Id_Illinois- Illinois-\nTPLCode TPLCode_Id\nIX_Billing_ClaimIllinoisDetail_IllinoisTPLStatus_Id_Illinois- Illinois-\nTPLStatus TPLStatus_Id",
+  "fk_section": "Name Columns\nFK_IllinoisClaim_Claim Id->[Billing].[Claim].[Id]\nFK_IllinoisClaim_IllCode IllinoisTPLCode_Id->[Lookups].[IllinoisTPLCode].[Id]\nFK_IllinoisClaim_IllStatus IllinoisTPLStatus_Id->[Lookups].[IllinoisTPLStatus].[Id]\nPage 97 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

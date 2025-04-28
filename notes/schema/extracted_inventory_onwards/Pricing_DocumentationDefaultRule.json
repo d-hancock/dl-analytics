@@ -1,0 +1,11 @@
+{
+  "table_name": "Pricing.DocumentationDefaultRule",
+  "schema": "Pricing",
+  "table": "DocumentationDefaultRule",
+  "doc_page": 1188,
+  "pdf_page": 1186,
+  "raw_text": "DocumentationDefaultRule_Contract DocumentationModel_Id->[Pricing].[Documentation-\nModel].[Id]\nFK_DocumentationDefaultRule_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nfk_DocumentationDefaultRule_CustomDocument- CustomPatientDocumentTemplate_Id-\nTemplate >[Template].[CustomPatientDocumentTemplate].[Id]\nFK_DocumentationDefaultRule_Document PatientSupportingDocumentType_Id->[Lookups].[Patient-\nSupportingDocumentType].[Id]\nfk_DocumentationDefaultRule_SecondaryCustom- SecondaryCustomDocumentTemplate_Id-\nDocumentTemplate >[Template].[CustomPatientDocumentTemplate].[Id]\nFK_DocumentationDefaultRule_SecondaryDocument SecondarySupportingDocumentType_Id-\n>[Lookups].[PatientSupportingDocumentType].[Id]\nFK_DocumentationDefaultRule_Template Template_Id->[Template].[DocumentTemplate].[Id]\nPage 1189 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

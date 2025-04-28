@@ -1,0 +1,11 @@
+{
+  "table_name": "Pricing.PricingModel",
+  "schema": "Pricing",
+  "table": "PricingModel",
+  "doc_page": 1218,
+  "pdf_page": 1218,
+  "raw_text": "[Pricing].[PricingModel].[Id]\nFK_PricingPriceCodeRule_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_PricingPriceCodeRule_ExpectedPriceType ExpectedItemPriceType_Id->[Lookups].[ItemPrice-\nType].[Id]\nFK_PricingPriceCodeRule_PriceCode PriceCode_Id->[Lookups].[PriceCode].[Id]\nFK_PricingPriceCodeRule_PriceType PriceType_Id->[Lookups].[PriceType].[Id]\nPage 1221 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

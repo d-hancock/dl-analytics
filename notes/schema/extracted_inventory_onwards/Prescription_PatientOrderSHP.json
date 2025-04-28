@@ -1,0 +1,14 @@
+{
+  "table_name": "Prescription.PatientOrderSHP",
+  "schema": "Prescription",
+  "table": "PatientOrderSHP",
+  "doc_page": 1145,
+  "pdf_page": 1143,
+  "raw_text": "[Prescription].[PatientOrderSHP]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls\nId bigint 8 False\nSHP_DeliverySystem_Id int 4 True\nSHP_DeliverySystemTypeOther varchar(100) 100 True\nSHP_DeliverySystemBrand_Id int 4 True\nSHP_EnteralDevice_Id int 4 True\nSHP_IsIncludedInOutComes bit 1 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_PatientOrderSHP Id True 80\nForeign Keys\nName Columns\nfk_PatientOrderSHP_PatientOrder Id->[Prescription].[PatientOrder].[Id]\nFK_PatientOrderSHP_SHP_DeliverySystem SHP_DeliverySystem_Id->[Lookups].[SHP_Delivery-\nSystem].[Id]\nFK_PatientOrderSHP_SHP_DeliverySystemBrand SHP_DeliverySystemBrand_Id->[Lookups].[SHP_Delivery-\nSystemBrand].[Id]\nFK_PatientOrderSHP_SHP_EnteralDevice SHP_EnteralDevice_Id->[Lookups].[SHP_Enteral-\nDevice].[Id]\nPage 1145 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls\nId bigint 8 False\nSHP_DeliverySystem_Id int 4 True\nSHP_DeliverySystemTypeOther varchar(100) 100 True\nSHP_DeliverySystemBrand_Id int 4 True\nSHP_EnteralDevice_Id int 4 True\nSHP_IsIncludedInOutComes bit 1 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_PatientOrderSHP Id True 80",
+  "fk_section": "Name Columns\nfk_PatientOrderSHP_PatientOrder Id->[Prescription].[PatientOrder].[Id]\nFK_PatientOrderSHP_SHP_DeliverySystem SHP_DeliverySystem_Id->[Lookups].[SHP_Delivery-\nSystem].[Id]\nFK_PatientOrderSHP_SHP_DeliverySystemBrand SHP_DeliverySystemBrand_Id->[Lookups].[SHP_Delivery-\nSystemBrand].[Id]\nFK_PatientOrderSHP_SHP_EnteralDevice SHP_EnteralDevice_Id->[Lookups].[SHP_Enteral-\nDevice].[Id]\nPage 1145 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

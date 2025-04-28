@@ -1,0 +1,14 @@
+{
+  "table_name": "Documents.PatientLAPA",
+  "schema": "Documents",
+  "table": "PatientLAPA",
+  "doc_page": 312,
+  "pdf_page": 313,
+  "raw_text": "[Documents].[PatientLAPA]\nColumns\nKey Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nMiddleInitial char(5) 5 True\nPrescriptionDate datetime2 8 True\nStartDate datetime2 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_PatientLAPA Id True 80\nForeign Keys\nName Columns\nfk_PatientLAPA_PatientSupportingDocument Id->[Documents].[PatientSupportingDocument].[Id]\nPage 312 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Key Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nMiddleInitial char(5) 5 True\nPrescriptionDate datetime2 8 True\nStartDate datetime2 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_PatientLAPA Id True 80",
+  "fk_section": "Name Columns\nfk_PatientLAPA_PatientSupportingDocument Id->[Documents].[PatientSupportingDocument].[Id]\nPage 312 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

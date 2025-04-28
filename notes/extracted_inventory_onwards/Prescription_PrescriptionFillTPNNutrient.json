@@ -1,0 +1,11 @@
+{
+  "table_name": "Prescription.PrescriptionFillTPNNutrient",
+  "schema": "Prescription",
+  "table": "PrescriptionFillTPNNutrient",
+  "doc_page": 1168,
+  "pdf_page": 1167,
+  "raw_text": "PrescriptionFillTPNNutrient_RecStatusModifiedBy RecStatusModifiedBy->[Security].[DHSUser].[Id]\nFK_PrescriptionFillTPNNutrient_TPNNutrientType TPNNutrientType_Id->[Lookups].[TPNNutrientType].[Id]\nPage 1169 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

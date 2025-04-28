@@ -1,0 +1,11 @@
+{
+  "table_name": "Pricing.PricingExplicitItemRule",
+  "schema": "Pricing",
+  "table": "PricingExplicitItemRule",
+  "doc_page": 1213,
+  "pdf_page": 1211,
+  "raw_text": "PricingExplicitItemRule_BilledItemPriceType BilledItemPriceType_Id->[Lookups].[ItemPriceType].[Id]\nFK_PricingExplicitItemRule_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_PricingExplicitItemRule_ExpectedItemPriceType ExpectedItemPriceType_Id->[Lookups].[ItemPrice-\nType].[Id]\nPage 1214 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

@@ -1,0 +1,14 @@
+{
+  "table_name": "PointOfSale.TransactionLineItemDiagnosisCode",
+  "schema": "PointOfSale",
+  "table": "TransactionLineItemDiagnosisCode",
+  "doc_page": 1117,
+  "pdf_page": 1115,
+  "raw_text": "[PointOfSale].[TransactionLineItemDiagnosisCode]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nTransactionLineItem_Id bigint 8 False\nDiagnosisCode_Id bigint 8 False\nSequence_No int 4 False\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdate\ntime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_TransactionLineItemDiagnosis Id True 80\nForeign Keys\nName Columns\nFK_TransactionLineItemDiagnosis_PatientDiagnosis DiagnosisCode_Id->[Patient].[PatientDiagnosis].[Id]\nFK_TransactionLineItemDiagnosis_TransactionLineItem TransactionLineItem_Id->[PointOfSale].[TransactionLine-\nItem].[Id]\nPage 1117 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nTransactionLineItem_Id bigint 8 False\nDiagnosisCode_Id bigint 8 False\nSequence_No int 4 False\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdate\ntime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_TransactionLineItemDiagnosis Id True 80",
+  "fk_section": "Name Columns\nFK_TransactionLineItemDiagnosis_PatientDiagnosis DiagnosisCode_Id->[Patient].[PatientDiagnosis].[Id]\nFK_TransactionLineItemDiagnosis_TransactionLineItem TransactionLineItem_Id->[PointOfSale].[TransactionLine-\nItem].[Id]\nPage 1117 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

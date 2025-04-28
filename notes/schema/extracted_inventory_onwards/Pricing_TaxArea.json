@@ -1,0 +1,11 @@
+{
+  "table_name": "Pricing.TaxArea",
+  "schema": "Pricing",
+  "table": "TaxArea",
+  "doc_page": 1222,
+  "pdf_page": 1224,
+  "raw_text": "[Pricing].[TaxArea].[Id]\nFK_TaxTemplateArea_TaxTemplate TaxTemplate_Id->[Pricing].[TaxTemplate].[Id]\nPage 1228 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

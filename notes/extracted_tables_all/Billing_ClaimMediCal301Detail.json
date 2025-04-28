@@ -1,0 +1,14 @@
+{
+  "table_name": "Billing.ClaimMediCal301Detail",
+  "schema": "Billing",
+  "table": "ClaimMediCal301Detail",
+  "doc_page": 118,
+  "pdf_page": 120,
+  "raw_text": "[Billing].[ClaimMediCal301Detail]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Default\nId bigint 8 False\nPatientLocationCode_Id int 4 True\nMedicareStatus_Id int 4 True\nBillingLimitExceptions_Id int 4 True\nIsAttachment bit 1 False ((0))\nRemark varchar(max) max True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_ClaimMediCal301Detail Id True 80\nForeign Keys\nName Columns\nFK_ClaimMediCal301Detail_BillingLimitException BillingLimitExceptions_Id->[Lookups].[MediCalBillingLimit-\nException].[Id]\nFK_ClaimMediCal301Detail_Claim Id->[Billing].[Claim].[Id]\nFK_ClaimMediCal301Detail_MedicareStatus MedicareStatus_Id->[Lookups].[MediCareStatus].[Id]\nFK_ClaimMediCal301Detail_PatientLocationCode PatientLocationCode_Id->[Lookups].[MediCalPatient-\nLocationCode].[Id]\nPage 118 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Default\nId bigint 8 False\nPatientLocationCode_Id int 4 True\nMedicareStatus_Id int 4 True\nBillingLimitExceptions_Id int 4 True\nIsAttachment bit 1 False ((0))\nRemark varchar(max) max True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_ClaimMediCal301Detail Id True 80",
+  "fk_section": "Name Columns\nFK_ClaimMediCal301Detail_BillingLimitException BillingLimitExceptions_Id->[Lookups].[MediCalBillingLimit-\nException].[Id]\nFK_ClaimMediCal301Detail_Claim Id->[Billing].[Claim].[Id]\nFK_ClaimMediCal301Detail_MedicareStatus MedicareStatus_Id->[Lookups].[MediCareStatus].[Id]\nFK_ClaimMediCal301Detail_PatientLocationCode PatientLocationCode_Id->[Lookups].[MediCalPatient-\nLocationCode].[Id]\nPage 118 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

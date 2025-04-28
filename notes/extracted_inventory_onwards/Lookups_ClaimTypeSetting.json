@@ -1,0 +1,14 @@
+{
+  "table_name": "Lookups.ClaimTypeSetting",
+  "schema": "Lookups",
+  "table": "ClaimTypeSetting",
+  "doc_page": 596,
+  "pdf_page": 594,
+  "raw_text": "[Lookups].[ClaimTypeSetting]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId int 4 False 500001 - 1\nName varchar(255) 255 False\nDescription varchar(1000) 1000 True\nIsActive bit 1 False ((1))\nClaimType_Id int 4 False\nSettingType_Id int 4 False\nSortOrder numeric(19,5) 9 False\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_ClaimTypeSetting Id True 90\nUQ_ClaimTypeSettingName Name True\nForeign Keys\nName Columns\nPFK_ClaimTypeSetting_ClaimType ClaimType_Id->[Lookups].[ClaimType].[Id]\nPFK_ClaimTypeSetting_SettingType SettingType_Id->[Lookups].[SettingType].[Id]\nPage 596 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId int 4 False 500001 - 1\nName varchar(255) 255 False\nDescription varchar(1000) 1000 True\nIsActive bit 1 False ((1))\nClaimType_Id int 4 False\nSettingType_Id int 4 False\nSortOrder numeric(19,5) 9 False",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_ClaimTypeSetting Id True 90\nUQ_ClaimTypeSettingName Name True",
+  "fk_section": "Name Columns\nPFK_ClaimTypeSetting_ClaimType ClaimType_Id->[Lookups].[ClaimType].[Id]\nPFK_ClaimTypeSetting_SettingType SettingType_Id->[Lookups].[SettingType].[Id]\nPage 596 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

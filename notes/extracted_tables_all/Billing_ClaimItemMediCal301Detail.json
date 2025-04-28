@@ -1,0 +1,14 @@
+{
+  "table_name": "Billing.ClaimItemMediCal301Detail",
+  "schema": "Billing",
+  "table": "ClaimItemMediCal301Detail",
+  "doc_page": 107,
+  "pdf_page": 109,
+  "raw_text": "[Billing].[ClaimItemMediCal301Detail]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Default\nId bigint 8 False\nCodeRestictionsMet bit 1 False ((1))\nDaysSupplied int 4 True\nMediCalBasisofCost_Id int 4 True\nMediCalProductQualifier_Id int 4 True\nOtherCoverageAmount numeric(19,5) 9 True\nOtherCoverageCode_Id int 4 True\nPatientAmount numeric(19,5) 9 True\nTarControlNumber bigint 8 True\nCompoundCode_Id int 4 True\nIsDelete bit 1 False ((0))\nSpecificDetail varchar(255) 255 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_ClaimItemMediCal301Detail Id True 80\nForeign Keys\nName Columns\nFK_ClaimItemMediCal301Detail_BasisofCost MediCalBasisofCost_Id->[Lookups].[MediCalBasisof-\nCost].[Id]\nFK_ClaimItemMediCal301Detail_ClaimItem Id->[Billing].[ClaimItem].[Id]\nFK_ClaimItemMediCal301Detail_CompoundCode CompoundCode_Id->[Lookups].[CompoundCode].[Id]\nFK_ClaimItemMediCal301Detail_OtherCoverageCode OtherCoverageCode_Id->[Lookups].[OtherCoverage-\nCode].[Id]\nFK_ClaimItemMediCal301Detail_ProductQualifier MediCalProductQualifier_Id->[Lookups].[MediCalProduct-\nQualifier].[Id]\nPage 107 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Default\nId bigint 8 False\nCodeRestictionsMet bit 1 False ((1))\nDaysSupplied int 4 True\nMediCalBasisofCost_Id int 4 True\nMediCalProductQualifier_Id int 4 True\nOtherCoverageAmount numeric(19,5) 9 True\nOtherCoverageCode_Id int 4 True\nPatientAmount numeric(19,5) 9 True\nTarControlNumber bigint 8 True\nCompoundCode_Id int 4 True\nIsDelete bit 1 False ((0))\nSpecificDetail varchar(255) 255 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_ClaimItemMediCal301Detail Id True 80",
+  "fk_section": "Name Columns\nFK_ClaimItemMediCal301Detail_BasisofCost MediCalBasisofCost_Id->[Lookups].[MediCalBasisof-\nCost].[Id]\nFK_ClaimItemMediCal301Detail_ClaimItem Id->[Billing].[ClaimItem].[Id]\nFK_ClaimItemMediCal301Detail_CompoundCode CompoundCode_Id->[Lookups].[CompoundCode].[Id]\nFK_ClaimItemMediCal301Detail_OtherCoverageCode OtherCoverageCode_Id->[Lookups].[OtherCoverage-\nCode].[Id]\nFK_ClaimItemMediCal301Detail_ProductQualifier MediCalProductQualifier_Id->[Lookups].[MediCalProduct-\nQualifier].[Id]\nPage 107 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

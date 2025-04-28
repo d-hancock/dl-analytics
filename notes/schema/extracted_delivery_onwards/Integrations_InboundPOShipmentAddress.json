@@ -1,0 +1,13 @@
+{
+  "table_name": "Integrations.InboundPOShipmentAddress",
+  "schema": "Integrations",
+  "table": "InboundPOShipmentAddress",
+  "doc_page": 461,
+  "pdf_page": 461,
+  "raw_text": "[Integrations].[InboundPOShipmentAddress]\nColumns\nMax\nLength\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nAddressLine1 varchar(50) 50 True\nAddressLine2 varchar(50) 50 True\nCity varchar(50) 50 True\nState varchar(50) 50 True\nPostalCode varchar(20) 20 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdatet\nime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_InboundPOShipmentAddress Id True 80\nPage 461 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nAddressLine1 varchar(50) 50 True\nAddressLine2 varchar(50) 50 True\nCity varchar(50) 50 True\nState varchar(50) 50 True\nPostalCode varchar(20) 20 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdatet\nime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_InboundPOShipmentAddress Id True 80\nPage 461 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

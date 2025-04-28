@@ -1,0 +1,14 @@
+{
+  "table_name": "Prescription.PrescriptionLabelLine",
+  "schema": "Prescription",
+  "table": "PrescriptionLabelLine",
+  "doc_page": 1171,
+  "pdf_page": 1169,
+  "raw_text": "[Prescription].[PrescriptionLabelLine]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nPrescriptionLabel_Id bigint 8 False\nLabelLineType_Id int 4 False\nValue varchar(max) max False\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdate\ntime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_PrescriptionLabelLine Id True 80\nForeign Keys\nName Columns\nFK_PrescriptionLabelLine_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_PrescriptionLabelLine_LabelLineType LabelLineType_Id->[Lookups].[LabelLineType].[Id]\nFK_PrescriptionLabelLine_ModifiedBy ModifiedBy->[Security].[DHSUser].[Id]\nFK_PrescriptionLabelLine_PrescriptionLabel PrescriptionLabel_Id->[Prescription].[Prescription-\nLabel].[Id]\nFK_PrescriptionLabelLine_RecStatusModifiedBy RecStatusModifiedBy->[Security].[DHSUser].[Id]\nPage 1171 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nPrescriptionLabel_Id bigint 8 False\nLabelLineType_Id int 4 False\nValue varchar(max) max False\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdate\ntime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_PrescriptionLabelLine Id True 80",
+  "fk_section": "Name Columns\nFK_PrescriptionLabelLine_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_PrescriptionLabelLine_LabelLineType LabelLineType_Id->[Lookups].[LabelLineType].[Id]\nFK_PrescriptionLabelLine_ModifiedBy ModifiedBy->[Security].[DHSUser].[Id]\nFK_PrescriptionLabelLine_PrescriptionLabel PrescriptionLabel_Id->[Prescription].[Prescription-\nLabel].[Id]\nFK_PrescriptionLabelLine_RecStatusModifiedBy RecStatusModifiedBy->[Security].[DHSUser].[Id]\nPage 1171 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

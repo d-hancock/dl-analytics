@@ -1,0 +1,14 @@
+{
+  "table_name": "Encounter.PatientAssessmentCommon",
+  "schema": "Encounter",
+  "table": "PatientAssessmentCommon",
+  "doc_page": 362,
+  "pdf_page": 363,
+  "raw_text": "[Encounter].[PatientAssessmentCommon]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls\nId bigint 8 False\nWasDressingChanged bit 1 False\nDressingChangedComments varchar(50) 50 True\nWasIntact bit 1 False\nIntactComments varchar(50) 50 True\nWasPainTender bit 1 False\nHadRedness bit 1 False\nWasExudate bit 1 False\nHadInLineFilter bit 1 False\nIsNewInsertion bit 1 False\nNewInsertionComments varchar(50) 50 True\nNextPhysicianAppointmentDate datetime2 8 True\nNextPhysicianAppointmentTime varchar(20) 20 True\nGoalForNextAppointment varchar(100) 100 True\nNotes varchar(max) max True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_PatientAssessmentCommon Id True 80\nForeign Keys\nName Columns\nfk_PatientAssessmentCommon_PatientAssessment Id->[Encounter].[PatientAssessment].[Id]\nPage 362 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls\nId bigint 8 False\nWasDressingChanged bit 1 False\nDressingChangedComments varchar(50) 50 True\nWasIntact bit 1 False\nIntactComments varchar(50) 50 True\nWasPainTender bit 1 False\nHadRedness bit 1 False\nWasExudate bit 1 False\nHadInLineFilter bit 1 False\nIsNewInsertion bit 1 False\nNewInsertionComments varchar(50) 50 True\nNextPhysicianAppointmentDate datetime2 8 True\nNextPhysicianAppointmentTime varchar(20) 20 True\nGoalForNextAppointment varchar(100) 100 True\nNotes varchar(max) max True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_PatientAssessmentCommon Id True 80",
+  "fk_section": "Name Columns\nfk_PatientAssessmentCommon_PatientAssessment Id->[Encounter].[PatientAssessment].[Id]\nPage 362 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

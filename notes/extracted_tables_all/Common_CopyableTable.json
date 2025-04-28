@@ -1,0 +1,13 @@
+{
+  "table_name": "Common.CopyableTable",
+  "schema": "Common",
+  "table": "CopyableTable",
+  "doc_page": 234,
+  "pdf_page": 236,
+  "raw_text": "[Common].[CopyableTable]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Identity\nId int 4 False 500001 - 1\nSchemaName varchar(50) 50 False\nName varchar(50) 50 False\nTableType tinyint 1 False\nTypeField varchar(50) 50 True\nXRefCopyField varchar(50) 50 True\nCoreReferenceField varchar(50) 50 True\nReturnField varchar(50) 50 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_CopyableTable Id True 80\nPage 234 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Identity\nId int 4 False 500001 - 1\nSchemaName varchar(50) 50 False\nName varchar(50) 50 False\nTableType tinyint 1 False\nTypeField varchar(50) 50 True\nXRefCopyField varchar(50) 50 True\nCoreReferenceField varchar(50) 50 True\nReturnField varchar(50) 50 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_CopyableTable Id True 80\nPage 234 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

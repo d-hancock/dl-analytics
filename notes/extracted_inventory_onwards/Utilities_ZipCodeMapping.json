@@ -1,0 +1,13 @@
+{
+  "table_name": "Utilities.ZipCodeMapping",
+  "schema": "Utilities",
+  "table": "ZipCodeMapping",
+  "doc_page": 1318,
+  "pdf_page": 1316,
+  "raw_text": "ZipCodeMappingStagingTable]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Identity\nId bigint 8 False 1 - 1\nZip varchar(10) 10 True\nPrimaryCity varchar(50) 50 True\nState varchar(2) 2 True\nCounty varchar(50) 50 True\nTimezone varchar(50) 50 True\nAreaCodes varchar(50) 50 True\nLatitude varchar(20) 20 True\nLongitude varchar(20) 20 True\nDecommissioned varchar(1) 1 True\nGMTOffset varchar(5) 5 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_ZipCodeMappingStagingTable Id True 80\nPage 1320 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Identity\nId bigint 8 False 1 - 1\nZip varchar(10) 10 True\nPrimaryCity varchar(50) 50 True\nState varchar(2) 2 True\nCounty varchar(50) 50 True\nTimezone varchar(50) 50 True\nAreaCodes varchar(50) 50 True\nLatitude varchar(20) 20 True\nLongitude varchar(20) 20 True\nDecommissioned varchar(1) 1 True\nGMTOffset varchar(5) 5 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_ZipCodeMappingStagingTable Id True 80\nPage 1320 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

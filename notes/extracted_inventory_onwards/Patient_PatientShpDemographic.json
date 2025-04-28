@@ -1,0 +1,14 @@
+{
+  "table_name": "Patient.PatientShpDemographic",
+  "schema": "Patient",
+  "table": "PatientShpDemographic",
+  "doc_page": 1104,
+  "pdf_page": 1102,
+  "raw_text": "[Patient].[PatientShpDemographic]\nColumns\nKey Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nIsTracked bit 1 True\nHasBeenSent bit 1 True\nAreCathetersTracked bit 1 True\nAcuityAdmission_Id int 4 True\nWeightAdmission numeric(19,5) 9 True\nServiceSite_Id int 4 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_PatientShpDemographics Id True 80\nForeign Keys\nName Columns\nFK_PatientShpDemographics_AcuityAdmission AcuityAdmission_Id->[Lookups].[AcuityAdmission].[Id]\nFK_PatientShpDemographics_Patient Id->[Patient].[Patient].[Id]\nFK_PatientShpDemographics_ServiceSite ServiceSite_Id->[Lookups].[ServiceSite].[Id]\nPage 1104 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Key Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nIsTracked bit 1 True\nHasBeenSent bit 1 True\nAreCathetersTracked bit 1 True\nAcuityAdmission_Id int 4 True\nWeightAdmission numeric(19,5) 9 True\nServiceSite_Id int 4 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_PatientShpDemographics Id True 80",
+  "fk_section": "Name Columns\nFK_PatientShpDemographics_AcuityAdmission AcuityAdmission_Id->[Lookups].[AcuityAdmission].[Id]\nFK_PatientShpDemographics_Patient Id->[Patient].[Patient].[Id]\nFK_PatientShpDemographics_ServiceSite ServiceSite_Id->[Lookups].[ServiceSite].[Id]\nPage 1104 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

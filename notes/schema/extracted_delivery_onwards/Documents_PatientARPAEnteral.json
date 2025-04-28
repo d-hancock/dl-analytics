@@ -1,0 +1,14 @@
+{
+  "table_name": "Documents.PatientARPAEnteral",
+  "schema": "Documents",
+  "table": "PatientARPAEnteral",
+  "doc_page": 309,
+  "pdf_page": 310,
+  "raw_text": "[Documents].[PatientARPAEnteral]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nPatientARPA_Id bigint 8 False\nInventoryItem_Id bigint 8 True\nInventoryItemType_Id int 4 True\nDescription varchar(100) 100 True\nCalories numeric(19,5) 9 True\nVolume numeric(19,5) 9 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdat\netime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_PatientARPAEnteral Id True 80\nForeign Keys\nName Columns\nFK_PatientARPAEnteral_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_PatientARPAEnteral_InventoryItem InventoryItem_Id->[Inventory].[InventoryItem].[Id]\nFK_PatientARPAEnteral_PatientARPA PatientARPA_Id->[Documents].[PatientARPA].[Id]\nPage 309 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nPatientARPA_Id bigint 8 False\nInventoryItem_Id bigint 8 True\nInventoryItemType_Id int 4 True\nDescription varchar(100) 100 True\nCalories numeric(19,5) 9 True\nVolume numeric(19,5) 9 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdat\netime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_PatientARPAEnteral Id True 80",
+  "fk_section": "Name Columns\nFK_PatientARPAEnteral_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_PatientARPAEnteral_InventoryItem InventoryItem_Id->[Inventory].[InventoryItem].[Id]\nFK_PatientARPAEnteral_PatientARPA PatientARPA_Id->[Documents].[PatientARPA].[Id]\nPage 309 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

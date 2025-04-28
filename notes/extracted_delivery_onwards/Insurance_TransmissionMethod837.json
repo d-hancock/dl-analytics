@@ -1,0 +1,14 @@
+{
+  "table_name": "Insurance.TransmissionMethod837",
+  "schema": "Insurance",
+  "table": "TransmissionMethod837",
+  "doc_page": 429,
+  "pdf_page": 430,
+  "raw_text": "[Insurance].[TransmissionMethod837]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Default\nId bigint 8 False\nIsDirectSubmissionRequired bit 1 False ((0))\nAuthorizationInformationQualifier varchar(2) 2 True\nAuthorizationInformation varchar(10) 10 True\nSecurityInformationQualifier varchar(2) 2 True\nSecurityInformation varchar(10) 10 True\nInterchangeSenderIdQualifier varchar(2) 2 True\nInterchangeSenderId varchar(15) 15 True\nInterchangeReceiverIdQualifier varchar(2) 2 True\nInterchangeReceiverId varchar(15) 15 True\nApplicationSendersCode varchar(15) 15 True\nApplicationReceiversCode varchar(15) 15 True\nReceiversPrimaryIdNumber varchar(80) 80 True\nIsAcknowledgementRequired bit 1 False ((0))\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_TransmissionMethod837 Id True 80\nForeign Keys\nName Columns\nfk_TransmissionMethod837_TransmissionMethod Id->[Insurance].[TransmissionMethod].[Id]\nPage 429 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Default\nId bigint 8 False\nIsDirectSubmissionRequired bit 1 False ((0))\nAuthorizationInformationQualifier varchar(2) 2 True\nAuthorizationInformation varchar(10) 10 True\nSecurityInformationQualifier varchar(2) 2 True\nSecurityInformation varchar(10) 10 True\nInterchangeSenderIdQualifier varchar(2) 2 True\nInterchangeSenderId varchar(15) 15 True\nInterchangeReceiverIdQualifier varchar(2) 2 True\nInterchangeReceiverId varchar(15) 15 True\nApplicationSendersCode varchar(15) 15 True\nApplicationReceiversCode varchar(15) 15 True\nReceiversPrimaryIdNumber varchar(80) 80 True\nIsAcknowledgementRequired bit 1 False ((0))",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_TransmissionMethod837 Id True 80",
+  "fk_section": "Name Columns\nfk_TransmissionMethod837_TransmissionMethod Id->[Insurance].[TransmissionMethod].[Id]\nPage 429 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

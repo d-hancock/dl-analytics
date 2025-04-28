@@ -1,0 +1,13 @@
+{
+  "table_name": "Lookups.TrackingBarcodeDefault",
+  "schema": "Lookups",
+  "table": "TrackingBarcodeDefault",
+  "doc_page": 1028,
+  "pdf_page": 1026,
+  "raw_text": "[Lookups].[TrackingBarcodeDefault]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId int 4 False 500001 - 1\nName varchar(255) 255 False\nDescription varchar(1000) 1000 True\nIsActive bit 1 False ((1))\nIsAutoAssignTracking bit 1 False ((0))\nIsAutoAssignAvailable bit 1 False ((0))\nIsPrintBarcode bit 1 False ((0))\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_TrackingBarcodeDefault Id True 80\nUQ_TrackingBarcodeDefaultName Name True 80\nPage 1028 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId int 4 False 500001 - 1\nName varchar(255) 255 False\nDescription varchar(1000) 1000 True\nIsActive bit 1 False ((1))\nIsAutoAssignTracking bit 1 False ((0))\nIsAutoAssignAvailable bit 1 False ((0))\nIsPrintBarcode bit 1 False ((0))",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_TrackingBarcodeDefault Id True 80\nUQ_TrackingBarcodeDefaultName Name True 80\nPage 1028 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

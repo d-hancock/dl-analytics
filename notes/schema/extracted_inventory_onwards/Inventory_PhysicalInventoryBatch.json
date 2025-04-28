@@ -1,0 +1,14 @@
+{
+  "table_name": "Inventory.PhysicalInventoryBatch",
+  "schema": "Inventory",
+  "table": "PhysicalInventoryBatch",
+  "doc_page": 511,
+  "pdf_page": 511,
+  "raw_text": "PhysicalInventoryBatch_Id bigint 8 False\nCountSheetStatus_Id int 4 False ((1))\nName varchar(255) 255 False\nDescription varchar(500) 500 False\nCreateDateTime datetime2 8 True\nStartDateTime datetime2 8 True\nReviewDateTime datetime2 8 True\nCompleteDateTime datetime2 8 True\nIsRecount bit 1 False ((0))\nShowOriginalCount bit 1 False ((0))\nIsScanSheet bit 1 False ((0))\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdat\netime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_PhysicalInventoryCountSheet Id True 80\nForeign Keys\nName Columns\nFK_PhysicalInventoryCountSheet_Batch PhysicalInventoryBatch_Id->[Inventory].[Physical-\nInventoryBatch].[Id]\nFK_PhysicalInventoryCountSheet_CountSheetStatus CountSheetStatus_Id->[Lookups].[PhysicalInventory-\nCountSheetStatus].[Id]\nPage 512 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Unique Fill Factor\nPK_PhysicalInventoryCountSheet Id True 80\nForeign Keys\nName Columns\nFK_PhysicalInventoryCountSheet_Batch PhysicalInventoryBatch_Id->[Inventory].[Physical-\nInventoryBatch].[Id]\nFK_PhysicalInventoryCountSheet_CountSheetStatus CountSheetStatus_Id->[Lookups].[PhysicalInventory-\nCountSheetStatus].[Id]\nPage 512 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_PhysicalInventoryCountSheet Id True 80",
+  "fk_section": "Name Columns\nFK_PhysicalInventoryCountSheet_Batch PhysicalInventoryBatch_Id->[Inventory].[Physical-\nInventoryBatch].[Id]\nFK_PhysicalInventoryCountSheet_CountSheetStatus CountSheetStatus_Id->[Lookups].[PhysicalInventory-\nCountSheetStatus].[Id]\nPage 512 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

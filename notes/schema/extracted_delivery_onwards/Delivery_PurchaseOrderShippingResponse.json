@@ -1,0 +1,14 @@
+{
+  "table_name": "Delivery.PurchaseOrderShippingResponse",
+  "schema": "Delivery",
+  "table": "PurchaseOrderShippingResponse",
+  "doc_page": 269,
+  "pdf_page": 270,
+  "raw_text": "[Delivery].[PurchaseOrderShippingResponse]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500000 - 1\nPurchaseOrder_Id bigint 8 False\nShippingResponse_Id bigint 8 False\nPurchaseOrderDetail_Id bigint 8 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdate\ntime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_PurchaseOrderShippingResponse Id True 80\nForeign Keys\nName Columns\nFK_PurchaseOrderShippingResponse_PurchaseOrder PurchaseOrder_Id->[PurchaseOrder].[Purchase-\nOrder].[Id]\nFK_PurchaseOrderShippingResponse_PurchaseOrder- PurchaseOrderDetail_Id->[PurchaseOrder].[Purchase-\nDetail OrderDetail].[Id]\nFK_PurchaseOrderShippingResponse_Shipping- ShippingResponse_Id->[Delivery].[Shipping-\nResponse Response].[Id]\nPage 269 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500000 - 1\nPurchaseOrder_Id bigint 8 False\nShippingResponse_Id bigint 8 False\nPurchaseOrderDetail_Id bigint 8 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdate\ntime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_PurchaseOrderShippingResponse Id True 80",
+  "fk_section": "Name Columns\nFK_PurchaseOrderShippingResponse_PurchaseOrder PurchaseOrder_Id->[PurchaseOrder].[Purchase-\nOrder].[Id]\nFK_PurchaseOrderShippingResponse_PurchaseOrder- PurchaseOrderDetail_Id->[PurchaseOrder].[Purchase-\nDetail OrderDetail].[Id]\nFK_PurchaseOrderShippingResponse_Shipping- ShippingResponse_Id->[Delivery].[Shipping-\nResponse Response].[Id]\nPage 269 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

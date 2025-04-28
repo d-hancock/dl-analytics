@@ -1,0 +1,11 @@
+{
+  "table_name": "Lookups.TemplateClass",
+  "schema": "Lookups",
+  "table": "TemplateClass",
+  "doc_page": 1012,
+  "pdf_page": 1011,
+  "raw_text": "[Lookups].[TemplateClass].[Id]\nPage 1013 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

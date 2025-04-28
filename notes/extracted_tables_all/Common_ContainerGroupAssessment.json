@@ -1,0 +1,14 @@
+{
+  "table_name": "Common.ContainerGroupAssessment",
+  "schema": "Common",
+  "table": "ContainerGroupAssessment",
+  "doc_page": 229,
+  "pdf_page": 231,
+  "raw_text": "[Common].[ContainerGroupAssessment]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Default\nId bigint 8 False\nDepartment_Id int 4 True\nEmployee_Id bigint 8 True\nTherapyType_Id int 4 True\nSignatureLabel1 varchar(100) 100 True\nSignatureLabel2 varchar(100) 100 True\nSignatureLabel3 varchar(100) 100 True\nSignatureLabel4 varchar(100) 100 True\nIsNewCreatedWithEachFill bit 1 False ((0))\nIsNewCreatedInitially bit 1 False ((0))\nIsPatientInfoHidden bit 1 False ((0))\nNumberOfDaysOutInitialIsDue int 4 False ((0))\nNumberOfDaysOutFollowupIsDue int 4 False ((0))\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_ContainerGroupAssessment Id True 80\nForeign Keys\nName Columns\nfk_ContainerGroupAssessment_ContainerGroup Id->[Common].[ContainerGroup].[Id]\nFK_ContainerGroupAssessment_Department Department_Id->[Lookups].[Department].[Id]\nFK_ContainerGroupAssessment_Employee Employee_Id->[Employees].[Employee].[Id]\nFK_ContainerGroupAssessment_TherapyType TherapyType_Id->[Lookups].[TherapyType].[Id]\nPage 229 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Default\nId bigint 8 False\nDepartment_Id int 4 True\nEmployee_Id bigint 8 True\nTherapyType_Id int 4 True\nSignatureLabel1 varchar(100) 100 True\nSignatureLabel2 varchar(100) 100 True\nSignatureLabel3 varchar(100) 100 True\nSignatureLabel4 varchar(100) 100 True\nIsNewCreatedWithEachFill bit 1 False ((0))\nIsNewCreatedInitially bit 1 False ((0))\nIsPatientInfoHidden bit 1 False ((0))\nNumberOfDaysOutInitialIsDue int 4 False ((0))\nNumberOfDaysOutFollowupIsDue int 4 False ((0))",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_ContainerGroupAssessment Id True 80",
+  "fk_section": "Name Columns\nfk_ContainerGroupAssessment_ContainerGroup Id->[Common].[ContainerGroup].[Id]\nFK_ContainerGroupAssessment_Department Department_Id->[Lookups].[Department].[Id]\nFK_ContainerGroupAssessment_Employee Employee_Id->[Employees].[Employee].[Id]\nFK_ContainerGroupAssessment_TherapyType TherapyType_Id->[Lookups].[TherapyType].[Id]\nPage 229 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

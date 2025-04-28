@@ -1,0 +1,13 @@
+{
+  "table_name": "Auditing.ChangeLog",
+  "schema": "Auditing",
+  "table": "ChangeLog",
+  "doc_page": 78,
+  "pdf_page": 80,
+  "raw_text": "[Auditing].[ChangeLog]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nModifiedBy bigint 8 False\nModifiedDate datetime2 8 False (sysutcdate\ntime())\nTableName varchar(255) 255 False\nPKID bigint 8 False\nColumnName varchar(255) 255 False\nOldValue varchar(max) max False\nNewValue varchar(max) max False\nOldReferenceValue varchar(255) 255 True\nNewReferenceValue varchar(255) 255 True\nIndexes\nKey Included\nKey Name Columns Columns Unique Fill Factor\nPK_ChangeLog Id True 80\nIX_Auditing_ChangeLog_PKID_TableName PKID, Table- NewValue,\nName OldValue,\nColumn-\nName, Id,\nModifiedBy,\nModifiedDate\nPage 78 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nModifiedBy bigint 8 False\nModifiedDate datetime2 8 False (sysutcdate\ntime())\nTableName varchar(255) 255 False\nPKID bigint 8 False\nColumnName varchar(255) 255 False\nOldValue varchar(max) max False\nNewValue varchar(max) max False\nOldReferenceValue varchar(255) 255 True\nNewReferenceValue varchar(255) 255 True",
+  "index_section": "Key Included\nKey Name Columns Columns Unique Fill Factor\nPK_ChangeLog Id True 80\nIX_Auditing_ChangeLog_PKID_TableName PKID, Table- NewValue,\nName OldValue,\nColumn-\nName, Id,\nModifiedBy,\nModifiedDate\nPage 78 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

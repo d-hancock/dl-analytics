@@ -1,0 +1,11 @@
+{
+  "table_name": "Provider.Facility",
+  "schema": "Provider",
+  "table": "Facility",
+  "doc_page": 1229,
+  "pdf_page": 1228,
+  "raw_text": "[Provider].[Facility].[Id]\nFK_ProviderFacility_Provider Provider_Id->[Provider].[Provider].[Id]\nPage 1232 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

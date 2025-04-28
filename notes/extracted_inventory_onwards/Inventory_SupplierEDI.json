@@ -1,0 +1,13 @@
+{
+  "table_name": "Inventory.SupplierEDI",
+  "schema": "Inventory",
+  "table": "SupplierEDI",
+  "doc_page": 522,
+  "pdf_page": 521,
+  "raw_text": "SupplierEDI Id True 80\nForeign Keys\nName Columns\nFK_SupplierEDI_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_SupplierEDI_Supplier Id->[Inventory].[Supplier].[Id]\nPage 523 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "FK_SupplierEDI_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_SupplierEDI_Supplier Id->[Inventory].[Supplier].[Id]\nPage 523 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "fk_section": "Name Columns\nFK_SupplierEDI_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_SupplierEDI_Supplier Id->[Inventory].[Supplier].[Id]\nPage 523 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

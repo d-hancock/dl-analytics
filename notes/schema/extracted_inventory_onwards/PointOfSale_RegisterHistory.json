@@ -1,0 +1,11 @@
+{
+  "table_name": "PointOfSale.RegisterHistory",
+  "schema": "PointOfSale",
+  "table": "RegisterHistory",
+  "doc_page": 1110,
+  "pdf_page": 1111,
+  "raw_text": "[PointOfSale].[RegisterHistory].[Id]\nFK_Transaction_Ticket Ticket_Id->[Delivery].[Ticket].[Id]\nFK_Transaction_Transaction OriginalTransaction_Id->[PointOfSale].[Transaction].[Id]\nPage 1113 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

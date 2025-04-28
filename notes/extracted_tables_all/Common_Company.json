@@ -1,0 +1,14 @@
+{
+  "table_name": "Common.Company",
+  "schema": "Common",
+  "table": "Company",
+  "doc_page": 224,
+  "pdf_page": 226,
+  "raw_text": "[Common].[Company]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Default\nId bigint 8 False\nPharmacyName varchar(200) 200 True\nAlternateName varchar(200) 200 True\nPharmacist_Id bigint 8 True\nTaxCode_Id int 4 True\nPrescriptionSequence_Id bigint 8 True\nDefaultRxLocation_Id bigint 8 True\nDefaultDTLocation_Id bigint 8 True\nIsPatientTaxDefaulted bit 1 False ((0))\nIsErxEnabled bit 1 False ((0))\nCanSendErxRefillRequests bit 1 False ((0))\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_Company Id True 80\nForeign Keys\nName Columns\nFK_Company_DefaultDTLocation DefaultDTLocation_Id->[Inventory].[Location].[Id]\nFK_Company_DefaultRxLocation DefaultRxLocation_Id->[Inventory].[Location].[Id]\nFK_Company_Employee Pharmacist_Id->[Employees].[Employee].[Id]\nfk_company_PrescriptionSequence PrescriptionSequence_Id->[Prescription].[PrescriptionSequence].[Id]\nFK_Company_TaxCode TaxCode_Id->[Lookups].[TaxCode].[Id]\nPFK_Company_Entity Id->[Common].[Entity].[Id]\nPage 224 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Default\nId bigint 8 False\nPharmacyName varchar(200) 200 True\nAlternateName varchar(200) 200 True\nPharmacist_Id bigint 8 True\nTaxCode_Id int 4 True\nPrescriptionSequence_Id bigint 8 True\nDefaultRxLocation_Id bigint 8 True\nDefaultDTLocation_Id bigint 8 True\nIsPatientTaxDefaulted bit 1 False ((0))\nIsErxEnabled bit 1 False ((0))\nCanSendErxRefillRequests bit 1 False ((0))",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_Company Id True 80",
+  "fk_section": "Name Columns\nFK_Company_DefaultDTLocation DefaultDTLocation_Id->[Inventory].[Location].[Id]\nFK_Company_DefaultRxLocation DefaultRxLocation_Id->[Inventory].[Location].[Id]\nFK_Company_Employee Pharmacist_Id->[Employees].[Employee].[Id]\nfk_company_PrescriptionSequence PrescriptionSequence_Id->[Prescription].[PrescriptionSequence].[Id]\nFK_Company_TaxCode TaxCode_Id->[Lookups].[TaxCode].[Id]\nPFK_Company_Entity Id->[Common].[Entity].[Id]\nPage 224 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

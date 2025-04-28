@@ -1,0 +1,118 @@
+[Billing].[ClaimItem]
+Columns
+Key Name Data Type
+Compu
+ted
+Max
+Length
+(Bytes)
+Allow
+Nulls
+Identit
+y Default
+Id bigint 8 False 500001
+- 1
+Invoice_Id bigint 8 True
+(3) Claim_Id bigint 8 True
+InventoryItem_Id bigint 8 True
+InventoryItemType_Id int 4 True
+ItemName varchar(255) 255 True
+IsRental bit 1 False ((0))
+Authorization_Id bigint 8 True
+Hcpc_Id int 4 True
+RevenueCode_Id int 4 True
+IsAuthorizationOverride bit 1 True
+ServiceFromDate datetime2 8 True
+ServiceToDate datetime2 8 True
+Quantity numeric(19,5) 9 True
+OriginalQuantity numeric(19,5) 9 True
+BilledUnit numeric(19,5) 9 True
+ExpectedUnit numeric(19,5) 9 True
+BilledPrice numeric(19,5) 9 False ((0.0))
+(2) ExpectedPrice numeric(19,5) 9 False ((0.0))
+ExpectedTax numeric(19,5) 9 False ((0.0))
+BilledTax numeric(19,5) 9 False ((0.0))
+TotalBilledPrice numeric(20,5) True 13 True
+TotalExpectedPrice numeric(20,5) True 13 True
+IsTaxable bit 1 False ((0))
+IsFSAEligible bit 1 False ((0))
+TextDescription varchar(80) 80 True
+PlaceofService_Id int 4 True
+Modifier varchar(11) 11 True
+SpecialProgramCode_Id int 4 True
+IsEmergencyService bit 1 True
+CareTend OLTP DB Data Dictionary
+2016 R2 SP1
+CTDOLTPDBDD
+Copyright© 2017 - Mediware Information Systems, Inc.
+ Proprietary and Confidential
+Page 99 of 1918
+Computed columns
+Indexes
+NDCCode varchar(25) 25 True
+NDCUnitQualifier_Id int 4 True
+NDCUnit numeric(19,5) 9 True
+RXNumber varchar(25) 25 True
+TypeLine varchar(50) 50 True
+COB varchar(3) 3 True
+CService varchar(2) 2 True
+PrescriptionFill_Id bigint 8 True
+PrescriptionFillItem_Id bigint 8 True
+PatientOrder_Id bigint 8 True
+TicketItem_Id bigint 8 True
+ReportType_Id int 4 True
+TransmissionCode_Id int 4 True
+DocumentControlNumber varchar(80) 80 True
+CreatedBy bigint 8 False
+CreatedDate datetime2 8 False (sysutc
+datetim
+e())
+ModifiedBy bigint 8 True
+ModifiedDate datetime2 8 True
+(3) RecStatus tinyint 1 False ((1))
+RecStatusDate datetime2 8 True
+RecStatusModifiedBy bigint 8 True
+Name Column definition
+TotalBilledPrice ([BilledPrice]+[BilledTax])
+TotalExpectedPrice ([ExpectedPrice]+[ExpectedTax])
+Key Name
+Key
+Columns
+Included
+Columns Unique Page Locks Fill Factor
+PK_ClaimItem Id True 80
+IX_ClaimItem_RecStatus_-
+ExpectedPrice
+RecStatus Claim_Id,
+ExpectedPrice
+Idx_ClmItm_ClmEx Claim_Id,
+ExpectedPrice
+RecStatus False 80
+Idx_ClmItm_RecStat RecStatus Id, Claim_- False 80
+CareTend OLTP DB Data Dictionary
+2016 R2 SP1
+CTDOLTPDBDD
+Copyright© 2017 - Mediware Information Systems, Inc.
+ Proprietary and Confidential
+Page 100 of 1918
+Foreign Keys
+Id,
+InventoryItem_Id
+Name Columns
+FK_ClaimDetail_CreatedBy CreatedBy->[Security].[DHSUser].[Id]
+FK_ClaimItem_Authorization Authorization_Id->[Billing].[BillingAuthorization].[Id]
+FK_ClaimItem_Claim Claim_Id->[Billing].[Claim].[Id]
+FK_ClaimItem_EligibilityFacilityTypeCode PlaceofService_Id->[Lookups].[EligibilityFacilityTypeCode].[Id]
+FK_ClaimItem_hcpc Hcpc_Id->[Lookups].[HcPc].[Id]
+FK_ClaimItem_InventoryItem InventoryItem_Id->[Inventory].[InventoryItem].[Id]
+FK_ClaimItem_InventoryItemType InventoryItemType_Id->[Lookups].[ItemType].[Id]
+FK_ClaimItem_Invoice Invoice_Id->[Billing].[Invoice].[Id]
+FK_ClaimItem_NDCUnitofMeasure NDCUnitQualifier_Id->[Lookups].[NDCUnitQualifier].[Id]
+FK_ClaimItem_PatientOrder PatientOrder_Id->[Prescription].[PatientOrder].[Id]
+FK_ClaimItem_PrescriptionFill PrescriptionFill_Id->[Prescription].[PrescriptionFill].[Id]
+FK_ClaimItem_PrescriptionFillItem PrescriptionFillItem_Id->[Prescription].[PrescriptionFillItem].[Id]
+FK_ClaimItem_ReportType ReportType_Id->[Lookups].[ReportType].[Id]
+FK_ClaimItem_RevenueCode RevenueCode_Id->[Lookups].[RevenueCode].[Id]
+FK_ClaimItem_SpecialProgramCode SpecialProgramCode_Id->[Lookups].[SpecialProgramCode].[Id]
+FK_ClaimItem_TicketItem TicketItem_Id->[Delivery].[TicketItem].[Id]
+FK_ClaimItem_TransmissionCode TransmissionCode_Id->[Lookups].[ClaimTransmissionCode].[Id]

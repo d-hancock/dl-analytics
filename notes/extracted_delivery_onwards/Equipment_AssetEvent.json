@@ -1,0 +1,14 @@
+{
+  "table_name": "Equipment.AssetEvent",
+  "schema": "Equipment",
+  "table": "AssetEvent",
+  "doc_page": 391,
+  "pdf_page": 392,
+  "raw_text": "[Equipment].[AssetEvent]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nEquipmentAsset_Id bigint 8 False\nEventDate datetime2 8 False (sysutcdat\netime())\nNotes varchar(1000) 1000 False\nAssetEventReason_Id int 4 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdat\netime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Included\nKey Name Columns Columns Unique Page Locks Fill Factor\nPK_AssetEvent Id True 80\nIdx_EqAsEv_EqAsId Equipment- RecStatus False 80\nAsset_Id,\nEventDate,\nAssetEvent-\nReason_Id\nForeign Keys\nName Columns\nFK_AssetEvent_AssetEventReason AssetEventReason_Id->[Lookups].[AssetEventReason].[Id]\nFK_AssetEvent_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_AssetEvent_EquipmentAsset EquipmentAsset_Id->[Equipment].[EquipmentAsset].[Id]\nPage 391 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nEquipmentAsset_Id bigint 8 False\nEventDate datetime2 8 False (sysutcdat\netime())\nNotes varchar(1000) 1000 False\nAssetEventReason_Id int 4 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdat\netime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Included\nKey Name Columns Columns Unique Page Locks Fill Factor\nPK_AssetEvent Id True 80\nIdx_EqAsEv_EqAsId Equipment- RecStatus False 80\nAsset_Id,\nEventDate,\nAssetEvent-\nReason_Id",
+  "fk_section": "Name Columns\nFK_AssetEvent_AssetEventReason AssetEventReason_Id->[Lookups].[AssetEventReason].[Id]\nFK_AssetEvent_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_AssetEvent_EquipmentAsset EquipmentAsset_Id->[Equipment].[EquipmentAsset].[Id]\nPage 391 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

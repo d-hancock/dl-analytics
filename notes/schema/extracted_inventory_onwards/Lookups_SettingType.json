@@ -1,0 +1,11 @@
+{
+  "table_name": "Lookups.SettingType",
+  "schema": "Lookups",
+  "table": "SettingType",
+  "doc_page": 970,
+  "pdf_page": 969,
+  "raw_text": "[Lookups].[SettingType].[Id]\nPage 971 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

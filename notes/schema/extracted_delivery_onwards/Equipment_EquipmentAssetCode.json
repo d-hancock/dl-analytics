@@ -1,0 +1,14 @@
+{
+  "table_name": "Equipment.EquipmentAssetCode",
+  "schema": "Equipment",
+  "table": "EquipmentAssetCode",
+  "doc_page": 401,
+  "pdf_page": 402,
+  "raw_text": "[Equipment].[EquipmentAssetCode]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nEquipmentAsset_Id bigint 8 False\nAssetCodeType_Id int 4 False\n(2)\nCode varchar(50) 50 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdat\netime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Included\nKey Name Columns Columns Unique Page Locks Fill Factor\nPK_EquipmentAssetCode Id True 80\nUQ_EquipmentAssetCode_- Equipment- True 80\nEquipmentAsset_AssetCodeType Asset_Id,\nAssetCode-\nType_Id\nIdx_EqAssetCode_CodeType_- Code, RecStatus False 80\nCode AssetCode-\nType_Id\nForeign Keys\nName Columns\nFK_EquipmentAssetCode_AssetCodeType AssetCodeType_Id->[Lookups].[AssetCodeType].[Id]\nFK_EquipmentAssetCode_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_EquipmentAssetCode_EquipmentAsset EquipmentAsset_Id->[Equipment].[EquipmentAsset].[Id]\nPage 401 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nEquipmentAsset_Id bigint 8 False\nAssetCodeType_Id int 4 False\n(2)\nCode varchar(50) 50 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdat\netime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Included\nKey Name Columns Columns Unique Page Locks Fill Factor\nPK_EquipmentAssetCode Id True 80\nUQ_EquipmentAssetCode_- Equipment- True 80\nEquipmentAsset_AssetCodeType Asset_Id,\nAssetCode-\nType_Id\nIdx_EqAssetCode_CodeType_- Code, RecStatus False 80\nCode AssetCode-\nType_Id",
+  "fk_section": "Name Columns\nFK_EquipmentAssetCode_AssetCodeType AssetCodeType_Id->[Lookups].[AssetCodeType].[Id]\nFK_EquipmentAssetCode_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_EquipmentAssetCode_EquipmentAsset EquipmentAsset_Id->[Equipment].[EquipmentAsset].[Id]\nPage 401 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

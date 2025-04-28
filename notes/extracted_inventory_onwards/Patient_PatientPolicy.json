@@ -1,0 +1,11 @@
+{
+  "table_name": "Patient.PatientPolicy",
+  "schema": "Patient",
+  "table": "PatientPolicy",
+  "doc_page": 1097,
+  "pdf_page": 1098,
+  "raw_text": "[Patient].[PatientPolicy].[Id]\nPage 1100 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

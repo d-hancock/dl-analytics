@@ -1,0 +1,14 @@
+{
+  "table_name": "CareTendMobile.WebRecent",
+  "schema": "CareTendMobile",
+  "table": "WebRecent",
+  "doc_page": 212,
+  "pdf_page": 214,
+  "raw_text": "[CareTendMobile].[WebRecent]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Identity\nId bigint 8 False 500001 - 1\nDHSUser_Id bigint 8 False\nWebRecentType_Id int 4 False\nSequence int 4 False\nDescription varchar(1000) 1000 False\nURL varchar(max) max False\nCreatedDate datetime2 8 False\nModifiedDate datetime2 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_WebRecent Id True 80\nForeign Keys\nName Columns\nFK_WebRecent_DHSUser DHSUser_Id->[Security].[DHSUser].[Id]\nFK_WebRecent_WebRecentType WebRecentType_Id->",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Identity\nId bigint 8 False 500001 - 1\nDHSUser_Id bigint 8 False\nWebRecentType_Id int 4 False\nSequence int 4 False\nDescription varchar(1000) 1000 False\nURL varchar(max) max False\nCreatedDate datetime2 8 False\nModifiedDate datetime2 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_WebRecent Id True 80",
+  "fk_section": "Name Columns\nFK_WebRecent_DHSUser DHSUser_Id->[Security].[DHSUser].[Id]\nFK_WebRecent_WebRecentType WebRecentType_Id->"
+}

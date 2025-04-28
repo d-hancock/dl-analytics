@@ -1,0 +1,14 @@
+{
+  "table_name": "Documents.PhysicalDocument",
+  "schema": "Documents",
+  "table": "PhysicalDocument",
+  "doc_page": 327,
+  "pdf_page": 328,
+  "raw_text": "[Documents].[PhysicalDocument]\nColumns\nKey Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nDocumentFile varbinary(max) max True\nFileName varchar(2048) 2048 False\nIndexes\nKey Name Key Columns Unique Fill Factor\npk_physicalDocument Id True 80\nForeign Keys\nName Columns\nfk_PhysicalDocument_Document Id->[Documents].[Document].[Id]\nPage 327 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Key Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nDocumentFile varbinary(max) max True\nFileName varchar(2048) 2048 False",
+  "index_section": "Key Name Key Columns Unique Fill Factor\npk_physicalDocument Id True 80",
+  "fk_section": "Name Columns\nfk_PhysicalDocument_Document Id->[Documents].[Document].[Id]\nPage 327 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

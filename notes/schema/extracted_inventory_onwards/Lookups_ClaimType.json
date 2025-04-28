@@ -1,0 +1,11 @@
+{
+  "table_name": "Lookups.ClaimType",
+  "schema": "Lookups",
+  "table": "ClaimType",
+  "doc_page": 595,
+  "pdf_page": 594,
+  "raw_text": "[Lookups].[ClaimType].[Id]\nPFK_ClaimTypeSetting_SettingType SettingType_Id->[Lookups].[SettingType].[Id]\nPage 596 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

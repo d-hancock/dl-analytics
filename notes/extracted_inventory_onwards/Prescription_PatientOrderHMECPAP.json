@@ -1,0 +1,13 @@
+{
+  "table_name": "Prescription.PatientOrderHMECPAP",
+  "schema": "Prescription",
+  "table": "PatientOrderHMECPAP",
+  "doc_page": 1139,
+  "pdf_page": 1138,
+  "raw_text": "PatientOrderHMECPAP Id True 80\nForeign Keys\nName Columns\nFK_PatientOrderHMECPAP_Compliance_Download- Compliance_DownloadSource_Id->[Lookups].[Download-\nSource Source].[Id]\nFK_PatientOrderHMECPAP_Compliance_Provider Compliance_Provider_Id->[Provider].[Provider].[Id]\nFK_PatientOrderHMECPAP_FaceToFace_Provider FaceToFace_Provider_Id->[Provider].[Provider].[Id]\nFK_PatientOrderHMECPAP_Facility SleepLab_Id->[Provider].[Facility].[Id]\nFK_PatientOrderHMECPAP_PatientOrderHME Id->[Prescription].[PatientOrderHME].[Id]\nFK_PatientOrderHMECPAP_RecurringRental RecurringRental_Id->[Billing].[RecurringRental].[Id]\nPage 1140 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "FK_PatientOrderHMECPAP_Compliance_Download- Compliance_DownloadSource_Id->[Lookups].[Download-\nSource Source].[Id]\nFK_PatientOrderHMECPAP_Compliance_Provider Compliance_Provider_Id->[Provider].[Provider].[Id]\nFK_PatientOrderHMECPAP_FaceToFace_Provider FaceToFace_Provider_Id->[Provider].[Provider].[Id]\nFK_PatientOrderHMECPAP_Facility SleepLab_Id->[Provider].[Facility].[Id]\nFK_PatientOrderHMECPAP_PatientOrderHME Id->[Prescription].[PatientOrderHME].[Id]\nFK_PatientOrderHMECPAP_RecurringRental RecurringRental_Id->[Billing].[RecurringRental].[Id]\nPage 1140 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "fk_section": "Name Columns\nFK_PatientOrderHMECPAP_Compliance_Download- Compliance_DownloadSource_Id->[Lookups].[Download-\nSource Source].[Id]\nFK_PatientOrderHMECPAP_Compliance_Provider Compliance_Provider_Id->[Provider].[Provider].[Id]\nFK_PatientOrderHMECPAP_FaceToFace_Provider FaceToFace_Provider_Id->[Provider].[Provider].[Id]\nFK_PatientOrderHMECPAP_Facility SleepLab_Id->[Provider].[Facility].[Id]\nFK_PatientOrderHMECPAP_PatientOrderHME Id->[Prescription].[PatientOrderHME].[Id]\nFK_PatientOrderHMECPAP_RecurringRental RecurringRental_Id->[Billing].[RecurringRental].[Id]\nPage 1140 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

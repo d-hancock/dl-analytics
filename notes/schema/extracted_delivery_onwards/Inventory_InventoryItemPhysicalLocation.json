@@ -1,0 +1,14 @@
+{
+  "table_name": "Inventory.InventoryItemPhysicalLocation",
+  "schema": "Inventory",
+  "table": "InventoryItemPhysicalLocation",
+  "doc_page": 488,
+  "pdf_page": 488,
+  "raw_text": "[Inventory].[InventoryItemPhysicalLocation]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Identity\nId bigint 8 False 500001 - 1\nInventoryItemLocation_Id bigint 8 False\nLocation_Id bigint 8 False\nIndexes\nKey\nKey Name Columns Unique Page Locks Fill Factor\nPK_InventoryItemPhysicalLocation Id True 80\nIdx_InvItmPhLc_LcId InventoryItem- False 80\nLocation_Id,\nLocation_Id\nForeign Keys\nName Columns\nFK_InventoryItemPhysicalLocaiton_InventoryItem- InventoryItemLocation_Id->[Inventory].[InventoryItem-\nLocation Location].[Id]\nFK_InventoryItemPhysicalLocation_Location Location_Id->[Inventory].[Location].[Id]\nPage 488 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Identity\nId bigint 8 False 500001 - 1\nInventoryItemLocation_Id bigint 8 False\nLocation_Id bigint 8 False",
+  "index_section": "Key\nKey Name Columns Unique Page Locks Fill Factor\nPK_InventoryItemPhysicalLocation Id True 80\nIdx_InvItmPhLc_LcId InventoryItem- False 80\nLocation_Id,\nLocation_Id",
+  "fk_section": "Name Columns\nFK_InventoryItemPhysicalLocaiton_InventoryItem- InventoryItemLocation_Id->[Inventory].[InventoryItem-\nLocation Location].[Id]\nFK_InventoryItemPhysicalLocation_Location Location_Id->[Inventory].[Location].[Id]\nPage 488 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

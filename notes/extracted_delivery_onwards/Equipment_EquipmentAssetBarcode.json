@@ -1,0 +1,14 @@
+{
+  "table_name": "Equipment.EquipmentAssetBarcode",
+  "schema": "Equipment",
+  "table": "EquipmentAssetBarcode",
+  "doc_page": 400,
+  "pdf_page": 401,
+  "raw_text": "[Equipment].[EquipmentAssetBarcode]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nEquipmentAsset_Id bigint 8 False\nAssetBarcodeType_Id int 4 False\nBarcode varchar(50) 50 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdate\ntime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_EquipmentAssetBarCode Id True 80\nUQ_EquipmentAssetBarcode EquipmentAsset_Id, True 80\nAssetBarcodeType_-\nId, Barcode\nForeign Keys\nName Columns\nFK_EquipmentAssetBarCode_AssetCodeType AssetBarcodeType_Id->[Lookups].[AssetBarcode-\nType].[Id]\nFK_EquipmentAssetBarCode_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_EquipmentAssetBarCode_EquipmentAsset EquipmentAsset_Id->[Equipment].[EquipmentAsset].[Id]\nPage 400 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nEquipmentAsset_Id bigint 8 False\nAssetBarcodeType_Id int 4 False\nBarcode varchar(50) 50 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdate\ntime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_EquipmentAssetBarCode Id True 80\nUQ_EquipmentAssetBarcode EquipmentAsset_Id, True 80\nAssetBarcodeType_-\nId, Barcode",
+  "fk_section": "Name Columns\nFK_EquipmentAssetBarCode_AssetCodeType AssetBarcodeType_Id->[Lookups].[AssetBarcode-\nType].[Id]\nFK_EquipmentAssetBarCode_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_EquipmentAssetBarCode_EquipmentAsset EquipmentAsset_Id->[Equipment].[EquipmentAsset].[Id]\nPage 400 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

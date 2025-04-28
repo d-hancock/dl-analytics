@@ -1,0 +1,14 @@
+{
+  "table_name": "Billing.ClaimPharmacyMeasurement",
+  "schema": "Billing",
+  "table": "ClaimPharmacyMeasurement",
+  "doc_page": 133,
+  "pdf_page": 135,
+  "raw_text": "[Billing].[ClaimPharmacyMeasurement]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nClaimPharmacyDetail_Id bigint 8 False\nMeasurementDate datetime2 8 True\nDimension_Id int 4 True\nUnit_Id int 4 True\nValue varchar(20) 20 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdat\netime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_ClaimPharmacyMeasurement Id True 80\nForeign Keys\nName Columns\nFK_ClaimPharmacyMeasurement_ClaimPharmacyDetail ClaimPharmacyDetail_Id->[Billing].[ClaimPharmacy-\nDetail].[Id]\nFK_ClaimPharmacyMeasurement_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_ClaimPharmacyMeasurement_Measurement- Dimension_Id->[Lookups].[MeasurementDimension].[Id]\nDimension\nFK_ClaimPharmacyMeasurement_MeasurementUnit Unit_Id->[Lookups].[MeasurementUnit].[Id]\nFK_ClaimPharmacyMeasurement_ModifiedBy ModifiedBy->[Security].[DHSUser].[Id]\nFK_ClaimPharmacyMeasurement_RecStatusModifiedBy RecStatusModifiedBy->[Security].[DHSUser].[Id]\nPage 133 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nClaimPharmacyDetail_Id bigint 8 False\nMeasurementDate datetime2 8 True\nDimension_Id int 4 True\nUnit_Id int 4 True\nValue varchar(20) 20 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdat\netime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_ClaimPharmacyMeasurement Id True 80",
+  "fk_section": "Name Columns\nFK_ClaimPharmacyMeasurement_ClaimPharmacyDetail ClaimPharmacyDetail_Id->[Billing].[ClaimPharmacy-\nDetail].[Id]\nFK_ClaimPharmacyMeasurement_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_ClaimPharmacyMeasurement_Measurement- Dimension_Id->[Lookups].[MeasurementDimension].[Id]\nDimension\nFK_ClaimPharmacyMeasurement_MeasurementUnit Unit_Id->[Lookups].[MeasurementUnit].[Id]\nFK_ClaimPharmacyMeasurement_ModifiedBy ModifiedBy->[Security].[DHSUser].[Id]\nFK_ClaimPharmacyMeasurement_RecStatusModifiedBy RecStatusModifiedBy->[Security].[DHSUser].[Id]\nPage 133 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

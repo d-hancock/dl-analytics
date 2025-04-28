@@ -1,0 +1,14 @@
+{
+  "table_name": "Employees.Employee",
+  "schema": "Employees",
+  "table": "Employee",
+  "doc_page": 351,
+  "pdf_page": 352,
+  "raw_text": "[Employees].[Employee]\nColumns\nKey Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nSupervisor_Id bigint 8 True\nJobTitle varchar(100) 100 True\nJobDescription varchar(1000) 1000 True\nInitials varchar(50) 50 True\neSignature varbinary(max) max True\nPCN varchar(50) 50 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_Employee Id True 80\nForeign Keys\nName Columns\nFK_Employee_Supervisor Supervisor_Id->[Employees].[Employee].[Id]\nPFK_Employee_Person Id->[Common].[Person].[Id]\nPage 351 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Key Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nSupervisor_Id bigint 8 True\nJobTitle varchar(100) 100 True\nJobDescription varchar(1000) 1000 True\nInitials varchar(50) 50 True\neSignature varbinary(max) max True\nPCN varchar(50) 50 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_Employee Id True 80",
+  "fk_section": "Name Columns\nFK_Employee_Supervisor Supervisor_Id->[Employees].[Employee].[Id]\nPFK_Employee_Person Id->[Common].[Person].[Id]\nPage 351 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

@@ -1,0 +1,14 @@
+{
+  "table_name": "Prescription.PatientOrderREMS",
+  "schema": "Prescription",
+  "table": "PatientOrderREMS",
+  "doc_page": 1144,
+  "pdf_page": 1142,
+  "raw_text": "[Prescription].[PatientOrderREMS]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls\nId bigint 8 False\nREMSPatientType_Id int 4 True\nMustShipByDate datetime2 8 True\nPrescriberAuthorizationNumber varchar(255) 255 True\nPrescriberAuthorizationDate datetime2 8 True\nDispenseAuthorizationNumber varchar(255) 255 True\nDispenseAuthorizationDate datetime2 8 True\nCancellationNumber varchar(255) 255 True\nCancellationDate datetime2 8 True\nPrescriberReauthorizationNumber varchar(255) 255 True\nPrescriberReauthorizationDate datetime2 8 True\nDispenseReauthorizationNumber varchar(255) 255 True\nDispenseReauthorizationDate datetime2 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_PatientOrderREMS Id True 80\nForeign Keys\nName Columns\nfk_PatientOrderREMS_PatientOrder Id->[Prescription].[PatientOrder].[Id]\nFK_PatientOrderREMS_REMSPatientType REMSPatientType_Id->[Lookups].[REMSPatientType].[Id]\nPage 1144 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls\nId bigint 8 False\nREMSPatientType_Id int 4 True\nMustShipByDate datetime2 8 True\nPrescriberAuthorizationNumber varchar(255) 255 True\nPrescriberAuthorizationDate datetime2 8 True\nDispenseAuthorizationNumber varchar(255) 255 True\nDispenseAuthorizationDate datetime2 8 True\nCancellationNumber varchar(255) 255 True\nCancellationDate datetime2 8 True\nPrescriberReauthorizationNumber varchar(255) 255 True\nPrescriberReauthorizationDate datetime2 8 True\nDispenseReauthorizationNumber varchar(255) 255 True\nDispenseReauthorizationDate datetime2 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_PatientOrderREMS Id True 80",
+  "fk_section": "Name Columns\nfk_PatientOrderREMS_PatientOrder Id->[Prescription].[PatientOrder].[Id]\nFK_PatientOrderREMS_REMSPatientType REMSPatientType_Id->[Lookups].[REMSPatientType].[Id]\nPage 1144 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

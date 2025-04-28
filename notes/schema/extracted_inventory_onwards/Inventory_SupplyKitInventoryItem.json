@@ -1,0 +1,11 @@
+{
+  "table_name": "Inventory.SupplyKitInventoryItem",
+  "schema": "Inventory",
+  "table": "SupplyKitInventoryItem",
+  "doc_page": 525,
+  "pdf_page": 524,
+  "raw_text": "SupplyKitInventoryItem_InventoryItem InventoryItem_Id->[Inventory].[InventoryItem].[Id]\nFK_SupplyKitInventoryItem_InventoryItemDispensible- InventoryItemDispensibleUnit_Id->[Inventory].[Inventory-\nUnit ItemDispensibleUnit].[Id]\nFK_SupplyKitInventoryItem_SupplyKit SupplyKit_Id->[Inventory].[SupplyKit].[Id]\nPage 526 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

@@ -1,0 +1,14 @@
+{
+  "table_name": "Documents.UploadLog",
+  "schema": "Documents",
+  "table": "UploadLog",
+  "doc_page": 329,
+  "pdf_page": 330,
+  "raw_text": "[Documents].[UploadLog]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nDocument_Id bigint 8 False\nDestination_Id bigint 8 False\nRetryCount int 4 False\nUploadDate datetime2 8 False\nUploadSuccessful bit 1 False\nUploadResultMessage varchar(max) max True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdat\netime())\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_UploadLog Id True 80\nForeign Keys\nName Columns\nFK_UploadLog_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_UploadLog_Destination Destination_Id->[Documents].[UploadDestinations].[Id]\nFK_UploadLog_Document Document_Id->[Documents].[Document].[Id]\nPage 329 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nDocument_Id bigint 8 False\nDestination_Id bigint 8 False\nRetryCount int 4 False\nUploadDate datetime2 8 False\nUploadSuccessful bit 1 False\nUploadResultMessage varchar(max) max True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdat\netime())",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_UploadLog Id True 80",
+  "fk_section": "Name Columns\nFK_UploadLog_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_UploadLog_Destination Destination_Id->[Documents].[UploadDestinations].[Id]\nFK_UploadLog_Document Document_Id->[Documents].[Document].[Id]\nPage 329 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

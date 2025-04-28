@@ -1,0 +1,11 @@
+{
+  "table_name": "Utilities.TransmissionBatch",
+  "schema": "Utilities",
+  "table": "TransmissionBatch",
+  "doc_page": 1315,
+  "pdf_page": 1313,
+  "raw_text": "[Utilities].[TransmissionBatch].[Id]\nFK_TransmissionLog_TransmissionStatus Status_Id->[Lookups].[TransmissionStatus].[Id]\nPage 1317 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

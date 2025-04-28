@@ -1,0 +1,13 @@
+{
+  "table_name": "Lookups.DeliveryTicketFooter",
+  "schema": "Lookups",
+  "table": "DeliveryTicketFooter",
+  "doc_page": 669,
+  "pdf_page": 667,
+  "raw_text": "[Lookups].[DeliveryTicketFooter]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId int 4 False 500001 - 1\nName varchar(255) 255 False\nDescription varchar(max) max True\nIsDefault bit 1 False ((0))\nIsActive bit 1 False ((1))\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_DeliveryTicketFooter Id True 80\nUQ_DeliveryTicketFooterName Name True 80\nPage 669 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId int 4 False 500001 - 1\nName varchar(255) 255 False\nDescription varchar(max) max True\nIsDefault bit 1 False ((0))\nIsActive bit 1 False ((1))",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_DeliveryTicketFooter Id True 80\nUQ_DeliveryTicketFooterName Name True 80\nPage 669 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

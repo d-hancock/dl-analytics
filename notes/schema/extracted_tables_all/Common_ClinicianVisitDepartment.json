@@ -1,0 +1,14 @@
+{
+  "table_name": "Common.ClinicianVisitDepartment",
+  "schema": "Common",
+  "table": "ClinicianVisitDepartment",
+  "doc_page": 223,
+  "pdf_page": 225,
+  "raw_text": "[Common].[ClinicianVisitDepartment]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nClinicianVisit_Id bigint 8 False\nDepartment_Id int 4 False\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdateti\nme())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_ClinicianVisitDepartment Id True 80\nForeign Keys\nName Columns\nFK_ClinicianVisitDepartment_ClinicianVisit ClinicianVisit_Id->[Common].[ClinicianVisit].[Id]\nFK_ClinicianVisitDepartment_Department Department_Id->[Lookups].[Department].[Id]\nPage 223 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nClinicianVisit_Id bigint 8 False\nDepartment_Id int 4 False\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdateti\nme())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_ClinicianVisitDepartment Id True 80",
+  "fk_section": "Name Columns\nFK_ClinicianVisitDepartment_ClinicianVisit ClinicianVisit_Id->[Common].[ClinicianVisit].[Id]\nFK_ClinicianVisitDepartment_Department Department_Id->[Lookups].[Department].[Id]\nPage 223 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

@@ -1,0 +1,14 @@
+{
+  "table_name": "Billing.ClaimPharmacyWorkersComp",
+  "schema": "Billing",
+  "table": "ClaimPharmacyWorkersComp",
+  "doc_page": 142,
+  "pdf_page": 144,
+  "raw_text": "[Billing].[ClaimPharmacyWorkersComp]\nColumns\nKey Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nEmployer_Id bigint 8 True\nCarrierID varchar(50) 50 True\nClaimID varchar(50) 50 True\nRPhLicenseNumber varchar(50) 50 True\nGenericProductID varchar(50) 50 True\nGenericProductIDQualifier_Id int 4 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_ClaimPharmacyWorkersComp Id True 80\nForeign Keys\nName Columns\nFK_ClaimPharmacyWorkersComp_Claim Id->[Billing].[Claim].[Id]\nFK_ClaimPharmacyWorkersComp_EmployerEntity Employer_Id->[Common].[Entity].[Id]\nFK_ClaimPharmacyWorkersComp_GenericProduct- GenericProductIDQualifier_Id->[Lookups].[SettingType-\nIDQualifier Option].[Id]\nPage 142 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Key Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nEmployer_Id bigint 8 True\nCarrierID varchar(50) 50 True\nClaimID varchar(50) 50 True\nRPhLicenseNumber varchar(50) 50 True\nGenericProductID varchar(50) 50 True\nGenericProductIDQualifier_Id int 4 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_ClaimPharmacyWorkersComp Id True 80",
+  "fk_section": "Name Columns\nFK_ClaimPharmacyWorkersComp_Claim Id->[Billing].[Claim].[Id]\nFK_ClaimPharmacyWorkersComp_EmployerEntity Employer_Id->[Common].[Entity].[Id]\nFK_ClaimPharmacyWorkersComp_GenericProduct- GenericProductIDQualifier_Id->[Lookups].[SettingType-\nIDQualifier Option].[Id]\nPage 142 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

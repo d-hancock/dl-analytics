@@ -1,0 +1,14 @@
+{
+  "table_name": "Drug.DrugConcentration",
+  "schema": "Drug",
+  "table": "DrugConcentration",
+  "doc_page": 336,
+  "pdf_page": 337,
+  "raw_text": "[Drug].[DrugConcentration]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nConcentration numeric(19,5) 9 False\nDrug_Id bigint 8 False\nDiluent_Id bigint 8 False\nVolume numeric(19,5) 9 True\nIsDefault bit 1 False ((0))\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdate\ntime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_DrugConcentration Id True 80\nForeign Keys\nName Columns\nFK_DrugConcentration_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_DrugConcentration_Drug Drug_Id->[Drug].[Drug].[Id]\nFK_DrugConcentration_DrugDiluent Diluent_Id->[Drug].[Drug].[Id]\nPage 336 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nConcentration numeric(19,5) 9 False\nDrug_Id bigint 8 False\nDiluent_Id bigint 8 False\nVolume numeric(19,5) 9 True\nIsDefault bit 1 False ((0))\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdate\ntime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_DrugConcentration Id True 80",
+  "fk_section": "Name Columns\nFK_DrugConcentration_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_DrugConcentration_Drug Drug_Id->[Drug].[Drug].[Id]\nFK_DrugConcentration_DrugDiluent Diluent_Id->[Drug].[Drug].[Id]\nPage 336 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

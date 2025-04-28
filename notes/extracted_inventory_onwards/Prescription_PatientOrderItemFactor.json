@@ -1,0 +1,14 @@
+{
+  "table_name": "Prescription.PatientOrderItemFactor",
+  "schema": "Prescription",
+  "table": "PatientOrderItemFactor",
+  "doc_page": 1143,
+  "pdf_page": 1141,
+  "raw_text": "[Prescription].[PatientOrderItemFactor]\nColumns\nKey Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nDescription varchar(255) 255 False\nCorrection int 4 True\nAdminDirections varchar(50) 50 True\nMaxDosesPerFill int 4 True\nTotalDosesPerPrescription int 4 True\nFrequency_Daily bit 1 True\nFrequency_PRN bit 1 True\nFrequency_Other bit 1 True\nFrequency_Sunday bit 1 True\nFrequency_Monday bit 1 True\nFrequency_Tuesday bit 1 True\nFrequency_Wednesday bit 1 True\nFrequency_Thursday bit 1 True\nFrequency_Friday bit 1 True\nFrequency_Saturday bit 1 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_PatientOrderItemFactor Id True 80\nForeign Keys\nName Columns\nfk_PatientOrderItemFactor_PatientOrderItem Id->[Prescription].[PatientOrderItem].[Id]\nPage 1143 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Key Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nDescription varchar(255) 255 False\nCorrection int 4 True\nAdminDirections varchar(50) 50 True\nMaxDosesPerFill int 4 True\nTotalDosesPerPrescription int 4 True\nFrequency_Daily bit 1 True\nFrequency_PRN bit 1 True\nFrequency_Other bit 1 True\nFrequency_Sunday bit 1 True\nFrequency_Monday bit 1 True\nFrequency_Tuesday bit 1 True\nFrequency_Wednesday bit 1 True\nFrequency_Thursday bit 1 True\nFrequency_Friday bit 1 True\nFrequency_Saturday bit 1 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_PatientOrderItemFactor Id True 80",
+  "fk_section": "Name Columns\nfk_PatientOrderItemFactor_PatientOrderItem Id->[Prescription].[PatientOrderItem].[Id]\nPage 1143 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

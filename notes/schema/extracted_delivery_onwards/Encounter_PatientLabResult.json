@@ -1,0 +1,14 @@
+{
+  "table_name": "Encounter.PatientLabResult",
+  "schema": "Encounter",
+  "table": "PatientLabResult",
+  "doc_page": 374,
+  "pdf_page": 375,
+  "raw_text": "[Encounter].[PatientLabResult]\nColumns\nMax\nLength\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nPatientEncounter_Id bigint 8 False\nLabTest_Id int 4 False\nLabProfile_Id bigint 8 True\nTestDate datetime2 8 True\nValue varchar(20) 20 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdatet\nime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_PatientLabResult Id True 80\nForeign Keys\nName Columns\nFK_PatientLabResult_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_PatientLabResult_LabProfile LabProfile_Id->[Template].[LabProfile].[Id]\nFK_PatientLabResult_LabTest LabTest_Id->[Lookups].[LabTest].[Id]\nFK_PatientLabResult_ModifiedBy ModifiedBy->[Security].[DHSUser].[Id]\nFK_PatientLabResult_PatientEncounter PatientEncounter_Id->[Encounter].[PatientEncounter].[Id]\nFK_PatientLabResult_RecStatusModifiedBy RecStatusModifiedBy->[Security].[DHSUser].[Id]\nPage 374 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nPatientEncounter_Id bigint 8 False\nLabTest_Id int 4 False\nLabProfile_Id bigint 8 True\nTestDate datetime2 8 True\nValue varchar(20) 20 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdatet\nime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_PatientLabResult Id True 80",
+  "fk_section": "Name Columns\nFK_PatientLabResult_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_PatientLabResult_LabProfile LabProfile_Id->[Template].[LabProfile].[Id]\nFK_PatientLabResult_LabTest LabTest_Id->[Lookups].[LabTest].[Id]\nFK_PatientLabResult_ModifiedBy ModifiedBy->[Security].[DHSUser].[Id]\nFK_PatientLabResult_PatientEncounter PatientEncounter_Id->[Encounter].[PatientEncounter].[Id]\nFK_PatientLabResult_RecStatusModifiedBy RecStatusModifiedBy->[Security].[DHSUser].[Id]\nPage 374 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

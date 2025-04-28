@@ -1,0 +1,11 @@
+{
+  "table_name": "Prescription.PatientOrderDrug",
+  "schema": "Prescription",
+  "table": "PatientOrderDrug",
+  "doc_page": 1134,
+  "pdf_page": 1133,
+  "raw_text": "PatientOrderDrugFillType PatientOrderDrugFillType_Id->[Lookups].[PatientOrder-\nDrugFillType].[Id]\nFK_PatientOrder_PerDiemInventoryItem PerDiemInventoryItem_Id->[Inventory].[InventoryItem].[Id]\nFK_PatientOrder_PrescriptionDispenseConstraint PrescriptionDispenseConstraint_Id-\n>[Lookups].[PrescriptionDispenseConstraint].[Id]\nFK_PatientOrder_PumpType PumpType_Id->[Lookups].[PumpType].[Id]\nFK_PatientOrder_Route Route_Id->[Lookups].[DrugRoute].[Id]\nFK_PatientOrder_WrittenInventoryItem Written_InventoryItem_Id->[Inventory].[InventoryItem].[Id]\nFK_PatientOrderDrug_MedicationProfileClass MedicationProfileClass_Id->[Lookups].[MedicationProfile-\nClass].[Id]\nfk_PatientOrderDrug_PatientOrder Id->[Prescription].[PatientOrder].[Id]\nPage 1135 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

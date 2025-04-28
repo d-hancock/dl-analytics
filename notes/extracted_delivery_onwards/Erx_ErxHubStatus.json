@@ -1,0 +1,14 @@
+{
+  "table_name": "Erx.ErxHubStatus",
+  "schema": "Erx",
+  "table": "ErxHubStatus",
+  "doc_page": 404,
+  "pdf_page": 405,
+  "raw_text": "[Erx].[ErxHubStatus]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nCompany_Id bigint 8 False\nSuccess bit 1 False ((1))\nReturnAmount int 4 False ((0))\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdateti\nme())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique\nPK_ErxHubStatus Id True\nForeign Keys\nName Columns\nFK_ErxHubStatus_Company Company_Id->[Common].[Company].[Id]\nPage 404 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nCompany_Id bigint 8 False\nSuccess bit 1 False ((1))\nReturnAmount int 4 False ((0))\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdateti\nme())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique\nPK_ErxHubStatus Id True",
+  "fk_section": "Name Columns\nFK_ErxHubStatus_Company Company_Id->[Common].[Company].[Id]\nPage 404 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

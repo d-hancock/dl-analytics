@@ -1,0 +1,13 @@
+{
+  "table_name": "Pricing.MedicareCBAProductCategoryRound",
+  "schema": "Pricing",
+  "table": "MedicareCBAProductCategoryRound",
+  "doc_page": 1201,
+  "pdf_page": 1199,
+  "raw_text": "MedicareCBAProductCategoryRound_ID int 4 False\nHcPc varchar(10) 10 False\nRate numeric(19,5) 9 False\nModifier1 char(2) 2 True\nModifier2 char(2) 2 True\nModifier3 char(2) 2 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_Id Id True\nIX_MedicareCBARatesRaw_HCPC HcPc 80\nPage 1202 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Unique Fill Factor\nPK_Id Id True\nIX_MedicareCBARatesRaw_HCPC HcPc 80\nPage 1202 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_Id Id True\nIX_MedicareCBARatesRaw_HCPC HcPc 80\nPage 1202 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

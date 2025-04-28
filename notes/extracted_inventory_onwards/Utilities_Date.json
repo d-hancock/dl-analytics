@@ -1,0 +1,13 @@
+{
+  "table_name": "Utilities.Date",
+  "schema": "Utilities",
+  "table": "Date",
+  "doc_page": 1288,
+  "pdf_page": 1288,
+  "raw_text": "Date datetime2 8 False (sysutcdateti\nme())\nProcedureName varchar(255) 255 True\nSQL_User varchar(100) 100 False\nTableName varchar(150) 150 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_HipaaLog Id True 80\nPage 1292 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Unique Fill Factor\nPK_HipaaLog Id True 80\nPage 1292 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_HipaaLog Id True 80\nPage 1292 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

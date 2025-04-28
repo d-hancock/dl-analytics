@@ -1,0 +1,14 @@
+{
+  "table_name": "Employees.EmployeeAttendance",
+  "schema": "Employees",
+  "table": "EmployeeAttendance",
+  "doc_page": 352,
+  "pdf_page": 353,
+  "raw_text": "[Employees].[EmployeeAttendance]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 -\n1\nEmployee_Id bigint 8 False\nEmployeeAttendanceType_Id int 4 False\nDate datetime2 8 False\nNumberOfDaysAffected numeric(19,5) 9 False\nNotes varchar(1000) 1000 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcda\ntetime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_EmployeeAttendance Id True 80\nForeign Keys\nName Columns\nFK_EmployeeAttendance_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nPFK_EmployeeAttendance_Employee Employee_Id->[Employees].[Employee].[Id]\nPFK_EmployeeAttendance_EmployeeAttendanceType EmployeeAttendanceType_Id->[Lookups].[Employee-\nAttendanceType].[Id]\nPage 352 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 -\n1\nEmployee_Id bigint 8 False\nEmployeeAttendanceType_Id int 4 False\nDate datetime2 8 False\nNumberOfDaysAffected numeric(19,5) 9 False\nNotes varchar(1000) 1000 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcda\ntetime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_EmployeeAttendance Id True 80",
+  "fk_section": "Name Columns\nFK_EmployeeAttendance_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nPFK_EmployeeAttendance_Employee Employee_Id->[Employees].[Employee].[Id]\nPFK_EmployeeAttendance_EmployeeAttendanceType EmployeeAttendanceType_Id->[Lookups].[Employee-\nAttendanceType].[Id]\nPage 352 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

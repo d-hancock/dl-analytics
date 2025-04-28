@@ -1,0 +1,14 @@
+{
+  "table_name": "Delivery.RouteStop",
+  "schema": "Delivery",
+  "table": "RouteStop",
+  "doc_page": 272,
+  "pdf_page": 273,
+  "raw_text": "[Delivery].[RouteStop]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 -\n1\nRoute_Id bigint 8 False\nRouteStopFromDateTime datetime2 8 True\nRouteStopToDateTime datetime2 8 True\nTimeDelivered datetime2 8 True\nRouteOrigin bigint 8 True\nRouteAddress_Id bigint 8 True\nRoutePhone_Id bigint 8 True\nSequence int 4 True\nStopDescription varchar(max) max True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdat\netime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_RouteStop Id True 80\nForeign Keys\nName Columns\nFK_RouteStop_Address RouteAddress_Id->[Common].[Address].[Id]\nFK_RouteStop_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_RouteStop_PhoneNumber RoutePhone_Id->[Common].[PhoneNumber].[Id]\nFK_RouteStop_Route Route_Id->[Delivery].[Route].[Id]\nPage 272 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 -\n1\nRoute_Id bigint 8 False\nRouteStopFromDateTime datetime2 8 True\nRouteStopToDateTime datetime2 8 True\nTimeDelivered datetime2 8 True\nRouteOrigin bigint 8 True\nRouteAddress_Id bigint 8 True\nRoutePhone_Id bigint 8 True\nSequence int 4 True\nStopDescription varchar(max) max True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdat\netime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_RouteStop Id True 80",
+  "fk_section": "Name Columns\nFK_RouteStop_Address RouteAddress_Id->[Common].[Address].[Id]\nFK_RouteStop_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_RouteStop_PhoneNumber RoutePhone_Id->[Common].[PhoneNumber].[Id]\nFK_RouteStop_Route Route_Id->[Delivery].[Route].[Id]\nPage 272 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

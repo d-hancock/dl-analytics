@@ -1,0 +1,11 @@
+{
+  "table_name": "Template.DocumentTemplate",
+  "schema": "Template",
+  "table": "DocumentTemplate",
+  "doc_page": 1261,
+  "pdf_page": 1259,
+  "raw_text": "DocumentTemplateLine_DocumentTemplate DocumentTemplate_Id->[Template].[Document-\nTemplate].[Id]\nFK_DocumentTemplateLine_InventoryItem InventoryItem_Id->[Inventory].[InventoryItem].[Id]\nPage 1263 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

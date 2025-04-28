@@ -1,0 +1,14 @@
+{
+  "table_name": "Inventory.ItemTypePriceType",
+  "schema": "Inventory",
+  "table": "ItemTypePriceType",
+  "doc_page": 506,
+  "pdf_page": 506,
+  "raw_text": "[Inventory].[ItemTypePriceType]\nColumns\nKey Name Data Type Max Length (Bytes) Allow Nulls Identity\nId int 4 False 500001 - 1\nItemType_Id int 4 False\nPriceType_Id int 4 False\nSortOrder int 4 False\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_ItemTypePriceType Id True 80\nForeign Keys\nName Columns\nFK_ItemTypePriceTYpe_ItemTYpe ItemType_Id->[Lookups].[ItemType].[Id]\nFK_ItemTypePriceType_PriceType PriceType_Id->[Lookups].[ItemPriceType].[Id]\nPage 506 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Key Name Data Type Max Length (Bytes) Allow Nulls Identity\nId int 4 False 500001 - 1\nItemType_Id int 4 False\nPriceType_Id int 4 False\nSortOrder int 4 False",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_ItemTypePriceType Id True 80",
+  "fk_section": "Name Columns\nFK_ItemTypePriceTYpe_ItemTYpe ItemType_Id->[Lookups].[ItemType].[Id]\nFK_ItemTypePriceType_PriceType PriceType_Id->[Lookups].[ItemPriceType].[Id]\nPage 506 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

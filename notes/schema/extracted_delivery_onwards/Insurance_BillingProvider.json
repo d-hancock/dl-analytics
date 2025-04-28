@@ -1,0 +1,14 @@
+{
+  "table_name": "Insurance.BillingProvider",
+  "schema": "Insurance",
+  "table": "BillingProvider",
+  "doc_page": 405,
+  "pdf_page": 406,
+  "raw_text": "[Insurance].[BillingProvider]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Default\nId bigint 8 False\nBox31Signature varchar(50) 50 True\nTransmitSignature bit 1 False ((0))\nDefaultSignatureSource_Id int 4 True\nDefaultInfoReleaseCode_Id int 4 True\nDMEMACRegion_Id int 4 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_BillingProvider Id True 80\nForeign Keys\nName Columns\nFK_BillingProvIder_DMEMACRegion DMEMACRegion_Id->[Lookups].[DMEMACRegion].[Id]\nFK_BillingProvIder_InfoReleaseCode DefaultInfoReleaseCode_Id->[Lookups].[InfoReleaseCode].[Id]\nFK_BillingProvIder_SignatureSource DefaultSignatureSource_Id->[Lookups].[SignatureSource].[Id]\nPFK_BillingProvider_Entity Id->[Common].[Entity].[Id]\nPage 405 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Default\nId bigint 8 False\nBox31Signature varchar(50) 50 True\nTransmitSignature bit 1 False ((0))\nDefaultSignatureSource_Id int 4 True\nDefaultInfoReleaseCode_Id int 4 True\nDMEMACRegion_Id int 4 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_BillingProvider Id True 80",
+  "fk_section": "Name Columns\nFK_BillingProvIder_DMEMACRegion DMEMACRegion_Id->[Lookups].[DMEMACRegion].[Id]\nFK_BillingProvIder_InfoReleaseCode DefaultInfoReleaseCode_Id->[Lookups].[InfoReleaseCode].[Id]\nFK_BillingProvIder_SignatureSource DefaultSignatureSource_Id->[Lookups].[SignatureSource].[Id]\nPFK_BillingProvider_Entity Id->[Common].[Entity].[Id]\nPage 405 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

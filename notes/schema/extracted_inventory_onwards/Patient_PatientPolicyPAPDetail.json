@@ -1,0 +1,14 @@
+{
+  "table_name": "Patient.PatientPolicyPAPDetail",
+  "schema": "Patient",
+  "table": "PatientPolicyPAPDetail",
+  "doc_page": 1100,
+  "pdf_page": 1098,
+  "raw_text": "[Patient].[PatientPolicyPAPDetail]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 -\n1\nPatientPolicy_Id bigint 8 False\nAdjustmentDate datetime2 8 True\nPAPAdjustmentReason_Id int 4 True\nAmountPaid numeric(19,5) 9 True\nClaimPharmacyDetail_Id bigint 8 True\nCreatedBy bigint 8 False ((0))\nCreatedDate datetime2 8 False (sysutcda\ntetime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_PatientPolicyPAPDetail Id True 80\nForeign Keys\nName Columns\nFK_PatientPolicyPAPDetail_ClaimPharmacyDetail ClaimPharmacyDetail_Id->[Billing].[ClaimPharmacy-\nDetail].[Id]\nFK_PatientPolicyPAPDetail_PAPAdjustmentReason PAPAdjustmentReason_Id->[Lookups].[PAPAdjustment-\nReason].[Id]\nFK_PatientPolicyPAPDetail_PatientPolicy PatientPolicy_Id->[Patient].[PatientPolicy].[Id]\nPage 1100 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 -\n1\nPatientPolicy_Id bigint 8 False\nAdjustmentDate datetime2 8 True\nPAPAdjustmentReason_Id int 4 True\nAmountPaid numeric(19,5) 9 True\nClaimPharmacyDetail_Id bigint 8 True\nCreatedBy bigint 8 False ((0))\nCreatedDate datetime2 8 False (sysutcda\ntetime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_PatientPolicyPAPDetail Id True 80",
+  "fk_section": "Name Columns\nFK_PatientPolicyPAPDetail_ClaimPharmacyDetail ClaimPharmacyDetail_Id->[Billing].[ClaimPharmacy-\nDetail].[Id]\nFK_PatientPolicyPAPDetail_PAPAdjustmentReason PAPAdjustmentReason_Id->[Lookups].[PAPAdjustment-\nReason].[Id]\nFK_PatientPolicyPAPDetail_PatientPolicy PatientPolicy_Id->[Patient].[PatientPolicy].[Id]\nPage 1100 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

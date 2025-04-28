@@ -1,0 +1,11 @@
+{
+  "table_name": "PointOfSale.PaymentTransaction",
+  "schema": "PointOfSale",
+  "table": "PaymentTransaction",
+  "doc_page": 1107,
+  "pdf_page": 1106,
+  "raw_text": "PaymentTransaction_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_PaymentTransaction_CreditCardTransaction CreditCardTransaction_Id->[Billing].[CreditCard-\nTransaction].[Id]\nFK_PaymentTransaction_ModifiedBy ModifiedBy->[Security].[DHSUser].[Id]\nFK_PaymentTransaction_PointOfSalePaymentType PaymentType_Id->[Lookups].[PointOfSalePayment-\nType].[Id]\nFK_PaymentTransaction_RecStatusModifiedBy RecStatusModifiedBy->[Security].[DHSUser].[Id]\nFK_PaymentTransaction_Transaction Transaction_Id->[PointOfSale].[Transaction].[Id]\nPage 1108 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

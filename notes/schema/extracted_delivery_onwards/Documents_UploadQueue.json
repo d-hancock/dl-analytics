@@ -1,0 +1,14 @@
+{
+  "table_name": "Documents.UploadQueue",
+  "schema": "Documents",
+  "table": "UploadQueue",
+  "doc_page": 330,
+  "pdf_page": 331,
+  "raw_text": "[Documents].[UploadQueue]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nDocument_Id bigint 8 False\nDestination_Id bigint 8 False\nRetryCount int 4 False\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdatetim\ne())\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_UploadQueue Id True 80\nForeign Keys\nName Columns\nFK_UploadQueue_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_UploadQueue_Destination Destination_Id->[Documents].[UploadDestinations].[Id]\nFK_UploadQueue_Document Document_Id->[Documents].[Document].[Id]\nPage 330 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nDocument_Id bigint 8 False\nDestination_Id bigint 8 False\nRetryCount int 4 False\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdatetim\ne())",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_UploadQueue Id True 80",
+  "fk_section": "Name Columns\nFK_UploadQueue_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_UploadQueue_Destination Destination_Id->[Documents].[UploadDestinations].[Id]\nFK_UploadQueue_Document Document_Id->[Documents].[Document].[Id]\nPage 330 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

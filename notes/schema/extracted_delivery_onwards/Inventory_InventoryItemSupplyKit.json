@@ -1,0 +1,14 @@
+{
+  "table_name": "Inventory.InventoryItemSupplyKit",
+  "schema": "Inventory",
+  "table": "InventoryItemSupplyKit",
+  "doc_page": 500,
+  "pdf_page": 500,
+  "raw_text": "[Inventory].[InventoryItemSupplyKit]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nInventoryItem_Id bigint 8 False\nSupplyKit_Id bigint 8 False\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdateti\nme())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_InventoryItemSupplyKit Id True 80\nForeign Keys\nName Columns\nFK_InventoryItemSupplyKit_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_InventoryItemSupplyKit_InventoryItem InventoryItem_Id->[Inventory].[InventoryItem].[Id]\nFK_InventoryItemSupplyKit_SupplyKit SupplyKit_Id->[Inventory].[SupplyKit].[Id]\nPage 500 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nInventoryItem_Id bigint 8 False\nSupplyKit_Id bigint 8 False\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdateti\nme())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_InventoryItemSupplyKit Id True 80",
+  "fk_section": "Name Columns\nFK_InventoryItemSupplyKit_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_InventoryItemSupplyKit_InventoryItem InventoryItem_Id->[Inventory].[InventoryItem].[Id]\nFK_InventoryItemSupplyKit_SupplyKit SupplyKit_Id->[Inventory].[SupplyKit].[Id]\nPage 500 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

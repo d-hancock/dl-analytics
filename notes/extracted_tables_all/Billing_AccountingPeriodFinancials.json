@@ -1,0 +1,14 @@
+{
+  "table_name": "Billing.AccountingPeriodFinancials",
+  "schema": "Billing",
+  "table": "AccountingPeriodFinancials",
+  "doc_page": 84,
+  "pdf_page": 86,
+  "raw_text": "[Billing].[AccountingPeriodFinancials]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Default\nId bigint 8 False\nTotalRevenueAmount numeric(19,5) 9 True ((0.0))\nAccountsReceivableAmount numeric(19,5) 9 True ((0.0))\nCreditAmount numeric(19,5) 9 True ((0.0))\nDebitAmount numeric(19,5) 9 True ((0.0))\nCostOfGoodsAmount numeric(19,5) 9 True ((0.0))\nTotalUnbilledAmount numeric(19,5) 9 True ((0.0))\nUnappliedCashAmount numeric(19,5) 9 True ((0.0))\nCashAmount numeric(19,5) 9 True ((0.0))\nAdjustmentAmount numeric(19,5) 9 True ((0.0))\nTaxAmount numeric(19,5) 9 True ((0.0))\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_AccountingPeriodFinancials Id True 80\nForeign Keys\nName Columns\nFK_AccountingPeriodFinancials_AccountingPeriod Id->[Billing].[AccountingPeriod].[Id]\nPage 84 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Default\nId bigint 8 False\nTotalRevenueAmount numeric(19,5) 9 True ((0.0))\nAccountsReceivableAmount numeric(19,5) 9 True ((0.0))\nCreditAmount numeric(19,5) 9 True ((0.0))\nDebitAmount numeric(19,5) 9 True ((0.0))\nCostOfGoodsAmount numeric(19,5) 9 True ((0.0))\nTotalUnbilledAmount numeric(19,5) 9 True ((0.0))\nUnappliedCashAmount numeric(19,5) 9 True ((0.0))\nCashAmount numeric(19,5) 9 True ((0.0))\nAdjustmentAmount numeric(19,5) 9 True ((0.0))\nTaxAmount numeric(19,5) 9 True ((0.0))",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_AccountingPeriodFinancials Id True 80",
+  "fk_section": "Name Columns\nFK_AccountingPeriodFinancials_AccountingPeriod Id->[Billing].[AccountingPeriod].[Id]\nPage 84 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

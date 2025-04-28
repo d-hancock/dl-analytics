@@ -1,0 +1,14 @@
+{
+  "table_name": "Lookups.PlanForPayment",
+  "schema": "Lookups",
+  "table": "PlanForPayment",
+  "doc_page": 901,
+  "pdf_page": 899,
+  "raw_text": "[Lookups].[PlanForPayment]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId int 4 False 500001 -\n1\nName varchar(255) 255 False\nDescription varchar(1000) 1000 True\nIsActive bit 1 False ((1))\nControlledSubstanceVersion_Id int 4 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_PlanForPayment Id True 80\nUQ_PlanForPaymentName Name, Controlled- True 80\nSubstanceVersion_-\nId\nForeign Keys\nName Columns\nFK_PlanForPayment_ControlledSubstanceVersion ControlledSubstanceVersion_Id->[Lookups].[Controlled-\nSubstanceVersion].[Id]\nPage 901 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId int 4 False 500001 -\n1\nName varchar(255) 255 False\nDescription varchar(1000) 1000 True\nIsActive bit 1 False ((1))\nControlledSubstanceVersion_Id int 4 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_PlanForPayment Id True 80\nUQ_PlanForPaymentName Name, Controlled- True 80\nSubstanceVersion_-\nId",
+  "fk_section": "Name Columns\nFK_PlanForPayment_ControlledSubstanceVersion ControlledSubstanceVersion_Id->[Lookups].[Controlled-\nSubstanceVersion].[Id]\nPage 901 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

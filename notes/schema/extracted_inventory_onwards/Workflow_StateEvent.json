@@ -1,0 +1,11 @@
+{
+  "table_name": "Workflow.StateEvent",
+  "schema": "Workflow",
+  "table": "StateEvent",
+  "doc_page": 1326,
+  "pdf_page": 1331,
+  "raw_text": "[Workflow].[StateEvent].[Id]\nFK_WorkflowHistory_StateEvent_To ToEvent_Id->[Workflow].[StateEvent].[Id]\nFK_WorkflowHistory_StateHold StateHold_Id->[Workflow].[StateHold].[Id]\nFK_WorkflowHistory_WorkflowDefinition WorkflowDefinition_Id->[Workflow].[WorkflowDefinition].[Id]\nFK_WorkflowHistory_WorkflowStateFrom FromWorkflowState_Id->[Workflow].[WorkflowState].[Id]\nFK_WorkflowHistory_WorkflowStateTo ToWorkflowState_Id->[Workflow].[WorkflowState].[Id]\nPage 1336 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

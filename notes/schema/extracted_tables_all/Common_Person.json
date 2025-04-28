@@ -1,0 +1,14 @@
+{
+  "table_name": "Common.Person",
+  "schema": "Common",
+  "table": "Person",
+  "doc_page": 251,
+  "pdf_page": 253,
+  "raw_text": "[Common].[Person]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Default\nId bigint 8 False\nPersonType_Id int 4 False\nGender_Id int 4 True\nMaritalStatus_Id int 4 True\nTitle_Id int 4 True\nLanguage_Id int 4 True\nFirstName varchar(50) 50 False\nMiddleName varchar(50) 50 True\nLastName varchar(50) 50 False\nSuffix varchar(50) 50 True\nOrganizationName varchar(200) 200 True\nDateOfBirth datetime2 8 True\nIsReferralSource bit 1 False ((0))\nAllowWebAccess bit 1 False ((0))\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_Person Id True 80\nForeign Keys\nName Columns\nFK_Person_Gender Gender_Id->[Lookups].[Gender].[Id]\nFK_Person_Language Language_Id->[Lookups].[Language].[Id]\nFK_Person_MaritalStatus MaritalStatus_Id->[Lookups].[MaritalStatus].[Id]\nFK_Person_NameTitle Title_Id->[Lookups].[NameTitle].[Id]\nFK_Person_PersonType PersonType_Id->[Lookups].[PersonType].[Id]\nPFK_Person_Party Id->[Common].[Party].[Id]\nPage 251 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Default\nId bigint 8 False\nPersonType_Id int 4 False\nGender_Id int 4 True\nMaritalStatus_Id int 4 True\nTitle_Id int 4 True\nLanguage_Id int 4 True\nFirstName varchar(50) 50 False\nMiddleName varchar(50) 50 True\nLastName varchar(50) 50 False\nSuffix varchar(50) 50 True\nOrganizationName varchar(200) 200 True\nDateOfBirth datetime2 8 True\nIsReferralSource bit 1 False ((0))\nAllowWebAccess bit 1 False ((0))",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_Person Id True 80",
+  "fk_section": "Name Columns\nFK_Person_Gender Gender_Id->[Lookups].[Gender].[Id]\nFK_Person_Language Language_Id->[Lookups].[Language].[Id]\nFK_Person_MaritalStatus MaritalStatus_Id->[Lookups].[MaritalStatus].[Id]\nFK_Person_NameTitle Title_Id->[Lookups].[NameTitle].[Id]\nFK_Person_PersonType PersonType_Id->[Lookups].[PersonType].[Id]\nPFK_Person_Party Id->[Common].[Party].[Id]\nPage 251 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

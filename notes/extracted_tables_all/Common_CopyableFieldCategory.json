@@ -1,0 +1,14 @@
+{
+  "table_name": "Common.CopyableFieldCategory",
+  "schema": "Common",
+  "table": "CopyableFieldCategory",
+  "doc_page": 233,
+  "pdf_page": 235,
+  "raw_text": "[Common].[CopyableFieldCategory]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Identity\nId int 4 False 500001 - 1\nField_Id int 4 False\nFieldCategory_Id int 4 True\nIndexes\nKey Name Key Columns Unique\nPK_CopyableFieldCategory Id True\nForeign Keys\nName Columns\nFK_CopyableFIeldCategory_CopyableFIeld Field_Id->[Common].[CopyableField].[Id]\nFK_CopyableFIeldCategory_FIeldCategory FieldCategory_Id->[Lookups].[FieldCategory].[Id]\nPage 233 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Identity\nId int 4 False 500001 - 1\nField_Id int 4 False\nFieldCategory_Id int 4 True",
+  "index_section": "Key Name Key Columns Unique\nPK_CopyableFieldCategory Id True",
+  "fk_section": "Name Columns\nFK_CopyableFIeldCategory_CopyableFIeld Field_Id->[Common].[CopyableField].[Id]\nFK_CopyableFIeldCategory_FIeldCategory FieldCategory_Id->[Lookups].[FieldCategory].[Id]\nPage 233 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

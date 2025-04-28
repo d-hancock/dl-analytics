@@ -1,0 +1,14 @@
+{
+  "table_name": "Outcomes.CompanyIndicatorKeyword",
+  "schema": "Outcomes",
+  "table": "CompanyIndicatorKeyword",
+  "doc_page": 1078,
+  "pdf_page": 1076,
+  "raw_text": "[Outcomes].[CompanyIndicatorKeyword]\nColumns\nMax\nLength\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nID bigint 8 False 500001 - 1\nCompany_Id bigint 8 False\nKeyword varchar(50) 50 False\nIsRegex bit 1 False ((0))\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdatet\nime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_CompanyIndicatorKeyword ID True 80\nForeign Keys\nName Columns\nFK_CompanyIndicatorKeyword_Company Company_Id->[Common].[Company].[Id]\nPage 1078 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nID bigint 8 False 500001 - 1\nCompany_Id bigint 8 False\nKeyword varchar(50) 50 False\nIsRegex bit 1 False ((0))\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdatet\nime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_CompanyIndicatorKeyword ID True 80",
+  "fk_section": "Name Columns\nFK_CompanyIndicatorKeyword_Company Company_Id->[Common].[Company].[Id]\nPage 1078 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

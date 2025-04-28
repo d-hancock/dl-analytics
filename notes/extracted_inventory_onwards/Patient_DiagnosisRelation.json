@@ -1,0 +1,14 @@
+{
+  "table_name": "Patient.DiagnosisRelation",
+  "schema": "Patient",
+  "table": "DiagnosisRelation",
+  "doc_page": 1084,
+  "pdf_page": 1082,
+  "raw_text": "[Patient].[DiagnosisRelation]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId int 4 False 1 - 1\nDiagnosis9_Id int 4 True\nDiagnosis10_Id int 4 True\nIsActive bit 1 False ((1))\nIndexes\nKey Name Key Columns Unique Page Locks Fill Factor\nPK_DiagnosisRelation Id True 80\nIdx_DgRl_10 Diagnosis10_Id False 80\nIdx_DgRl_9 Diagnosis9_Id False 80\nForeign Keys\nName Columns\nFK_DiagnosisRelation_DiagnosisCode10 Diagnosis10_Id->[Patient].[DiagnosisCode10].[Id]\nFK_DiagnosisRelation_DiagnosisCode9 Diagnosis9_Id->[Patient].[DiagnosisCode].[Id]\nPage 1084 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId int 4 False 1 - 1\nDiagnosis9_Id int 4 True\nDiagnosis10_Id int 4 True\nIsActive bit 1 False ((1))",
+  "index_section": "Key Name Key Columns Unique Page Locks Fill Factor\nPK_DiagnosisRelation Id True 80\nIdx_DgRl_10 Diagnosis10_Id False 80\nIdx_DgRl_9 Diagnosis9_Id False 80",
+  "fk_section": "Name Columns\nFK_DiagnosisRelation_DiagnosisCode10 Diagnosis10_Id->[Patient].[DiagnosisCode10].[Id]\nFK_DiagnosisRelation_DiagnosisCode9 Diagnosis9_Id->[Patient].[DiagnosisCode].[Id]\nPage 1084 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

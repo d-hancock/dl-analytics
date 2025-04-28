@@ -1,0 +1,11 @@
+{
+  "table_name": "Pricing.PriceCodeBasePrice",
+  "schema": "Pricing",
+  "table": "PriceCodeBasePrice",
+  "doc_page": 1208,
+  "pdf_page": 1206,
+  "raw_text": "PriceCodeBasePrice PriceCode_Id->[Lookups].[PriceCode].[Id]\nFK_PriceCodeBaseprice_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_PriceCodeBasePrice_ItemPriceType ItemPriceType_Id->[Lookups].[ItemPriceType].[Id]\nFK_PriceCodeBasePrice_PriceType PriceType_Id->[Lookups].[PriceType].[Id]\nPage 1209 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

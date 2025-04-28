@@ -1,0 +1,14 @@
+{
+  "table_name": "Prescription.ControlledSubstanceStateRaw",
+  "schema": "Prescription",
+  "table": "ControlledSubstanceStateRaw",
+  "doc_page": 1123,
+  "pdf_page": 1121,
+  "raw_text": "[Prescription].[ControlledSubstanceStateRaw]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nState varchar(2) 2 False\nMaxSchedule_Id int 4 False\nFrequency_Id int 4 False\nTemplate_Id bigint 8 False\nZeroReport bit 1 False\nFilenamePattern varchar(100) 100 True\nLastReportDate datetime2 8 True\nIsActive bit 1 True ((0))\nIndexes\nKey Name Key Columns Unique\nPK_ControlledSubstanceState Id True\nIX_Prescription_ControlledSubstanceStateRaw_Frequency_Id_CSReporting- Frequency_Id\nFrequency\nIX_Prescription_ControlledSubstanceStateRaw_MaxSchedule_Id_- MaxSchedule_-\nDEASchedule Id\nIX_Prescription_ControlledSubstanceStateRaw_Template_Id_X12Definition Template_Id\nForeign Keys\nName Columns\nFK_ControlledSubstanceState_Frequency Frequency_Id->[Prescription].[CSReporting-\nFrequency].[Id]\nFK_ControlledSubstanceState_Template Template_Id->[Template].[X12Definition].[Id]\nPK_ControlledSubstanceState_DEASchedule MaxSchedule_Id->[Lookups].[DEASchedule].[Id]\nPage 1123 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nState varchar(2) 2 False\nMaxSchedule_Id int 4 False\nFrequency_Id int 4 False\nTemplate_Id bigint 8 False\nZeroReport bit 1 False\nFilenamePattern varchar(100) 100 True\nLastReportDate datetime2 8 True\nIsActive bit 1 True ((0))",
+  "index_section": "Key Name Key Columns Unique\nPK_ControlledSubstanceState Id True\nIX_Prescription_ControlledSubstanceStateRaw_Frequency_Id_CSReporting- Frequency_Id\nFrequency\nIX_Prescription_ControlledSubstanceStateRaw_MaxSchedule_Id_- MaxSchedule_-\nDEASchedule Id\nIX_Prescription_ControlledSubstanceStateRaw_Template_Id_X12Definition Template_Id",
+  "fk_section": "Name Columns\nFK_ControlledSubstanceState_Frequency Frequency_Id->[Prescription].[CSReporting-\nFrequency].[Id]\nFK_ControlledSubstanceState_Template Template_Id->[Template].[X12Definition].[Id]\nPK_ControlledSubstanceState_DEASchedule MaxSchedule_Id->[Lookups].[DEASchedule].[Id]\nPage 1123 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

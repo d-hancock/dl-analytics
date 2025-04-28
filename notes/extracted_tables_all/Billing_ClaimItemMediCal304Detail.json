@@ -1,0 +1,14 @@
+{
+  "table_name": "Billing.ClaimItemMediCal304Detail",
+  "schema": "Billing",
+  "table": "ClaimItemMediCal304Detail",
+  "doc_page": 108,
+  "pdf_page": 110,
+  "raw_text": "[Billing].[ClaimItemMediCal304Detail]\nColumns\nKey Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nMediCalProductQualifier_Id int 4 True\nMediCalBasisofCost_Id int 4 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_ClaimItemMediCal304Detail Id True 80\nForeign Keys\nName Columns\nFK_ClaimItemMediCal304Detail_BasisofCost MediCalBasisofCost_Id->[Lookups].[MediCalBasisof-\nCost].[Id]\nFK_ClaimItemMediCal304Detail_ClaimItem Id->[Billing].[ClaimItem].[Id]\nFK_ClaimItemMediCal304Detail_ProductQualifier MediCalProductQualifier_Id->[Lookups].[MediCalProduct-\nQualifier].[Id]\nPage 108 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Key Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nMediCalProductQualifier_Id int 4 True\nMediCalBasisofCost_Id int 4 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_ClaimItemMediCal304Detail Id True 80",
+  "fk_section": "Name Columns\nFK_ClaimItemMediCal304Detail_BasisofCost MediCalBasisofCost_Id->[Lookups].[MediCalBasisof-\nCost].[Id]\nFK_ClaimItemMediCal304Detail_ClaimItem Id->[Billing].[ClaimItem].[Id]\nFK_ClaimItemMediCal304Detail_ProductQualifier MediCalProductQualifier_Id->[Lookups].[MediCalProduct-\nQualifier].[Id]\nPage 108 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

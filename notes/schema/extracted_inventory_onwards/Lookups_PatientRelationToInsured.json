@@ -1,0 +1,13 @@
+{
+  "table_name": "Lookups.PatientRelationToInsured",
+  "schema": "Lookups",
+  "table": "PatientRelationToInsured",
+  "doc_page": 854,
+  "pdf_page": 852,
+  "raw_text": "[Lookups].[PatientRelationToInsured]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId int 4 False 500001 - 1\nName varchar(255) 255 False\nDescription varchar(1000) 1000 True\nMedicalBillingCode varchar(10) 10 False ('G8')\nPharmacyBillingCode varchar(10) 10 False ('4')\nIsActive bit 1 False ((1))\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_PatientRelationToInsured Id True 80\nUQ_PatientRelationToInsuredName Name True 80\nPage 854 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId int 4 False 500001 - 1\nName varchar(255) 255 False\nDescription varchar(1000) 1000 True\nMedicalBillingCode varchar(10) 10 False ('G8')\nPharmacyBillingCode varchar(10) 10 False ('4')\nIsActive bit 1 False ((1))",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_PatientRelationToInsured Id True 80\nUQ_PatientRelationToInsuredName Name True 80\nPage 854 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

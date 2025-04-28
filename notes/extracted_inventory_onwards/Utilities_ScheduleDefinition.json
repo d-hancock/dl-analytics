@@ -1,0 +1,11 @@
+{
+  "table_name": "Utilities.ScheduleDefinition",
+  "schema": "Utilities",
+  "table": "ScheduleDefinition",
+  "doc_page": 1305,
+  "pdf_page": 1308,
+  "raw_text": "[Utilities].[ScheduleDefinition].[Id]\nPage 1312 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

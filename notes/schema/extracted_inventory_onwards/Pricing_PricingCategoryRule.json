@@ -1,0 +1,11 @@
+{
+  "table_name": "Pricing.PricingCategoryRule",
+  "schema": "Pricing",
+  "table": "PricingCategoryRule",
+  "doc_page": 1210,
+  "pdf_page": 1208,
+  "raw_text": "PricingCategoryRule_BilledPriceType BilledItemPriceType_Id->[Lookups].[ItemPriceType].[Id]\nFK_PricingCategoryRule_Contract PricingModel_Id->[Pricing].[PricingModel].[Id]\nFK_PricingCategoryRule_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_PricingCategoryRule_ExpectedPriceType ExpectedItemPriceType_Id->[Lookups].[ItemPrice-\nType].[Id]\nFK_PricingCategoryRule_PriceCode Category_Id->[Lookups].[InventoryCategory].[Id]\nFK_PricingCategoryRule_PriceType PriceType_Id->[Lookups].[PriceType].[Id]\nPage 1211 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

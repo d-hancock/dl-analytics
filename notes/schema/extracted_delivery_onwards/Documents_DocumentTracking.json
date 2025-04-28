@@ -1,0 +1,14 @@
+{
+  "table_name": "Documents.DocumentTracking",
+  "schema": "Documents",
+  "table": "DocumentTracking",
+  "doc_page": 305,
+  "pdf_page": 306,
+  "raw_text": "[Documents].[DocumentTracking]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Default\nId bigint 8 False\nDescription varchar(255) 255 True\nSentDate datetime2 8 True\nReturnedDate datetime2 8 True\nDueDate datetime2 8 True\nReceivedDate datetime2 8 True\nResentDate datetime2 8 True\nActiveDate datetime2 8 True\nIsPrimary bit 1 False ((0))\nKeyWords varchar(50) 50 True\nNotes varchar(max) max True\nDocumentReturnCode_Id int 4 True\nDocumentStatus_Id int 4 True\nTrackingBarcodeDefault_Id int 4 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_DocumentTracking Id True 80\nForeign Keys\nName Columns\nFK_DocumentTracking_Document Id->[Documents].[Document].[Id]\nFK_DocumentTracking_DocumentStatus DocumentStatus_Id->[Lookups].[DocumentStatus].[Id]\nFK_DocumentTracking_DocumentTrackingReturnCode DocumentReturnCode_Id->[Lookups].[DocumentReturn-\nCode].[Id]\nFK_DocumentTracking_TrackingBarcodeDefault TrackingBarcodeDefault_Id->[Lookups].[TrackingBarcode-\nDefault].[Id]\nPage 305 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Default\nId bigint 8 False\nDescription varchar(255) 255 True\nSentDate datetime2 8 True\nReturnedDate datetime2 8 True\nDueDate datetime2 8 True\nReceivedDate datetime2 8 True\nResentDate datetime2 8 True\nActiveDate datetime2 8 True\nIsPrimary bit 1 False ((0))\nKeyWords varchar(50) 50 True\nNotes varchar(max) max True\nDocumentReturnCode_Id int 4 True\nDocumentStatus_Id int 4 True\nTrackingBarcodeDefault_Id int 4 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_DocumentTracking Id True 80",
+  "fk_section": "Name Columns\nFK_DocumentTracking_Document Id->[Documents].[Document].[Id]\nFK_DocumentTracking_DocumentStatus DocumentStatus_Id->[Lookups].[DocumentStatus].[Id]\nFK_DocumentTracking_DocumentTrackingReturnCode DocumentReturnCode_Id->[Lookups].[DocumentReturn-\nCode].[Id]\nFK_DocumentTracking_TrackingBarcodeDefault TrackingBarcodeDefault_Id->[Lookups].[TrackingBarcode-\nDefault].[Id]\nPage 305 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

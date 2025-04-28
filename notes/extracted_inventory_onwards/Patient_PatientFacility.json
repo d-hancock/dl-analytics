@@ -1,0 +1,11 @@
+{
+  "table_name": "Patient.PatientFacility",
+  "schema": "Patient",
+  "table": "PatientFacility",
+  "doc_page": 1094,
+  "pdf_page": 1093,
+  "raw_text": "PatientFacility_Facility Facility_Id->[Provider].[Facility].[Id]\nFK_PatientFacility_ModifiedBy ModifiedBy->[Security].[DHSUser].[Id]\nFK_PatientFacility_Patient Patient_Id->[Patient].[Patient].[Id]\nFK_PatientFacility_Provider AttendingPhysician_Id->[Provider].[Provider].[Id]\nFK_PatientFacility_RecStatusModifiedBy RecStatusModifiedBy->[Security].[DHSUser].[Id]\nPage 1095 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

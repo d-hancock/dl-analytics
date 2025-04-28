@@ -1,0 +1,11 @@
+{
+  "table_name": "Lookups.SettingCategory",
+  "schema": "Lookups",
+  "table": "SettingCategory",
+  "doc_page": 968,
+  "pdf_page": 968,
+  "raw_text": "[Lookups].[SettingCategory].[Id]\nPFK_SettingType_SettingDataType SettingDataType_Id->[Lookups].[SettingDataType].[Id]\nPage 970 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

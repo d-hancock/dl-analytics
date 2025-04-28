@@ -1,0 +1,14 @@
+{
+  "table_name": "Insurance.BillingProviderCarrier",
+  "schema": "Insurance",
+  "table": "BillingProviderCarrier",
+  "doc_page": 406,
+  "pdf_page": 407,
+  "raw_text": "[Insurance].[BillingProviderCarrier]\nColumns\nMax\nLength\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nBillingProvider_Id bigint 8 False\nCarrier_Id bigint 8 False\nChampusId varchar(50) 50 True\nBlueShieldId varchar(50) 50 True\nMCDProviderNumber varchar(50) 50 True\nHCIDNumber varchar(50) 50 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdatet\nime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_BillingProviderCarrier Id True 80\nForeign Keys\nName Columns\nFK_BillingProviderCarrier_BillingProvider BillingProvider_Id->[Insurance].[BillingProvider].[Id]\nFK_BillingProviderCarrier_Carrier Carrier_Id->[Insurance].[Carrier].[Id]\nFK_BillingProviderCarrier_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nPage 406 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nBillingProvider_Id bigint 8 False\nCarrier_Id bigint 8 False\nChampusId varchar(50) 50 True\nBlueShieldId varchar(50) 50 True\nMCDProviderNumber varchar(50) 50 True\nHCIDNumber varchar(50) 50 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdatet\nime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_BillingProviderCarrier Id True 80",
+  "fk_section": "Name Columns\nFK_BillingProviderCarrier_BillingProvider BillingProvider_Id->[Insurance].[BillingProvider].[Id]\nFK_BillingProviderCarrier_Carrier Carrier_Id->[Insurance].[Carrier].[Id]\nFK_BillingProviderCarrier_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nPage 406 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

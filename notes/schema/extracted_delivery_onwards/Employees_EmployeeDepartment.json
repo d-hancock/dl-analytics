@@ -1,0 +1,14 @@
+{
+  "table_name": "Employees.EmployeeDepartment",
+  "schema": "Employees",
+  "table": "EmployeeDepartment",
+  "doc_page": 354,
+  "pdf_page": 355,
+  "raw_text": "[Employees].[EmployeeDepartment]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nEmployee_Id bigint 8 False\nDepartment_Id int 4 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdateti\nme())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_EmployeeDepartment Id True 80\nForeign Keys\nName Columns\nFK_Claim_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_EmployeeDepartment_Department Department_Id->[Lookups].[Department].[Id]\nPFK_EmployeeDepartment_Employee Employee_Id->[Employees].[Employee].[Id]\nPage 354 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nEmployee_Id bigint 8 False\nDepartment_Id int 4 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdateti\nme())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_EmployeeDepartment Id True 80",
+  "fk_section": "Name Columns\nFK_Claim_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_EmployeeDepartment_Department Department_Id->[Lookups].[Department].[Id]\nPFK_EmployeeDepartment_Employee Employee_Id->[Employees].[Employee].[Id]\nPage 354 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

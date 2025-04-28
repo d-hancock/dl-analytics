@@ -1,0 +1,11 @@
+{
+  "table_name": "Patient.DiagnosisCode",
+  "schema": "Patient",
+  "table": "DiagnosisCode",
+  "doc_page": 1082,
+  "pdf_page": 1082,
+  "raw_text": "[Patient].[DiagnosisCode].[Id]\nPage 1084 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

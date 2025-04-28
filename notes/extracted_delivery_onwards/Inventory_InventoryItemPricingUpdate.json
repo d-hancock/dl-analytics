@@ -1,0 +1,14 @@
+{
+  "table_name": "Inventory.InventoryItemPricingUpdate",
+  "schema": "Inventory",
+  "table": "InventoryItemPricingUpdate",
+  "doc_page": 491,
+  "pdf_page": 491,
+  "raw_text": "[Inventory].[InventoryItemPricingUpdate]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Identity\nId bigint 8 False 500001 - 1\nIdentifier varchar(15) 15 True\nInventoryItemName varchar(255) 255 True\nExternalItemName varchar(30) 30 True\nOldPrice numeric(19,5) 9 True\nNewPrice numeric(19,5) 9 True\nItemPriceType_Id int 4 False\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_InventoryItemPricingUpdate Id True 80\nForeign Keys\nName Columns\nFK_InventoryItemPricingUpdate_ItemPriceType ItemPriceType_Id->[Lookups].[ItemPriceType].[Id]\nPage 491 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Identity\nId bigint 8 False 500001 - 1\nIdentifier varchar(15) 15 True\nInventoryItemName varchar(255) 255 True\nExternalItemName varchar(30) 30 True\nOldPrice numeric(19,5) 9 True\nNewPrice numeric(19,5) 9 True\nItemPriceType_Id int 4 False",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_InventoryItemPricingUpdate Id True 80",
+  "fk_section": "Name Columns\nFK_InventoryItemPricingUpdate_ItemPriceType ItemPriceType_Id->[Lookups].[ItemPriceType].[Id]\nPage 491 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

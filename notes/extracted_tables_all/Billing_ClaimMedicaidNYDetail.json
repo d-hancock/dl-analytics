@@ -1,0 +1,14 @@
+{
+  "table_name": "Billing.ClaimMedicaidNYDetail",
+  "schema": "Billing",
+  "table": "ClaimMedicaidNYDetail",
+  "doc_page": 117,
+  "pdf_page": 119,
+  "raw_text": "[Billing].[ClaimMedicaidNYDetail]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Default\nId bigint 8 False\nPaymentSourceCode_Id int 4 True\nAlternatePhysicianId varchar(30) 30 True\nPhysiciansNPINumber varchar(80) 80 True\nIsEmergencyRelated bit 1 False ((0))\nNationalDrugCode varchar(30) 30 True\nUnit_Id int 4 True\nQuantity numeric(19,5) 9 True\nCost numeric(19,5) 9 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_ClaimMedicaidNYDetail Id True 80\nForeign Keys\nName Columns\nFK_ClaimMedicaidNYDetail_Claim Id->[Billing].[Claim].[Id]\nFK_ClaimMedicaidNYDetail_DrugUnit Unit_Id->[Lookups].[DrugUnit].[Id]\nFK_ClaimMedicaidNYDetail_PaymentSourceCode PaymentSourceCode_Id->[Lookups].[PaymentSource-\nCode].[Id]\nPage 117 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Default\nId bigint 8 False\nPaymentSourceCode_Id int 4 True\nAlternatePhysicianId varchar(30) 30 True\nPhysiciansNPINumber varchar(80) 80 True\nIsEmergencyRelated bit 1 False ((0))\nNationalDrugCode varchar(30) 30 True\nUnit_Id int 4 True\nQuantity numeric(19,5) 9 True\nCost numeric(19,5) 9 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_ClaimMedicaidNYDetail Id True 80",
+  "fk_section": "Name Columns\nFK_ClaimMedicaidNYDetail_Claim Id->[Billing].[Claim].[Id]\nFK_ClaimMedicaidNYDetail_DrugUnit Unit_Id->[Lookups].[DrugUnit].[Id]\nFK_ClaimMedicaidNYDetail_PaymentSourceCode PaymentSourceCode_Id->[Lookups].[PaymentSource-\nCode].[Id]\nPage 117 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

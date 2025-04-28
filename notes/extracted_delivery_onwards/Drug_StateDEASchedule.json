@@ -1,0 +1,14 @@
+{
+  "table_name": "Drug.StateDEASchedule",
+  "schema": "Drug",
+  "table": "StateDEASchedule",
+  "doc_page": 340,
+  "pdf_page": 341,
+  "raw_text": "[Drug].[StateDEASchedule]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nDrug_Id bigint 8 False\nState_Id int 4 False\nDEASchedule_Id int 4 False\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdateti\nme())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_StateDEASchedule Id True 80\nForeign Keys\nName Columns\nFK_StateDEASChedule_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nfk_stateDEASChedule_DEASchedule DEASchedule_Id->[Lookups].[DEASchedule].[Id]\nFK_StateDEASchedule_Drug Drug_Id->[Drug].[Drug].[Id]\nfk_StateDEASChedule_State State_Id->[Lookups].[State].[Id]\nPage 340 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nDrug_Id bigint 8 False\nState_Id int 4 False\nDEASchedule_Id int 4 False\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdateti\nme())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_StateDEASchedule Id True 80",
+  "fk_section": "Name Columns\nFK_StateDEASChedule_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nfk_stateDEASChedule_DEASchedule DEASchedule_Id->[Lookups].[DEASchedule].[Id]\nFK_StateDEASchedule_Drug Drug_Id->[Drug].[Drug].[Id]\nfk_StateDEASChedule_State State_Id->[Lookups].[State].[Id]\nPage 340 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

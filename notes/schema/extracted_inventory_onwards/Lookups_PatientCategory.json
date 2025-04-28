@@ -1,0 +1,13 @@
+{
+  "table_name": "Lookups.PatientCategory",
+  "schema": "Lookups",
+  "table": "PatientCategory",
+  "doc_page": 843,
+  "pdf_page": 841,
+  "raw_text": "[Lookups].[PatientCategory]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId int 4 False 500001 - 1\nName varchar(255) 255 False\nDescription varchar(1000) 1000 True\nRecStatus bit 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIsActive bit 1 False ((1))\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_PatientCategory Id True 80\nUQ_PatientCategoryName Name True 80\nPage 843 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId int 4 False 500001 - 1\nName varchar(255) 255 False\nDescription varchar(1000) 1000 True\nRecStatus bit 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIsActive bit 1 False ((1))",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_PatientCategory Id True 80\nUQ_PatientCategoryName Name True 80\nPage 843 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

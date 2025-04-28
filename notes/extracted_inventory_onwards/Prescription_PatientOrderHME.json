@@ -1,0 +1,11 @@
+{
+  "table_name": "Prescription.PatientOrderHME",
+  "schema": "Prescription",
+  "table": "PatientOrderHME",
+  "doc_page": 1136,
+  "pdf_page": 1138,
+  "raw_text": "[Prescription].[PatientOrderHME].[Id]\nFK_PatientOrderHMECPAP_RecurringRental RecurringRental_Id->[Billing].[RecurringRental].[Id]\nPage 1140 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

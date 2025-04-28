@@ -1,0 +1,14 @@
+{
+  "table_name": "Prescription.PrescriptionSignOff",
+  "schema": "Prescription",
+  "table": "PrescriptionSignOff",
+  "doc_page": 1173,
+  "pdf_page": 1171,
+  "raw_text": "[Prescription].[PrescriptionSignOff]\nColumns\nKey Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nSetupCompletedByEmployee_Id bigint 8 True\nVerifiedByEmployee_Id bigint 8 True\nDeniedByEmployee_Id bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_PrescriptionSignOff Id True 80\nForeign Keys\nName Columns\nFK_PrescriptionSignOff_DeniedByEmployee DeniedByEmployee_Id->[Employees].[Employee].[Id]\nFK_PrescriptionSignOff_Prescription Id->[Prescription].[Prescription].[Id]\nFK_PrescriptionSignOff_SetupCompletedByEmployee SetupCompletedByEmployee_Id-\n>[Employees].[Employee].[Id]\nFK_PrescriptionSignOff_VerifiedByEmployee VerifiedByEmployee_Id->[Employees].[Employee].[Id]\nPage 1173 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Key Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nSetupCompletedByEmployee_Id bigint 8 True\nVerifiedByEmployee_Id bigint 8 True\nDeniedByEmployee_Id bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_PrescriptionSignOff Id True 80",
+  "fk_section": "Name Columns\nFK_PrescriptionSignOff_DeniedByEmployee DeniedByEmployee_Id->[Employees].[Employee].[Id]\nFK_PrescriptionSignOff_Prescription Id->[Prescription].[Prescription].[Id]\nFK_PrescriptionSignOff_SetupCompletedByEmployee SetupCompletedByEmployee_Id-\n>[Employees].[Employee].[Id]\nFK_PrescriptionSignOff_VerifiedByEmployee VerifiedByEmployee_Id->[Employees].[Employee].[Id]\nPage 1173 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

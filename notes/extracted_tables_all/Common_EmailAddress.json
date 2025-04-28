@@ -1,0 +1,14 @@
+{
+  "table_name": "Common.EmailAddress",
+  "schema": "Common",
+  "table": "EmailAddress",
+  "doc_page": 236,
+  "pdf_page": 238,
+  "raw_text": "[Common].[EmailAddress]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nParty_Id bigint 8 False\nEmailType_Id int 4 False\nStartDate datetime2 8 True\nEndDate datetime2 8 True\nAddress varchar(100) 100 False\nIsDefault bit 1 False ((0))\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdate\ntime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_EmailAddress Id True 80\nForeign Keys\nName Columns\nFK_EmailAddress_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_EmailAddress_EmailType EmailType_Id->[Lookups].[EmailType].[Id]\nFK_EmailAddress_Party Party_Id->[Common].[Party].[Id]\nPage 236 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nParty_Id bigint 8 False\nEmailType_Id int 4 False\nStartDate datetime2 8 True\nEndDate datetime2 8 True\nAddress varchar(100) 100 False\nIsDefault bit 1 False ((0))\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdate\ntime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_EmailAddress Id True 80",
+  "fk_section": "Name Columns\nFK_EmailAddress_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_EmailAddress_EmailType EmailType_Id->[Lookups].[EmailType].[Id]\nFK_EmailAddress_Party Party_Id->[Common].[Party].[Id]\nPage 236 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

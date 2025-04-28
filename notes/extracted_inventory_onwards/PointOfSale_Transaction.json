@@ -1,0 +1,11 @@
+{
+  "table_name": "PointOfSale.Transaction",
+  "schema": "PointOfSale",
+  "table": "Transaction",
+  "doc_page": 1112,
+  "pdf_page": 1114,
+  "raw_text": "[PointOfSale].[Transaction].[Id]\nPFK_TransactionLineItem_Carrier Carrier_Id->[Insurance].[Carrier].[Id]\nPage 1116 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

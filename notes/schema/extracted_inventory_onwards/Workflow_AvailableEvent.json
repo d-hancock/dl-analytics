@@ -1,0 +1,11 @@
+{
+  "table_name": "Workflow.AvailableEvent",
+  "schema": "Workflow",
+  "table": "AvailableEvent",
+  "doc_page": 1322,
+  "pdf_page": 1320,
+  "raw_text": "[Workflow].[AvailableEvent].[Id]\nFK_EventSubscriber_DHSUser Subscriber_Id->[Employees].[Employee].[Id]\nPage 1324 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

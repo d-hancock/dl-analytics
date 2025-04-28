@@ -1,0 +1,14 @@
+{
+  "table_name": "Drug.SolubilityCurvePoint",
+  "schema": "Drug",
+  "table": "SolubilityCurvePoint",
+  "doc_page": 339,
+  "pdf_page": 340,
+  "raw_text": "[Drug].[SolubilityCurvePoint]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nSolubilityCurve_Id bigint 8 False\nCalcium numeric(19,5) 9 False\nPhosphate numeric(19,5) 9 False\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdate\ntime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_SolubilityCurvePoint Id True 90\nForeign Keys\nName Columns\nFK_SolubilityCurvePoint_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_SolubilityCurvePoint_SolubilityCurve SolubilityCurve_Id->[Drug].[SolubilityCurve].[Id]\nPage 339 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nSolubilityCurve_Id bigint 8 False\nCalcium numeric(19,5) 9 False\nPhosphate numeric(19,5) 9 False\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdate\ntime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_SolubilityCurvePoint Id True 90",
+  "fk_section": "Name Columns\nFK_SolubilityCurvePoint_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_SolubilityCurvePoint_SolubilityCurve SolubilityCurve_Id->[Drug].[SolubilityCurve].[Id]\nPage 339 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

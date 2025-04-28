@@ -1,0 +1,13 @@
+{
+  "table_name": "Lookups.AdjustmentCode",
+  "schema": "Lookups",
+  "table": "AdjustmentCode",
+  "doc_page": 533,
+  "pdf_page": 531,
+  "raw_text": "[Lookups].[AdjustmentCode]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId int 4 False 500001 - 1\nName varchar(255) 255 False\nDescription varchar(1000) 1000 True\nIsActive bit 1 False ((1))\nGLAccountNumber varchar(250) 250 True\nGLDepartmentNumber varchar(250) 250 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_AdjustmentCode Id True 80\nUQ_AdjustmentCodeName Name True 80\nPage 533 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId int 4 False 500001 - 1\nName varchar(255) 255 False\nDescription varchar(1000) 1000 True\nIsActive bit 1 False ((1))\nGLAccountNumber varchar(250) 250 True\nGLDepartmentNumber varchar(250) 250 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_AdjustmentCode Id True 80\nUQ_AdjustmentCodeName Name True 80\nPage 533 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

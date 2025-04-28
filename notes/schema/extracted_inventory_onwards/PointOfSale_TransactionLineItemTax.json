@@ -1,0 +1,14 @@
+{
+  "table_name": "PointOfSale.TransactionLineItemTax",
+  "schema": "PointOfSale",
+  "table": "TransactionLineItemTax",
+  "doc_page": 1120,
+  "pdf_page": 1118,
+  "raw_text": "[PointOfSale].[TransactionLineItemTax]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nTransactionLineItem_Id bigint 8 False\nTaxArea_Id bigint 8 False\nTaxPercentage numeric(19,5) 9 False ((0.0))\nExtractTax bit 1 False ((0))\nTaxOnCost bit 1 False ((0))\nBilledTax numeric(19,5) 9 False ((0.0))\nExpectedTax numeric(19,5) 9 False ((0.0))\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdat\netime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_TransactionLineItemTax Id True 80\nForeign Keys\nName Columns\nFK_TransactionLineItemTax_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_TransactionLineItemTax_ModifiedBy ModifiedBy->[Security].[DHSUser].[Id]\nFK_TransactionLineItemTax_RecStatusModifiedBy RecStatusModifiedBy->[Security].[DHSUser].[Id]\nFK_TransactionLineItemTax_TaxArea TaxArea_Id->[Pricing].[TaxArea].[Id]\nFK_TransactionLineItemTax_TransactionLineItem TransactionLineItem_Id->[PointOfSale].[TransactionLine-\nItem].[Id]\nPage 1120 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nTransactionLineItem_Id bigint 8 False\nTaxArea_Id bigint 8 False\nTaxPercentage numeric(19,5) 9 False ((0.0))\nExtractTax bit 1 False ((0))\nTaxOnCost bit 1 False ((0))\nBilledTax numeric(19,5) 9 False ((0.0))\nExpectedTax numeric(19,5) 9 False ((0.0))\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdat\netime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_TransactionLineItemTax Id True 80",
+  "fk_section": "Name Columns\nFK_TransactionLineItemTax_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_TransactionLineItemTax_ModifiedBy ModifiedBy->[Security].[DHSUser].[Id]\nFK_TransactionLineItemTax_RecStatusModifiedBy RecStatusModifiedBy->[Security].[DHSUser].[Id]\nFK_TransactionLineItemTax_TaxArea TaxArea_Id->[Pricing].[TaxArea].[Id]\nFK_TransactionLineItemTax_TransactionLineItem TransactionLineItem_Id->[PointOfSale].[TransactionLine-\nItem].[Id]\nPage 1120 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

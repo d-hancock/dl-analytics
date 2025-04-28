@@ -1,0 +1,11 @@
+{
+  "table_name": "PointOfSale.TransactionLineItemQuantityDeducted",
+  "schema": "PointOfSale",
+  "table": "TransactionLineItemQuantityDeducted",
+  "doc_page": 1118,
+  "pdf_page": 1117,
+  "raw_text": "TransactionLineItemQuantityDeducted_Quantity- QuantityDeducted_Id->[Inventory].[InventoryItemQuantity-\nDeducted Deducted].[Id]\nFK_TransactionLineItemQuantityDeducted_RecStatus- RecStatusModifiedBy->[Security].[DHSUser].[Id]\nModifiedBy\nFK_TransactionLineItemQuantityDeducted_Transaction- TransactionLineItem_Id->[PointOfSale].[TransactionLine-\nLineItem Item].[Id]\nPage 1119 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

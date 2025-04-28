@@ -1,0 +1,13 @@
+{
+  "table_name": "Lookups.DIFNutritionMethodOfAdministration",
+  "schema": "Lookups",
+  "table": "DIFNutritionMethodOfAdministration",
+  "doc_page": 675,
+  "pdf_page": 673,
+  "raw_text": "[Lookups].[DIFNutritionMethodOfAdministration]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId int 4 False 500001 - 1\nName varchar(255) 255 False\nDescription varchar(1000) 1000 True\nIsActive bit 1 False ((1))\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_DIFNutritionMethodOfAdministration Id True 80\nUQ_DIFNutritionMethodOfAdministrationName Name True 80\nPage 675 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId int 4 False 500001 - 1\nName varchar(255) 255 False\nDescription varchar(1000) 1000 True\nIsActive bit 1 False ((1))",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_DIFNutritionMethodOfAdministration Id True 80\nUQ_DIFNutritionMethodOfAdministrationName Name True 80\nPage 675 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

@@ -1,0 +1,14 @@
+{
+  "table_name": "Common.Entity",
+  "schema": "Common",
+  "table": "Entity",
+  "doc_page": 237,
+  "pdf_page": 239,
+  "raw_text": "[Common].[Entity]\nColumns\nKey Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nEntityType_Id int 4 False\nName varchar(100) 100 False\nFullName varchar(200) 200 False\nIndexes\nKey Name Key Columns Unique Page Locks Fill Factor\nPK_Entity Id True 80\nIdx_Ent_EntNm Id, Name False 80\nForeign Keys\nName Columns\nFK_Entity_EntityType EntityType_Id->[Lookups].[EntityType].[Id]\nPFK_Entity_Party Id->[Common].[Party].[Id]\nPage 237 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Key Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nEntityType_Id int 4 False\nName varchar(100) 100 False\nFullName varchar(200) 200 False",
+  "index_section": "Key Name Key Columns Unique Page Locks Fill Factor\nPK_Entity Id True 80\nIdx_Ent_EntNm Id, Name False 80",
+  "fk_section": "Name Columns\nFK_Entity_EntityType EntityType_Id->[Lookups].[EntityType].[Id]\nPFK_Entity_Party Id->[Common].[Party].[Id]\nPage 237 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

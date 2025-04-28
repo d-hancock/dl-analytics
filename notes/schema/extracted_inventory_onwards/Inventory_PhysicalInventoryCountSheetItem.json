@@ -1,0 +1,11 @@
+{
+  "table_name": "Inventory.PhysicalInventoryCountSheetItem",
+  "schema": "Inventory",
+  "table": "PhysicalInventoryCountSheetItem",
+  "doc_page": 515,
+  "pdf_page": 515,
+  "raw_text": "[Inventory].[PhysicalInventoryCountSheetItem].[Id]\nPage 517 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

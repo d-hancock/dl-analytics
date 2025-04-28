@@ -1,0 +1,14 @@
+{
+  "table_name": "Auditing.DeaLog",
+  "schema": "Auditing",
+  "table": "DeaLog",
+  "doc_page": 81,
+  "pdf_page": 83,
+  "raw_text": "[Auditing].[DeaLog]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Identity\nId bigint 8 False 500001 - 1\nEventDate datetime2 8 True\nEmployee_Id bigint 8 True\nEmployeeName varchar(100) 100 True\nMessage varchar(max) max True\nDEAAuditLogEventType_Id int 4 True\nSessionType_Id int 4 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_DeaLog Id True 80\nIX_Auditing_DeaLog_DEAAuditLogEventType_Id_DEAAudit- DEAAuditLog-\nLogEventType EventType_Id\nIX_Auditing_DeaLog_Employee_Id_Employee Employee_Id\nIX_Auditing_DeaLog_SessionType_Id_SessionType SessionType_-\nId\nForeign Keys\nName Columns\nFK_DeaLog_DEAAuditLogEventType DEAAuditLogEventType_Id->[Lookups].[DEAAuditLogEvent-\nType].[Id]\nFK_DeaLog_Employee Employee_Id->[Employees].[Employee].[Id]\nFK_DeaLog_SessionType SessionType_Id->[Lookups].[SessionType].[Id]\nPage 81 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Identity\nId bigint 8 False 500001 - 1\nEventDate datetime2 8 True\nEmployee_Id bigint 8 True\nEmployeeName varchar(100) 100 True\nMessage varchar(max) max True\nDEAAuditLogEventType_Id int 4 True\nSessionType_Id int 4 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_DeaLog Id True 80\nIX_Auditing_DeaLog_DEAAuditLogEventType_Id_DEAAudit- DEAAuditLog-\nLogEventType EventType_Id\nIX_Auditing_DeaLog_Employee_Id_Employee Employee_Id\nIX_Auditing_DeaLog_SessionType_Id_SessionType SessionType_-\nId",
+  "fk_section": "Name Columns\nFK_DeaLog_DEAAuditLogEventType DEAAuditLogEventType_Id->[Lookups].[DEAAuditLogEvent-\nType].[Id]\nFK_DeaLog_Employee Employee_Id->[Employees].[Employee].[Id]\nFK_DeaLog_SessionType SessionType_Id->[Lookups].[SessionType].[Id]\nPage 81 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

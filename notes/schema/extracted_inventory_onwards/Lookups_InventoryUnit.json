@@ -1,0 +1,14 @@
+{
+  "table_name": "Lookups.InventoryUnit",
+  "schema": "Lookups",
+  "table": "InventoryUnit",
+  "doc_page": 781,
+  "pdf_page": 779,
+  "raw_text": "[Lookups].[InventoryUnit]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId int 4 False 500001 -\n1\nX12UnitCode_Id int 4 True\nName varchar(255) 255 False\n(2)\nDescription varchar(1000) 1000 True\nRecStatus bit 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIsActive bit 1 False ((1))\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_InventoryUnit Id True 80\nIX_InventoryUnit_X12UnitCode_Id_Name X12UnitCode_- True 80\nId, Name\nUQ_InventoryUnitName Name True 80\nForeign Keys\nName Columns\nFK_InventoryUnit_X12UnitOrBasisForMeasurementCode X12UnitCode_Id->[Lookups].[X12UnitOrBasisFor-\nMeasurementCode].[Id]\nPage 781 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId int 4 False 500001 -\n1\nX12UnitCode_Id int 4 True\nName varchar(255) 255 False\n(2)\nDescription varchar(1000) 1000 True\nRecStatus bit 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIsActive bit 1 False ((1))",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_InventoryUnit Id True 80\nIX_InventoryUnit_X12UnitCode_Id_Name X12UnitCode_- True 80\nId, Name\nUQ_InventoryUnitName Name True 80",
+  "fk_section": "Name Columns\nFK_InventoryUnit_X12UnitOrBasisForMeasurementCode X12UnitCode_Id->[Lookups].[X12UnitOrBasisFor-\nMeasurementCode].[Id]\nPage 781 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

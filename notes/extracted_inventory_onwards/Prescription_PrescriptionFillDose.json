@@ -1,0 +1,11 @@
+{
+  "table_name": "Prescription.PrescriptionFillDose",
+  "schema": "Prescription",
+  "table": "PrescriptionFillDose",
+  "doc_page": 1158,
+  "pdf_page": 1157,
+  "raw_text": "[Prescription].[PrescriptionFillDose].[Id]\nFK_PrescriptionFillDose_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_PrescriptionFillDose_ModifiedBy ModifiedBy->[Security].[DHSUser].[Id]\nFK_PrescriptionFillDose_PatientOrderItem PatientOrderItem_Id->[Prescription].[PatientOrder-\nItem].[Id]\nFK_PrescriptionFillDose_PrescriptionFill PrescriptionFill_Id->[Prescription].[PrescriptionFill].[Id]\nFK_PrescriptionFillDose_RecStatusModifiedBy RecStatusModifiedBy->[Security].[DHSUser].[Id]\nPage 1159 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

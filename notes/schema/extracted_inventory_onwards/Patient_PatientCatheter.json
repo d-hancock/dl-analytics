@@ -1,0 +1,11 @@
+{
+  "table_name": "Patient.PatientCatheter",
+  "schema": "Patient",
+  "table": "PatientCatheter",
+  "doc_page": 1089,
+  "pdf_page": 1088,
+  "raw_text": "PatientCatheter_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_PatientCatheter_InsertionSite InsertionSite_Id->[Lookups].[InsertionSite].[Id]\nFK_PatientCatheter_Manufacturer Manufacturer_Id->[Lookups].[Manufacturer].[Id]\nFK_PatientCatheter_ModifiedBy ModifiedBy->[Security].[DHSUser].[Id]\nFK_PatientCatheter_Patient Patient_Id->[Patient].[Patient].[Id]\nFK_PatientCatheter_RecStatusModifiedBy RecStatusModifiedBy->[Security].[DHSUser].[Id]\nPage 1090 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

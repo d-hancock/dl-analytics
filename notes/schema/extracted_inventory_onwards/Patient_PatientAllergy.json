@@ -1,0 +1,11 @@
+{
+  "table_name": "Patient.PatientAllergy",
+  "schema": "Patient",
+  "table": "PatientAllergy",
+  "doc_page": 1087,
+  "pdf_page": 1086,
+  "raw_text": "PatientAllergy_Patient Patient_Id->[Patient].[Patient].[Id]\nFK_PatientAllergy_RecStatusModifiedBy RecStatusModifiedBy->[Security].[DHSUser].[Id]\nFK_UserDefinedAllergy_Patient UserDefinedAllergy_Id->[Lookups].[UserDefinedAllergy].[Id]\nPage 1088 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

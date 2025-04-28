@@ -1,0 +1,11 @@
+{
+  "table_name": "Prescription.PrescriptionFillTPNItem",
+  "schema": "Prescription",
+  "table": "PrescriptionFillTPNItem",
+  "doc_page": 1166,
+  "pdf_page": 1165,
+  "raw_text": "PrescriptionFillTPNItem_RecStatusModifiedBy RecStatusModifiedBy->[Security].[DHSUser].[Id]\nFK_PrescriptionFillTPNItem_TPNAmountMultiplier_Id TPNAmountMultiplier_Id->[Lookups].[TPNQualifier].[Id]\nFK_PrescriptionFillTPNItem_TPNUoM_Id TPNUoM_Id->[Lookups].[TPNUoM].[Id]\nPage 1167 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

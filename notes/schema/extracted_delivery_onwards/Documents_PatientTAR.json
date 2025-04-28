@@ -1,0 +1,14 @@
+{
+  "table_name": "Documents.PatientTAR",
+  "schema": "Documents",
+  "table": "PatientTAR",
+  "doc_page": 325,
+  "pdf_page": 326,
+  "raw_text": "[Documents].[PatientTAR]\nColumns\nKey Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nTARTypeOfService_Id int 4 True\nTARPatientStatus_Id int 4 True\nIsPatientMedicareEligible bit 1 False\nIsRequestRetroactive bit 1 False\nMediCalCheckDigit char(1) 1 True\nPatientIdNumber varchar(50) 50 True\nControlNumber varchar(50) 50 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_PatientTAR Id True 80\nForeign Keys\nName Columns\nfk_PatientTAR_PatientSupportingDocument Id->[Documents].[PatientSupportingDocument].[Id]\nfk_PatientTAR_TARPatientStatus TARPatientStatus_Id->[Lookups].[TARPatientStatus].[Id]\nfk_PatientTAR_TARTypeOfService TARTypeOfService_Id->[Lookups].[TARTypeOf-\nService].[Id]\nPage 325 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Key Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nTARTypeOfService_Id int 4 True\nTARPatientStatus_Id int 4 True\nIsPatientMedicareEligible bit 1 False\nIsRequestRetroactive bit 1 False\nMediCalCheckDigit char(1) 1 True\nPatientIdNumber varchar(50) 50 True\nControlNumber varchar(50) 50 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_PatientTAR Id True 80",
+  "fk_section": "Name Columns\nfk_PatientTAR_PatientSupportingDocument Id->[Documents].[PatientSupportingDocument].[Id]\nfk_PatientTAR_TARPatientStatus TARPatientStatus_Id->[Lookups].[TARPatientStatus].[Id]\nfk_PatientTAR_TARTypeOfService TARTypeOfService_Id->[Lookups].[TARTypeOf-\nService].[Id]\nPage 325 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

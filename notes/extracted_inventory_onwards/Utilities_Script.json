@@ -1,0 +1,13 @@
+{
+  "table_name": "Utilities.Script",
+  "schema": "Utilities",
+  "table": "Script",
+  "doc_page": 1307,
+  "pdf_page": 1305,
+  "raw_text": "ScriptPoint]\nColumns\nKey Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nName varchar(50) 50 False\nDescription varchar(255) 255 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_ScriptPoint Id True 80\nPage 1309 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Key Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nName varchar(50) 50 False\nDescription varchar(255) 255 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_ScriptPoint Id True 80\nPage 1309 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

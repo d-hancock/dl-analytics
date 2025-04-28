@@ -1,0 +1,14 @@
+{
+  "table_name": "Security.AuthorizationStore",
+  "schema": "Security",
+  "table": "AuthorizationStore",
+  "doc_page": 1250,
+  "pdf_page": 1248,
+  "raw_text": "AuthorizationStoreGroupMember]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId int 4 False 500001 -\n1\nAuthorizationStoreGroup_Id int 4 False\nDomain varchar(50) 50 False\nMemberName varchar(50) 50 False\nobjectSid uniqueidentifier 16 False\nWhereDefined int 4 False\nIsMember bit 1 False\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcda\ntetime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_AuthorizationStoreGroupMember Id True 80\nIX_AuthorizationStoreGroupMember_StoreGroupId_object- Authorization- 90\nSid StoreGroup_Id,\nobjectSid\nForeign Keys\nName Columns\nFK_AuthorizationStoreGroupMember_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_AuthorizationStoreGroupMember_StoreGroup AuthorizationStoreGroup_Id->[Security].[Authorization-\nStoreGroup].[Id]\nPage 1252 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId int 4 False 500001 -\n1\nAuthorizationStoreGroup_Id int 4 False\nDomain varchar(50) 50 False\nMemberName varchar(50) 50 False\nobjectSid uniqueidentifier 16 False\nWhereDefined int 4 False\nIsMember bit 1 False\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcda\ntetime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_AuthorizationStoreGroupMember Id True 80\nIX_AuthorizationStoreGroupMember_StoreGroupId_object- Authorization- 90\nSid StoreGroup_Id,\nobjectSid",
+  "fk_section": "Name Columns\nFK_AuthorizationStoreGroupMember_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_AuthorizationStoreGroupMember_StoreGroup AuthorizationStoreGroup_Id->[Security].[Authorization-\nStoreGroup].[Id]\nPage 1252 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

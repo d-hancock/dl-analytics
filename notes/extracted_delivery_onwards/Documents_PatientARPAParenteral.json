@@ -1,0 +1,14 @@
+{
+  "table_name": "Documents.PatientARPAParenteral",
+  "schema": "Documents",
+  "table": "PatientARPAParenteral",
+  "doc_page": 310,
+  "pdf_page": 311,
+  "raw_text": "[Documents].[PatientARPAParenteral]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls\nId bigint 8 False\nAminoAcId numeric(19,5) 9 True\nCalcium numeric(19,5) 9 True\nDextrose numeric(19,5) 9 True\nDextroseConcentration numeric(19,5) 9 True\nLipIds numeric(19,5) 9 True\nLipIdsConcentration numeric(19,5) 9 True\nMagnesium numeric(19,5) 9 True\nPotassium numeric(19,5) 9 True\nProtein numeric(19,5) 9 True\nSodium numeric(19,5) 9 True\nTotalVolume numeric(19,5) 9 True\nOther varchar(100) 100 True\nEnteral_ARPAFrequency_Id int 4 True\nEnteral_OtherFrequency varchar(100) 100 True\nParenteral_ARPAFrequency_Id int 4 True\nParenteral_OtherFrequency varchar(100) 100 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_PatientARPAParenteral Id True 80\nForeign Keys\nName Columns\nfk_PatientARPAParenteral_Enteral_ARPAFrequency Enteral_ARPAFrequency_Id-\n>[Lookups].[ARPAFrequency].[Id]\nfk_PatientARPAParenteral_Parenteral_ARPAFrequency Parenteral_ARPAFrequency_Id-\n>[Lookups].[ARPAFrequency].[Id]\nfk_PatientARPAParenteral_PatientARPA Id->[Documents].[PatientARPA].[Id]\nPage 310 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls\nId bigint 8 False\nAminoAcId numeric(19,5) 9 True\nCalcium numeric(19,5) 9 True\nDextrose numeric(19,5) 9 True\nDextroseConcentration numeric(19,5) 9 True\nLipIds numeric(19,5) 9 True\nLipIdsConcentration numeric(19,5) 9 True\nMagnesium numeric(19,5) 9 True\nPotassium numeric(19,5) 9 True\nProtein numeric(19,5) 9 True\nSodium numeric(19,5) 9 True\nTotalVolume numeric(19,5) 9 True\nOther varchar(100) 100 True\nEnteral_ARPAFrequency_Id int 4 True\nEnteral_OtherFrequency varchar(100) 100 True\nParenteral_ARPAFrequency_Id int 4 True\nParenteral_OtherFrequency varchar(100) 100 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_PatientARPAParenteral Id True 80",
+  "fk_section": "Name Columns\nfk_PatientARPAParenteral_Enteral_ARPAFrequency Enteral_ARPAFrequency_Id-\n>[Lookups].[ARPAFrequency].[Id]\nfk_PatientARPAParenteral_Parenteral_ARPAFrequency Parenteral_ARPAFrequency_Id-\n>[Lookups].[ARPAFrequency].[Id]\nfk_PatientARPAParenteral_PatientARPA Id->[Documents].[PatientARPA].[Id]\nPage 310 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

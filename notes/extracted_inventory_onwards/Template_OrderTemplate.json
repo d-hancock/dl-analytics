@@ -1,0 +1,11 @@
+{
+  "table_name": "Template.OrderTemplate",
+  "schema": "Template",
+  "table": "OrderTemplate",
+  "doc_page": 1271,
+  "pdf_page": 1269,
+  "raw_text": "[Template].[OrderTemplate].[Id]\nFK_OrderTemplateAncillaryOrder_OrderTemplate_- Parent_Id->[Template].[OrderTemplate].[Id]\nParent\nPage 1273 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

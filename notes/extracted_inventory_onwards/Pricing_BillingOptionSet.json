@@ -1,0 +1,11 @@
+{
+  "table_name": "Pricing.BillingOptionSet",
+  "schema": "Pricing",
+  "table": "BillingOptionSet",
+  "doc_page": 1178,
+  "pdf_page": 1179,
+  "raw_text": "[Pricing].[BillingOptionSet].[Id]\nfk_BillingOptionsHcpcRule_Contract BillingOptionsModel_Id->[Pricing].[BillingOptions-\nModel].[Id]\nFK_BillingOptionsHcpcRule_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_BillingOptionsHcpcRule_Hcpc Hcpc_Id->[Lookups].[HcPc].[Id]\nPage 1182 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

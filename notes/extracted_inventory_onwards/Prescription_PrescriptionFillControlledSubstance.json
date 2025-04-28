@@ -1,0 +1,11 @@
+{
+  "table_name": "Prescription.PrescriptionFillControlledSubstance",
+  "schema": "Prescription",
+  "table": "PrescriptionFillControlledSubstance",
+  "doc_page": 1155,
+  "pdf_page": 1154,
+  "raw_text": "PrescriptionFillControlledSubstance_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_PrescriptionFillControlledSubstance_DosageCode DosageCode_Id->[Lookups].[ControlledSubstance-\nDosageCode].[Id]\nFK_PrescriptionFillControlledSubstance_licenseQualfier PickupLicenseQualifier_Id->[Lookups].[License-\nQualifier].[Id]\nFK_PrescriptionFillControlledSubstance_ModifiedBy ModifiedBy->[Security].[DHSUser].[Id]\nFK_PrescriptionFillControlledSubstance_PartialFill- PartialFillIndicator_Id->[Lookups].[PartialFillIndicator].[Id]\nIndicator\nFK_PrescriptionFillControlledSubstance_PatientLocation PatientLocation_Id->[Lookups].[PatientLocation].[Id]\nFK_PrescriptionFillControlledSubstance_PickupQualifier PickupQualifier_Id->[Lookups].[PickupQualifier].[Id]\nFK_PrescriptionFillControlledSubstance_PlanFor- PlanForPayment_Id->[Lookups].[PlanForPayment].[Id]\nPayment\nFK_PrescriptionFillControlledSubstance_PrescriptionFill Id->[Prescription].[PrescriptionFill].[Id]\nFK_PrescriptionFillControlledSubstance_Prescription- PrescriptionTransferFormat_Id->[Lookups].[Prescription-\nTransferFormat TransferFormat].[Id]\nFK_PrescriptionFillControlledSubstance_RecStatus- RecStatusModifiedBy->[Security].[DHSUser].[Id]\nModifiedBy\nFK_PrescriptionFillControlledSubstance_RelationTo- PickupRelationToPatient_Id->[Lookups].[Controlled-\nPatient SubstanceRelationshipType].[Id]\nFK_PrescriptionFillControlledSubstance_SpeciesCode SpeciesCode_Id->[Lookups].[SpeciesCode].[Id]\nFK_PrescriptionFillControlledSubstance_State PickupLicenseState_Id->[Lookups].[State].[Id]\nPage 1156 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

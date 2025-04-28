@@ -1,0 +1,14 @@
+{
+  "table_name": "Inventory.Location",
+  "schema": "Inventory",
+  "table": "Location",
+  "doc_page": 507,
+  "pdf_page": 507,
+  "raw_text": "[Inventory].[Location]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nName varchar(255) 255 False\nDescription varchar(1000) 1000 False\nLocationType_Id int 4 False\nParentLocation_Id bigint 8 False\nRootLocation_Id bigint 8 False\nAddress_Id bigint 8 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdat\netime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_Location Id True 80\nIDX_Location_Root_Parent RootLocation_Id, 80\nParentLocation_Id\nForeign Keys\nName Columns\nFK_Location_Address Address_Id->[Common].[Address].[Id]\nFK_Location_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_Location_Location ParentLocation_Id->[Inventory].[Location].[Id]\nFK_Location_LocationType LocationType_Id->[Lookups].[LocationType].[Id]\nFK_Location_RootLocation RootLocation_Id->[Inventory].[Location].[Id]\nPage 507 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nName varchar(255) 255 False\nDescription varchar(1000) 1000 False\nLocationType_Id int 4 False\nParentLocation_Id bigint 8 False\nRootLocation_Id bigint 8 False\nAddress_Id bigint 8 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdat\netime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_Location Id True 80\nIDX_Location_Root_Parent RootLocation_Id, 80\nParentLocation_Id",
+  "fk_section": "Name Columns\nFK_Location_Address Address_Id->[Common].[Address].[Id]\nFK_Location_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_Location_Location ParentLocation_Id->[Inventory].[Location].[Id]\nFK_Location_LocationType LocationType_Id->[Lookups].[LocationType].[Id]\nFK_Location_RootLocation RootLocation_Id->[Inventory].[Location].[Id]\nPage 507 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

@@ -1,6 +1,74 @@
 #!/usr/bin/env python3
-# filepath: /home/dale/development/dl-analytics/notes/extract.py
-# Purpose: Extract table column definitions from CareTend Data Dictionary PDF
+# =================================================================================
+# CARETEND OLTP DATABASE TABLE EXTRACTOR
+# =================================================================================
+# Filename: extract.py
+# Location: /home/dale/development/dl-analytics/notes/extract.py
+# 
+# Purpose: 
+#   Extract and display table column definitions from the CareTend Data Dictionary PDF.
+#   This tool helps developers understand source table structures when writing SQL queries
+#   against the OLTP database.
+#
+# OVERVIEW:
+# ---------
+# This script extracts table definitions from the CareTend Data Dictionary PDF
+# and displays column information (names, data types, nullability, keys) for a specified
+# table. It uses a cache to improve performance for repeated lookups and can export
+# all table definitions to a CSV file.
+#
+# REQUIREMENTS:
+# ------------
+# - Python 3.6+
+# - PyPDF2 library (pip install PyPDF2)
+# - "CareTend Data Dictionary OLTP DB.pdf" in the same directory as this script
+# - "all_table_definitions.csv" (pre-extracted table definitions)
+#
+# USAGE EXAMPLES:
+# --------------
+# 1. Extract definition for a specific table:
+#    python extract.py "[Patient].[Patient]"
+#    python extract.py "[Billing].[Claim]"
+#
+# 2. Enable debug output for more detailed information:
+#    python extract.py "[Patient].[Patient]" --debug
+#
+# 3. List all tables found in the PDF:
+#    python extract.py --list
+#
+# 4. Export all table definitions to CSV:
+#    python extract.py --export
+#    python extract.py --export custom_output.csv
+#
+# 5. Process multiple tables from a text file:
+#    python extract.py --process-list tables.txt
+#    (where tables.txt contains one table name per line)
+#
+# INTEGRATING WITH SQL DEVELOPMENT:
+# -------------------------------
+# When working with SQL files that reference OLTP tables:
+# 1. Identify table names in your SQL (usually after FROM or JOIN)
+# 2. Run: python notes/extract.py "[Schema].[Table]"
+# 3. Use the column definitions to ensure correct field references and join conditions
+#
+# FEATURES:
+# --------
+# - Uses pre-extracted table definitions from all_table_definitions.csv by default
+# - Falls back to scanning the PDF if a table is not found in pre-extracted definitions
+# - Supports both bracketed "[Schema].[Table]" and unbracketed "Schema.Table" formats
+# - Extracts tables from TOC for more accurate lookup
+# - Export all definitions to CSV for offline reference
+#
+# TROUBLESHOOTING:
+# --------------
+# - If "PDF not found" error occurs, ensure the PDF is in the notes directory
+# - If a table definition isn't found:
+#   - Try with and without brackets: "[Schema].[Table]" vs "Schema.Table"
+#   - Check --list output to see all available tables
+#   - Refer to the all_table_definitions.csv file for pre-extracted definitions
+#
+# =================================================================================
+
 import re
 import sys
 import PyPDF2
@@ -15,6 +83,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PDF = os.path.join(SCRIPT_DIR, PDF_FILENAME)
 PAGE_OFFSET = 2  # PDF page 3 corresponds to document page 1 (offset of 2)
 CACHE_FILE = os.path.join(SCRIPT_DIR, "table_definitions_cache.csv")
+ALL_DEFINITIONS_FILE = os.path.join(SCRIPT_DIR, "all_table_definitions.csv")  # Pre-extracted definitions
 
 def find_table_of_contents(reader):
     """Find and parse the Table of Contents to get table names and their page numbers"""
@@ -154,54 +223,222 @@ def save_to_cache(table_name, page_num, definition):
         return False
 
 def extract_table_definition(reader, page_num):
-    """Extract the column definition from a specific page"""
+    """Extract the complete table definition from a page including columns, indexes and foreign keys"""
     if page_num >= len(reader.pages):
         return None
     
+    # Get initial page text
     text = reader.pages[page_num].extract_text() or ""
     lines = text.splitlines()
     
-    # Find column header line (e.g., "Key Name Data Type...")
-    column_section = []
-    found_header = False
+    # We'll rebuild our content with clear section demarcation
+    all_content = []
     
-    for i, line in enumerate(lines):
-        if "Key" in line and "Name" in line and ("Data Type" in line or "DataType" in line):
-            found_header = True
-            column_section.append(line)
-            
-            # Get the lines after the header
-            j = i + 1
-            while j < len(lines) and len(column_section) < 30:
-                if lines[j].strip():
-                    column_section.append(lines[j].strip())
-                j += 1
+    # Try to find the table name first (in bracket notation)
+    table_name = None
+    for i, line in enumerate(lines[:20]):  # Look in first 20 lines
+        line = line.strip()
+        # Match exactly [Schema].[Table] pattern with nothing else on the line
+        if re.match(r'^\[\w+\]\.\[\w+\]$', line):
+            table_name = line
+            all_content.append(table_name)
             break
     
-    if found_header:
-        return "\n".join(column_section)
+    # If we couldn't find a table name, this might not be a valid table page
+    if not table_name and page_num < len(reader.pages) - 1:
+        # Check next page for the table name
+        next_page_text = reader.pages[page_num + 1].extract_text() or ""
+        next_page_lines = next_page_text.splitlines()
+        for line in next_page_lines[:10]:
+            line = line.strip()
+            if re.match(r'^\[\w+\]\.\[\w+\]$', line):
+                table_name = line
+                all_content.append(table_name)
+                break
     
-    # If we didn't find a standard header, try to get any relevant content
-    for pattern in ["Columns", "Column", "Fields", "Field"]:
-        if pattern in text:
-            idx = text.find(pattern)
-            if idx > 0:
-                return text[idx:idx+1000]  # Return a chunk of text after the pattern
+    # If we still don't have a table name, use a generic approach
+    if not table_name:
+        for i, line in enumerate(lines[:30]):
+            if re.search(r'\[\w+\]\.\[\w+\]', line):
+                match = re.search(r'\[\w+\]\.\[\w+\]', line)
+                table_name = match.group(0)
+                all_content.append(table_name)
+                break
+    
+    # Define section markers and their content
+    sections = {
+        "columns": {"marker": r'^Columns$', "content": [], "found": False},
+        "indexes": {"marker": r'^Indexes$', "content": [], "found": False},
+        "foreign_keys": {"marker": r'^Foreign Keys$', "content": [], "found": False}
+    }
+    
+    # Process up to 3 pages looking for and collecting our sections
+    max_pages = 3
+    for page_offset in range(max_pages):
+        current_page = page_num + page_offset
+        if current_page >= len(reader.pages):
+            break
+            
+        page_text = reader.pages[current_page].extract_text() or ""
+        page_lines = page_text.splitlines()
+        
+        # Track which section we're currently in while processing this page
+        current_section = None
+        
+        # Process each line on this page
+        for line in page_lines:
+            line = line.strip()
+            if not line:
+                continue
+                
+            # Check if this line is a section marker
+            if re.match(r'^Columns$', line):
+                current_section = "columns"
+                sections[current_section]["found"] = True
+                continue
+                
+            elif re.match(r'^Indexes$', line):
+                current_section = "indexes"
+                sections[current_section]["found"] = True
+                continue
+                
+            elif re.match(r'^Foreign Keys$', line):
+                current_section = "foreign_keys"
+                sections[current_section]["found"] = True
+                continue
+            
+            # Add content to the current section if we're in one
+            if current_section:
+                # Skip page numbers and copyright notices
+                if re.match(r'^Page \d+ of \d+$', line):
+                    continue
+                if "Copyright" in line:
+                    continue
+                if "CareTend OLTP DB Data Dictionary" in line:
+                    continue
+                    
+                # Check if this line is the start of a new table - stop collecting if it is
+                if re.match(r'^\[\w+\]\.\[\w+\]$', line) and line != table_name:
+                    # We've reached a new table
+                    break
+                    
+                sections[current_section]["content"].append(line)
+        
+        # Check if we've found all sections - if so, we can stop processing pages
+        if all(section["found"] for section in sections.values()):
+            # If we have all sections, check if each has enough content
+            if (len(sections["columns"]["content"]) > 5 and 
+                len(sections["indexes"]["content"]) > 0 and 
+                len(sections["foreign_keys"]["content"]) > 0):
+                break
+    
+    # Build the final output with clear section demarcation
+    if table_name:
+        all_content.append("")  # Add a blank line after table name
+    
+    if sections["columns"]["found"]:
+        all_content.append("Columns")
+        all_content.extend(sections["columns"]["content"])
+        all_content.append("")  # Add a blank line after section
+    
+    if sections["indexes"]["found"]:
+        all_content.append("Indexes")
+        all_content.extend(sections["indexes"]["content"])
+        all_content.append("")
+    
+    if sections["foreign_keys"]["found"]:
+        all_content.append("Foreign Keys")
+        all_content.extend(sections["foreign_keys"]["content"])
+    
+    # Return the result if we have content
+    if all_content:
+        return "\n".join(all_content)
+    
+    # Fall back to basic extraction if structured approach failed
+    if "Columns" in text:
+        idx = text.find("Columns")
+        if idx >= 0:
+            return text[idx:idx+2000]  # Return a chunk of text after finding "Columns"
     
     return None
 
-def grab(table, debug=False):
+def load_all_table_definitions():
+    """Load pre-extracted table definitions from all_table_definitions.csv file"""
+    definitions = {}
+    if not os.path.exists(ALL_DEFINITIONS_FILE):
+        print(f"Warning: Pre-extracted definitions file '{ALL_DEFINITIONS_FILE}' not found")
+        return definitions
+    
+    try:
+        with open(ALL_DEFINITIONS_FILE, 'r', newline='', encoding='utf-8') as csvfile:
+            reader = csv.reader(csvfile)
+            header = next(reader)  # Skip header
+            for row in reader:
+                if len(row) >= 3:
+                    table_name = row[0]
+                    page_num = int(row[1])
+                    definition = row[2]
+                    definitions[table_name.lower()] = (table_name, page_num, definition)
+        print(f"Loaded {len(definitions)} pre-extracted table definitions from {os.path.basename(ALL_DEFINITIONS_FILE)}")
+        return definitions
+    except Exception as e:
+        print(f"Error loading pre-extracted definitions: {e}")
+        return {}
+
+def grab(table, debug=False, force=False):
     """
     Extract column information for a specific table from the PDF.
     
     Args:
         table (str): The table name to search for (e.g. "[Utilities].[Date]")
         debug (bool): Whether to print debug information
+        force (bool): Whether to force extraction from PDF, bypassing cache
     
     Returns:
         bool: True if the table was found, False otherwise
     """
     print(f"Searching for table: {table}")
+    
+    # Skip cache and pre-extracted definitions if force is True
+    if not force:
+        # First check the pre-extracted definitions file (all_table_definitions.csv)
+        table_key = table.strip().lower()
+        all_definitions = load_all_table_definitions()
+        
+        # Try with brackets as provided
+        if table_key in all_definitions:
+            orig_name, page_num, definition = all_definitions[table_key]
+            print(f"Found table in pre-extracted definitions: {orig_name} (page {page_num+1})")
+            print(f"\n=== {orig_name} (page {page_num+1}) [PRE-EXTRACTED] ===")
+            print(definition)
+            return True
+        
+        # Try without brackets
+        table_key_no_brackets = table_key.replace('[', '').replace(']', '')
+        for stored_name, data in all_definitions.items():
+            stored_name_no_brackets = stored_name.replace('[', '').replace(']', '')
+            if table_key_no_brackets == stored_name_no_brackets:
+                orig_name, page_num, definition = data
+                print(f"Found table in pre-extracted definitions (without brackets): {orig_name} (page {page_num+1})")
+                print(f"\n=== {orig_name} (page {page_num+1}) [PRE-EXTRACTED] ===")
+                print(definition)
+                return True
+        
+        # Then check the cache
+        cache = load_cache()
+        if table_key in cache:
+            orig_name, page_num, definition = cache[table_key]
+            print(f"Found table in cache: {orig_name} (page {page_num+1})")
+            print(f"\n=== {orig_name} (page {page_num+1}) [CACHED] ===")
+            print(definition)
+            return True
+    
+    # Fall back to PDF extraction if table wasn't found in pre-extracted definitions or cache
+    # or if force=True was specified
+    if force:
+        print(f"Force flag specified, extracting directly from PDF...")
+    else:
+        print(f"Table not found in pre-extracted definitions or cache, attempting to extract from PDF...")
     
     # Check if PDF exists with better error messaging
     if not os.path.exists(PDF):
@@ -210,17 +447,6 @@ def grab(table, debug=False):
         print(f"Current working directory: {os.getcwd()}")
         print(f"Script directory: {SCRIPT_DIR}")
         return False
-    
-    # First check the cache
-    cache = load_cache()
-    table_key = table.strip().lower()
-    
-    if table_key in cache:
-        orig_name, page_num, definition = cache[table_key]
-        print(f"Found table in cache: {orig_name} (page {page_num+1})")
-        print(f"\n=== {orig_name} (page {page_num+1}) [CACHED] ===")
-        print(definition)
-        return True
     
     try:
         reader = PyPDF2.PdfReader(open(PDF, "rb"))
@@ -250,8 +476,9 @@ def grab(table, debug=False):
                         print(f"\n=== {found_table_name} (page {page_num+1}) ===")
                         print(definition)
                         
-                        # Save to cache
-                        save_to_cache(found_table_name, page_num, definition)
+                        # Save to cache (unless in force mode)
+                        if not force:
+                            save_to_cache(found_table_name, page_num, definition)
                         return True
         
         # Fall back to scanning the whole document if we didn't find it in TOC
@@ -286,8 +513,9 @@ def grab(table, debug=False):
                             print(f"\n=== {table} (page {p+1}) ===")
                             print(definition)
                             
-                            # Save to cache
-                            save_to_cache(table, p, definition)
+                            # Save to cache (unless in force mode)
+                            if not force:
+                                save_to_cache(table, p, definition)
                             return True
         
         print(f"No column information found for table '{table}'")
@@ -384,14 +612,16 @@ def process_table_list(file_path):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print(f"Usage: python {sys.argv[0]} <table_name> [--debug] [--list] [--export] [--process-list <file>]")
+        print(f"Usage: python {sys.argv[0]} <table_name> [--debug] [--force] [--list] [--export] [--process-list <file>]")
         print("  <table_name>: The name of the table to search for (e.g. \"[Utilities].[Date]\")")
         print("  --debug: Enable debug output")
+        print("  --force: Force extraction from PDF, bypassing cache and pre-extracted definitions")
         print("  --list: List tables found in the PDF")
         print("  --export: Export all table definitions to CSV")
         print("  --process-list <file>: Process a list of tables from a file (one table name per line)")
         print("Examples:")
         print("  python extract.py \"[Utilities].[Date]\" --debug")
+        print("  python extract.py \"[Patient].[PatientPolicy]\" --force")
         print("  python extract.py --list")
         print("  python extract.py --export")
         print("  python extract.py --process-list tables.txt")
@@ -420,7 +650,8 @@ if __name__ == "__main__":
             sys.exit(1)
         
     debug_mode = "--debug" in sys.argv
+    force_mode = "--force" in sys.argv
     tables = [arg for arg in sys.argv[1:] if not arg.startswith("--")]
     
     for t in tables:
-        grab(t, debug=debug_mode)
+        grab(t, debug=debug_mode, force=force_mode)

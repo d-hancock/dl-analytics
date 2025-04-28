@@ -1,0 +1,14 @@
+{
+  "table_name": "Documents.PatientNYPriorApproval",
+  "schema": "Documents",
+  "table": "PatientNYPriorApproval",
+  "doc_page": 315,
+  "pdf_page": 316,
+  "raw_text": "[Documents].[PatientNYPriorApproval]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls\nId bigint 8 False\nNYPriorApprovalRequestType_Id int 4 True\nNYPriorApprovalProfessionCode_Id int 4 True\nNYPriorApprovalOfficeCode_Id int 4 True\nLocationCode int 4 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_PatientNYPriorApproval Id True 80\nForeign Keys\nName Columns\nfk_PatientNYPriorApproval_NYPriorApprovalOfficeCode NYPriorApprovalOfficeCode_Id->[Lookups].[NYPrior-\nApprovalOfficeCode].[Id]\nfk_PatientNYPriorApproval_NYPriorApprovalProfession- NYPriorApprovalProfessionCode_Id->[Lookups].[NYPrior-\nCode ApprovalProfessionCode].[Id]\nfk_PatientNYPriorApproval_NYPriorApprovalRequest- NYPriorApprovalRequestType_Id->[Lookups].[NYPrior-\nType ApprovalRequestType].[Id]\nfk_PatientNYPriorApproval_PatientSupportingDocument Id->[Documents].[PatientSupportingDocument].[Id]\nPage 315 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls\nId bigint 8 False\nNYPriorApprovalRequestType_Id int 4 True\nNYPriorApprovalProfessionCode_Id int 4 True\nNYPriorApprovalOfficeCode_Id int 4 True\nLocationCode int 4 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_PatientNYPriorApproval Id True 80",
+  "fk_section": "Name Columns\nfk_PatientNYPriorApproval_NYPriorApprovalOfficeCode NYPriorApprovalOfficeCode_Id->[Lookups].[NYPrior-\nApprovalOfficeCode].[Id]\nfk_PatientNYPriorApproval_NYPriorApprovalProfession- NYPriorApprovalProfessionCode_Id->[Lookups].[NYPrior-\nCode ApprovalProfessionCode].[Id]\nfk_PatientNYPriorApproval_NYPriorApprovalRequest- NYPriorApprovalRequestType_Id->[Lookups].[NYPrior-\nType ApprovalRequestType].[Id]\nfk_PatientNYPriorApproval_PatientSupportingDocument Id->[Documents].[PatientSupportingDocument].[Id]\nPage 315 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

@@ -1,0 +1,14 @@
+{
+  "table_name": "Inventory.InventoryItemLocationQuantity",
+  "schema": "Inventory",
+  "table": "InventoryItemLocationQuantity",
+  "doc_page": 484,
+  "pdf_page": 484,
+  "raw_text": "[Inventory].[InventoryItemLocationQuantity]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 -\n1\nInventoryItemLocation_Id bigint 8 False\nLotInformation_Id bigint 8 True\nQuantity numeric(19,5) 9 False ((0))\nAvailableQuantity numeric(19,5) 9 False ((0))\nRequestedQuantity numeric(19,5) 9 False ((0))\nUnitsPerVial int 4 False ((0))\nIndexes\nKey Included\nKey Name Columns Columns Unique Fill Factor\npk_InventoryItemLocationQuantity Id True 80\nIdx_InvItmLcQt_InvItmLc_Qt InventoryItem- Available-\nLocation_Id Quantity,\nQuantity\nForeign Keys\nName Columns\nfk_InventoryItemLocationQty_InventoryItemLocation InventoryItemLocation_Id->[Inventory].[InventoryItem-\nLocation].[Id]\nFK_InventoryItemLocationQuantity_LotInformation LotInformation_Id->[Inventory].[LotInformation].[Id]\nPage 484 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 -\n1\nInventoryItemLocation_Id bigint 8 False\nLotInformation_Id bigint 8 True\nQuantity numeric(19,5) 9 False ((0))\nAvailableQuantity numeric(19,5) 9 False ((0))\nRequestedQuantity numeric(19,5) 9 False ((0))\nUnitsPerVial int 4 False ((0))",
+  "index_section": "Key Included\nKey Name Columns Columns Unique Fill Factor\npk_InventoryItemLocationQuantity Id True 80\nIdx_InvItmLcQt_InvItmLc_Qt InventoryItem- Available-\nLocation_Id Quantity,\nQuantity",
+  "fk_section": "Name Columns\nfk_InventoryItemLocationQty_InventoryItemLocation InventoryItemLocation_Id->[Inventory].[InventoryItem-\nLocation].[Id]\nFK_InventoryItemLocationQuantity_LotInformation LotInformation_Id->[Inventory].[LotInformation].[Id]\nPage 484 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

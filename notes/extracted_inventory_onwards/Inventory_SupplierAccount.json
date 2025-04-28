@@ -1,0 +1,11 @@
+{
+  "table_name": "Inventory.SupplierAccount",
+  "schema": "Inventory",
+  "table": "SupplierAccount",
+  "doc_page": 519,
+  "pdf_page": 519,
+  "raw_text": "[Inventory].[SupplierAccount].[Id]\nPage 521 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

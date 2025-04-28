@@ -1,0 +1,11 @@
+{
+  "table_name": "Prescription.PatientOrderItem",
+  "schema": "Prescription",
+  "table": "PatientOrderItem",
+  "doc_page": 1141,
+  "pdf_page": 1141,
+  "raw_text": "[Prescription].[PatientOrderItem].[Id]\nPage 1143 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

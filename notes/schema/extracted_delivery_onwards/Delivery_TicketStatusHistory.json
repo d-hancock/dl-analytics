@@ -1,0 +1,14 @@
+{
+  "table_name": "Delivery.TicketStatusHistory",
+  "schema": "Delivery",
+  "table": "TicketStatusHistory",
+  "doc_page": 294,
+  "pdf_page": 295,
+  "raw_text": "[Delivery].[TicketStatusHistory]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nTicket_Id bigint 8 False\n(3)\nStatus_Id int 4 False\n(3)\nStatusDate datetime2 8 False\n(2)\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdat\netime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\n(3)\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Included\nKey Name Columns Columns Unique Page Locks Fill Factor\nPK_TicketStatusHistory Id True 80\nIDX_TicketStatusHistory_Ticket- Status_Id, Ticket_Id,\nSearchBillingReview_Confirmed- RecStatus StatusDate\nDates\nIdx_TkStHs_TicketSearchBilling- Ticket_Id, RecStatus False\nReview Status_Id\nIdx_TkStHs_TkSt Ticket_Id, RecStatus False 80\nStatus_Id,\nStatusDate\nForeign Keys\nName Columns\nFK_TicketStatusHistory_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_TicketStatusHistory_Ticket Ticket_Id->[Delivery].[Ticket].[Id]\nFK_TicketStatusHistory_TicketStatus Status_Id->[Lookups].[TicketStatus].[Id]\nPage 294 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nTicket_Id bigint 8 False\n(3)\nStatus_Id int 4 False\n(3)\nStatusDate datetime2 8 False\n(2)\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdat\netime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\n(3)\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Included\nKey Name Columns Columns Unique Page Locks Fill Factor\nPK_TicketStatusHistory Id True 80\nIDX_TicketStatusHistory_Ticket- Status_Id, Ticket_Id,\nSearchBillingReview_Confirmed- RecStatus StatusDate\nDates\nIdx_TkStHs_TicketSearchBilling- Ticket_Id, RecStatus False\nReview Status_Id\nIdx_TkStHs_TkSt Ticket_Id, RecStatus False 80\nStatus_Id,\nStatusDate",
+  "fk_section": "Name Columns\nFK_TicketStatusHistory_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_TicketStatusHistory_Ticket Ticket_Id->[Delivery].[Ticket].[Id]\nFK_TicketStatusHistory_TicketStatus Status_Id->[Lookups].[TicketStatus].[Id]\nPage 294 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

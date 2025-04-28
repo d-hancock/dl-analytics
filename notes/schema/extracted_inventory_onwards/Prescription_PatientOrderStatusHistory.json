@@ -1,0 +1,14 @@
+{
+  "table_name": "Prescription.PatientOrderStatusHistory",
+  "schema": "Prescription",
+  "table": "PatientOrderStatusHistory",
+  "doc_page": 1146,
+  "pdf_page": 1144,
+  "raw_text": "[Prescription].[PatientOrderStatusHistory]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 -\n1\nPatientOrder_Id bigint 8 False\nPatientOrderWorkflowStatus_Id int 4 False\nStatusDate datetime2 8 False\nIsActive bit 1 False ((1))\nNotes varchar(max) max True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdat\netime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey\nKey Name Columns Unique Page Locks Fill Factor\nPK_PatientOrderStatusHistory Id True 80\nIdx_RxStHis_IsAcStat IsActive, False 80\nPatientOrder-\nWorkflow-\nStatus_Id\nForeign Keys\nName Columns\nFK_PatientOrderStatusHistory_PatientOrder PatientOrder_Id->[Prescription].[PatientOrder].[Id]\nFK_PatientOrderStatusHistory_PatientOrderWorkflow- PatientOrderWorkflowStatus_Id->[Lookups].[PatientOrder-\nStatus WorkflowStatus].[Id]\nPage 1146 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 -\n1\nPatientOrder_Id bigint 8 False\nPatientOrderWorkflowStatus_Id int 4 False\nStatusDate datetime2 8 False\nIsActive bit 1 False ((1))\nNotes varchar(max) max True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdat\netime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key\nKey Name Columns Unique Page Locks Fill Factor\nPK_PatientOrderStatusHistory Id True 80\nIdx_RxStHis_IsAcStat IsActive, False 80\nPatientOrder-\nWorkflow-\nStatus_Id",
+  "fk_section": "Name Columns\nFK_PatientOrderStatusHistory_PatientOrder PatientOrder_Id->[Prescription].[PatientOrder].[Id]\nFK_PatientOrderStatusHistory_PatientOrderWorkflow- PatientOrderWorkflowStatus_Id->[Lookups].[PatientOrder-\nStatus WorkflowStatus].[Id]\nPage 1146 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

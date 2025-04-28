@@ -1,0 +1,11 @@
+{
+  "table_name": "Lookups.ShippingMethod",
+  "schema": "Lookups",
+  "table": "ShippingMethod",
+  "doc_page": 972,
+  "pdf_page": 972,
+  "raw_text": "[Lookups].[ShippingMethod].[Id]\nPage 974 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

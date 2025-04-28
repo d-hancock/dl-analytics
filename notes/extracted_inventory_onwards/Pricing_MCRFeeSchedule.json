@@ -1,0 +1,11 @@
+{
+  "table_name": "Pricing.MCRFeeSchedule",
+  "schema": "Pricing",
+  "table": "MCRFeeSchedule",
+  "doc_page": 1198,
+  "pdf_page": 1196,
+  "raw_text": "MCRFeeSchedule_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_MCRFeeSchedule_Hcpc HcPc_Id->[Lookups].[HcPc].[Id]\nFK_MCRFeeSchedule_State State_Id->[Lookups].[State].[Id]\nPage 1199 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

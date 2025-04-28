@@ -1,0 +1,14 @@
+{
+  "table_name": "Employees.EmployeeSecure",
+  "schema": "Employees",
+  "table": "EmployeeSecure",
+  "doc_page": 355,
+  "pdf_page": 356,
+  "raw_text": "[Employees].[EmployeeSecure]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Default\nId bigint 8 False\nBasePay numeric(19,5) 9 True\nCurrentSalary numeric(19,5) 9 True\nBonus1 varchar(50) 50 True\nBonus2 varchar(50) 50 True\nIsCurrent bit 1 False ((0))\nIsExempt bit 1 False ((0))\nIsUsingHealthPlan bit 1 False ((0))\nHireDate datetime2 8 False\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_EmployeeSecure Id True 80\nForeign Keys\nName Columns\nPFK_EmployeeSecure_Employee Id->[Employees].[Employee].[Id]\nPage 355 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Default\nId bigint 8 False\nBasePay numeric(19,5) 9 True\nCurrentSalary numeric(19,5) 9 True\nBonus1 varchar(50) 50 True\nBonus2 varchar(50) 50 True\nIsCurrent bit 1 False ((0))\nIsExempt bit 1 False ((0))\nIsUsingHealthPlan bit 1 False ((0))\nHireDate datetime2 8 False",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_EmployeeSecure Id True 80",
+  "fk_section": "Name Columns\nPFK_EmployeeSecure_Employee Id->[Employees].[Employee].[Id]\nPage 355 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

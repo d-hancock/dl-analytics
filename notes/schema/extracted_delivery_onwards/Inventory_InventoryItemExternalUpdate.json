@@ -1,0 +1,14 @@
+{
+  "table_name": "Inventory.InventoryItemExternalUpdate",
+  "schema": "Inventory",
+  "table": "InventoryItemExternalUpdate",
+  "doc_page": 480,
+  "pdf_page": 480,
+  "raw_text": "[Inventory].[InventoryItemExternalUpdate]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Identity\nId bigint 8 False 500001 - 1\nIdentifier varchar(15) 15 True\nInventoryItemName varchar(255) 255 True\nExternalItemName varchar(30) 30 True\nOldItemValue varchar(50) 50 True\nNewItemValue varchar(50) 50 True\nInventoryExternalUpdateType_Id int 4 False\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_InventoryItemExternalUpdate Id True 80\nForeign Keys\nName Columns\nFK_InventoryItemExternalUpdate_ItemPriceType InventoryExternalUpdateType_Id->[Lookups].[Inventory-\nExternalUpdateType].[Id]\nPage 480 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Identity\nId bigint 8 False 500001 - 1\nIdentifier varchar(15) 15 True\nInventoryItemName varchar(255) 255 True\nExternalItemName varchar(30) 30 True\nOldItemValue varchar(50) 50 True\nNewItemValue varchar(50) 50 True\nInventoryExternalUpdateType_Id int 4 False",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_InventoryItemExternalUpdate Id True 80",
+  "fk_section": "Name Columns\nFK_InventoryItemExternalUpdate_ItemPriceType InventoryExternalUpdateType_Id->[Lookups].[Inventory-\nExternalUpdateType].[Id]\nPage 480 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

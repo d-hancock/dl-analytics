@@ -1,0 +1,11 @@
+{
+  "table_name": "Prescription.PrescriptionFill",
+  "schema": "Prescription",
+  "table": "PrescriptionFill",
+  "doc_page": 1152,
+  "pdf_page": 1154,
+  "raw_text": "[Prescription].[PrescriptionFill].[Id]\nFK_PrescriptionFillControlledSubstance_Prescription- PrescriptionTransferFormat_Id->[Lookups].[Prescription-\nTransferFormat TransferFormat].[Id]\nFK_PrescriptionFillControlledSubstance_RecStatus- RecStatusModifiedBy->[Security].[DHSUser].[Id]\nModifiedBy\nFK_PrescriptionFillControlledSubstance_RelationTo- PickupRelationToPatient_Id->[Lookups].[Controlled-\nPatient SubstanceRelationshipType].[Id]\nFK_PrescriptionFillControlledSubstance_SpeciesCode SpeciesCode_Id->[Lookups].[SpeciesCode].[Id]\nFK_PrescriptionFillControlledSubstance_State PickupLicenseState_Id->[Lookups].[State].[Id]\nPage 1156 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": []
+}

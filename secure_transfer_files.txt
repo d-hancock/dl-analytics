@@ -1,0 +1,43 @@
+# Minimum Files Required for Secure Environment Transfer
+# Based on Financial Executive Dashboard Requirements
+
+# Presentation Layer (1 file)
+models/presentation/dashboard_financial_executive.sql
+
+# Marts Layer (4 files)
+models/marts/finance/fct_revenue.sql
+models/marts/finance/fct_patient_activity.sql
+models/marts/finance/kpi_revenue_metrics.sql
+models/marts/finance/kpi_patient_metrics.sql
+
+# Intermediate Layer - Dimensions (5 files)
+models/intermediate/int_dim_date.sql
+models/intermediate/int_dim_location.sql
+models/intermediate/int_dim_product.sql
+models/intermediate/int_dim_therapy.sql
+models/intermediate/int_dim_payer.sql
+models/intermediate/int_patient_dimension.sql
+
+# Intermediate Layer - Facts (5 files)
+models/intermediate/int_fct_drug_revenue.sql
+models/intermediate/int_fct_expected_revenue.sql
+models/intermediate/int_fct_new_starts.sql
+models/intermediate/int_fct_referrals.sql
+models/intermediate/int_fct_discharges.sql
+
+# Staging Layer (10 files)
+models/staging/stg_billing_claim.sql
+models/staging/stg_billing_claim_item.sql
+models/staging/stg_date_dimension.sql
+models/staging/stg_facility_dimension.sql
+models/staging/stg_patient_dimension.sql
+models/staging/stg_patient_policy.sql
+models/staging/stg_patient_referrals.sql
+models/staging/stg_payer_dimension.sql
+models/staging/stg_discharge_summary.sql
+models/staging/stg_encounter_patient_encounter.sql
+
+# Build Scripts (1 file)
+stored_procedures/sp_build_analytics_views.sql
+
+# Total: 27 files

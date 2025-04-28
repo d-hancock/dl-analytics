@@ -1,0 +1,14 @@
+{
+  "table_name": "Lookups.ShippingServiceType",
+  "schema": "Lookups",
+  "table": "ShippingServiceType",
+  "doc_page": 974,
+  "pdf_page": 972,
+  "raw_text": "[Lookups].[ShippingServiceType]\nColumns\nMax\nLength\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId int 4 False 500001 - 1\nName varchar(255) 255 False\nDescription varchar(1000) 1000 True\nIsActive bit 1 False ((1))\nShippingMethod_Id int 4 True\nShippingCode varchar(255) 255 True\nMSDCode varchar(255) 255 True\nIsDefault bit 1 False ((0))\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_ShippingServiceType Id True 80\nForeign Keys\nName Columns\nFK_ShippingServiceType_ShippingMethod ShippingMethod_Id->[Lookups].[ShippingMethod].[Id]\nPage 974 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId int 4 False 500001 - 1\nName varchar(255) 255 False\nDescription varchar(1000) 1000 True\nIsActive bit 1 False ((1))\nShippingMethod_Id int 4 True\nShippingCode varchar(255) 255 True\nMSDCode varchar(255) 255 True\nIsDefault bit 1 False ((0))",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_ShippingServiceType Id True 80",
+  "fk_section": "Name Columns\nFK_ShippingServiceType_ShippingMethod ShippingMethod_Id->[Lookups].[ShippingMethod].[Id]\nPage 974 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

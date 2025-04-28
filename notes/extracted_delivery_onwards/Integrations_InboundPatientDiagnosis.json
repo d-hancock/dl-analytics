@@ -1,0 +1,14 @@
+{
+  "table_name": "Integrations.InboundPatientDiagnosis",
+  "schema": "Integrations",
+  "table": "InboundPatientDiagnosis",
+  "doc_page": 439,
+  "pdf_page": 440,
+  "raw_text": "[Integrations].[InboundPatientDiagnosis]\nColumns\nMax\nLength\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nPatient_Id bigint 8 True\nEffectiveDate datetime2 8 False\nDiagnosisType int 4 True\nDiagnosisCode varchar(50) 50 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdatet\nime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey\nKey Name Columns Unique Page Locks Fill Factor\nPK_Diagnosis Id True 80\nIdx_InboundPatientDiagnosis_PatientId Patient_Id False 80\nForeign Keys\nName Columns\nFK_Diagnosis_Patient Patient_Id->[Integrations].[InboundPatient].[Id]\nPage 439 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nPatient_Id bigint 8 True\nEffectiveDate datetime2 8 False\nDiagnosisType int 4 True\nDiagnosisCode varchar(50) 50 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdatet\nime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key\nKey Name Columns Unique Page Locks Fill Factor\nPK_Diagnosis Id True 80\nIdx_InboundPatientDiagnosis_PatientId Patient_Id False 80",
+  "fk_section": "Name Columns\nFK_Diagnosis_Patient Patient_Id->[Integrations].[InboundPatient].[Id]\nPage 439 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

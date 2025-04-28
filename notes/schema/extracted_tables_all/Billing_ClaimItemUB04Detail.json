@@ -1,0 +1,14 @@
+{
+  "table_name": "Billing.ClaimItemUB04Detail",
+  "schema": "Billing",
+  "table": "ClaimItemUB04Detail",
+  "doc_page": 116,
+  "pdf_page": 118,
+  "raw_text": "[Billing].[ClaimItemUB04Detail]\nColumns\nKey Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nUB04RevenueCode varchar(50) 50 True\nUB04NDCDescription varchar(100) 100 True\nUB04NonCoveredCharges numeric(19,5) 9 True\nHIPPSCode varchar(10) 10 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_UB04ClaimDetail Id True 90\nForeign Keys\nName Columns\nFK_UB04ClaimItemDetail_Claim_Item Id->[Billing].[ClaimItem].[Id]\nPage 116 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Key Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nUB04RevenueCode varchar(50) 50 True\nUB04NDCDescription varchar(100) 100 True\nUB04NonCoveredCharges numeric(19,5) 9 True\nHIPPSCode varchar(10) 10 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_UB04ClaimDetail Id True 90",
+  "fk_section": "Name Columns\nFK_UB04ClaimItemDetail_Claim_Item Id->[Billing].[ClaimItem].[Id]\nPage 116 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

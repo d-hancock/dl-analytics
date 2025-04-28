@@ -1,0 +1,14 @@
+{
+  "table_name": "Inventory.InventoryItemCompanyRank",
+  "schema": "Inventory",
+  "table": "InventoryItemCompanyRank",
+  "doc_page": 478,
+  "pdf_page": 478,
+  "raw_text": "[Inventory].[InventoryItemCompanyRank]\nColumns\nMax\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nInventoryItem_Id bigint 8 False\nCompany_Id bigint 8 False\nSequence_No int 4 False ((0))\nInventoryItemCompanyRank- int 4 False\nType_Id\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdat\netime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Included\nKey Name Columns Columns Unique Page Locks Fill Factor\nPK_InventoryItemCompanyRank Id True 80\nIdx_InvItmCompGPI_InvItmId_- Inventory- Company_- False 80\nComp Item_Id Id, Rec-\nStatus\nForeign Keys\nName Columns\nFK_InventoryItemCompanyRank_Company Company_Id->[Common].[Company].[Id]\nFK_InventoryItemCompanyRank_InventoryItem InventoryItem_Id->[Inventory].[InventoryItem].[Id]\nFK_InventoryItemCompanyRank_InventoryItemCompany- InventoryItemCompanyRankType_Id-\nRankType >[Lookups].[InventoryItemCompanyRankType].[Id]\nPage 478 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength Allow\nKey Name Data Type (Bytes) Nulls Identity Default\nId bigint 8 False 500001 - 1\nInventoryItem_Id bigint 8 False\nCompany_Id bigint 8 False\nSequence_No int 4 False ((0))\nInventoryItemCompanyRank- int 4 False\nType_Id\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdat\netime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Included\nKey Name Columns Columns Unique Page Locks Fill Factor\nPK_InventoryItemCompanyRank Id True 80\nIdx_InvItmCompGPI_InvItmId_- Inventory- Company_- False 80\nComp Item_Id Id, Rec-\nStatus",
+  "fk_section": "Name Columns\nFK_InventoryItemCompanyRank_Company Company_Id->[Common].[Company].[Id]\nFK_InventoryItemCompanyRank_InventoryItem InventoryItem_Id->[Inventory].[InventoryItem].[Id]\nFK_InventoryItemCompanyRank_InventoryItemCompany- InventoryItemCompanyRankType_Id-\nRankType >[Lookups].[InventoryItemCompanyRankType].[Id]\nPage 478 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

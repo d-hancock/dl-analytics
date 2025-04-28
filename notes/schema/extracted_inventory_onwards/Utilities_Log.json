@@ -1,0 +1,13 @@
+{
+  "table_name": "Utilities.Log",
+  "schema": "Utilities",
+  "table": "Log",
+  "doc_page": 1297,
+  "pdf_page": 1302,
+  "raw_text": "Log]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nID int 4 False 1 - 1\nExecutionTime datetime2 8 False\nUserName varchar(255) 255 False\nEventType varchar(100) 100 False\nTSQL nvarchar(max) max False\nIsReleaseChange bit 1 False ((0))\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_SChemaChangeLog ID True 80\nPage 1306 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nID int 4 False 1 - 1\nExecutionTime datetime2 8 False\nUserName varchar(255) 255 False\nEventType varchar(100) 100 False\nTSQL nvarchar(max) max False\nIsReleaseChange bit 1 False ((0))",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_SChemaChangeLog ID True 80\nPage 1306 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

@@ -1,0 +1,14 @@
+{
+  "table_name": "Documents.PatientCMN",
+  "schema": "Documents",
+  "table": "PatientCMN",
+  "doc_page": 311,
+  "pdf_page": 312,
+  "raw_text": "[Documents].[PatientCMN]\nColumns\nKey Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nAnsweredByName varchar(50) 50 True\nElectronicClaimBatchNumber varchar(100) 100 True\nPlaceOfServiceCode char(2) 2 True\nIsReplacementItem bit 1 False\nWasTransmitted bit 1 False\nWeight varchar(6) 6 True\nFacilityName varchar(50) 50 True\nFacilityAddress varchar(50) 50 True\nFacilityCityStateZip varchar(50) 50 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_PatientCMN Id True 90\nForeign Keys\nName Columns\nfk_PatientCMN_PatientSupportingDocument Id->[Documents].[PatientSupportingDocument].[Id]\nPage 311 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Key Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nAnsweredByName varchar(50) 50 True\nElectronicClaimBatchNumber varchar(100) 100 True\nPlaceOfServiceCode char(2) 2 True\nIsReplacementItem bit 1 False\nWasTransmitted bit 1 False\nWeight varchar(6) 6 True\nFacilityName varchar(50) 50 True\nFacilityAddress varchar(50) 50 True\nFacilityCityStateZip varchar(50) 50 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_PatientCMN Id True 90",
+  "fk_section": "Name Columns\nfk_PatientCMN_PatientSupportingDocument Id->[Documents].[PatientSupportingDocument].[Id]\nPage 311 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

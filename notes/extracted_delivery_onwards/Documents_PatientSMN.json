@@ -1,0 +1,14 @@
+{
+  "table_name": "Documents.PatientSMN",
+  "schema": "Documents",
+  "table": "PatientSMN",
+  "doc_page": 316,
+  "pdf_page": 317,
+  "raw_text": "[Documents].[PatientSMN]\nColumns\nKey Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nSMNTemplate_Id bigint 8 True\nPrognosis varchar(50) 50 True\nReasonHeading varchar(50) 50 True\nTherapiesProvIded varchar(100) 100 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_PatientSMN Id True 80\nForeign Keys\nName Columns\nFK_PatientSMN_DocumentTemplate SMNTemplate_Id->[Template].[DocumentTemplate].[Id]\nfk_PatientSMN_PatientSupportingDocument Id->[Documents].[PatientSupportingDocument].[Id]\nPage 316 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Key Name Data Type Max Length (Bytes) Allow Nulls\nId bigint 8 False\nSMNTemplate_Id bigint 8 True\nPrognosis varchar(50) 50 True\nReasonHeading varchar(50) 50 True\nTherapiesProvIded varchar(100) 100 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_PatientSMN Id True 80",
+  "fk_section": "Name Columns\nFK_PatientSMN_DocumentTemplate SMNTemplate_Id->[Template].[DocumentTemplate].[Id]\nfk_PatientSMN_PatientSupportingDocument Id->[Documents].[PatientSupportingDocument].[Id]\nPage 316 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

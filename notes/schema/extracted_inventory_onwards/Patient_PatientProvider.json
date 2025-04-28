@@ -1,0 +1,14 @@
+{
+  "table_name": "Patient.PatientProvider",
+  "schema": "Patient",
+  "table": "PatientProvider",
+  "doc_page": 1102,
+  "pdf_page": 1100,
+  "raw_text": "[Patient].[PatientProvider]\nColumns\nMax Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nPatient_Id bigint 8 False\nProvider_Id bigint 8 False\nProviderType_Id int 4 True\nSequence int 4 False\nEffectiveDate datetime2 8 False\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdatet\nime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey Name Key Columns Unique Fill Factor\nPK_PatientProvider Id True 80\nIX_Patient_PatientProvider_Patient_RecStatus Patient_Id, Rec-\nStatus\nForeign Keys\nName Columns\nFK_PatientProvider_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_PatientProvider_ModifiedBy ModifiedBy->[Security].[DHSUser].[Id]\nFK_PatientProvider_Patient Patient_Id->[Patient].[Patient].[Id]\nFK_PatientProvider_Provider Provider_Id->[Provider].[Provider].[Id]\nFK_PatientProvider_ProviderType ProviderType_Id->[Lookups].[ProviderType].[Id]\nFK_PatientProvider_RecStatusModifiedBy RecStatusModifiedBy->[Security].[DHSUser].[Id]\nPage 1102 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max Length\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nPatient_Id bigint 8 False\nProvider_Id bigint 8 False\nProviderType_Id int 4 True\nSequence int 4 False\nEffectiveDate datetime2 8 False\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdatet\nime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key Name Key Columns Unique Fill Factor\nPK_PatientProvider Id True 80\nIX_Patient_PatientProvider_Patient_RecStatus Patient_Id, Rec-\nStatus",
+  "fk_section": "Name Columns\nFK_PatientProvider_CreatedBy CreatedBy->[Security].[DHSUser].[Id]\nFK_PatientProvider_ModifiedBy ModifiedBy->[Security].[DHSUser].[Id]\nFK_PatientProvider_Patient Patient_Id->[Patient].[Patient].[Id]\nFK_PatientProvider_Provider Provider_Id->[Provider].[Provider].[Id]\nFK_PatientProvider_ProviderType ProviderType_Id->[Lookups].[ProviderType].[Id]\nFK_PatientProvider_RecStatusModifiedBy RecStatusModifiedBy->[Security].[DHSUser].[Id]\nPage 1102 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}

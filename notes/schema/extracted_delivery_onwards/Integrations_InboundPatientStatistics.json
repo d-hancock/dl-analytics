@@ -1,0 +1,14 @@
+{
+  "table_name": "Integrations.InboundPatientStatistics",
+  "schema": "Integrations",
+  "table": "InboundPatientStatistics",
+  "doc_page": 443,
+  "pdf_page": 444,
+  "raw_text": "[Integrations].[InboundPatientStatistics]\nColumns\nMax\nLength\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nPatient_Id bigint 8 True\nSequenceNo int 4 True\nObservation varchar(50) 50 False\nValue varchar(50) 50 True\nUnitOfMeasure varchar(50) 50 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdatet\nime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True\nIndexes\nKey\nKey Name Columns Unique Page Locks Fill Factor\nPK_Statistics Id True 80\nIdx_InboundPatientStatistics_PatientId Patient_Id False 80\nForeign Keys\nName Columns\nFK_Statistics_Patient Patient_Id->[Integrations].[InboundPatient].[Id]\nPage 443 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1",
+  "columns": [],
+  "indexes": [],
+  "foreign_keys": [],
+  "column_section": "Max\nLength\nKey Name Data Type (Bytes) Allow Nulls Identity Default\nId bigint 8 False 500001 - 1\nPatient_Id bigint 8 True\nSequenceNo int 4 True\nObservation varchar(50) 50 False\nValue varchar(50) 50 True\nUnitOfMeasure varchar(50) 50 True\nCreatedBy bigint 8 False\nCreatedDate datetime2 8 False (sysutcdatet\nime())\nModifiedBy bigint 8 True\nModifiedDate datetime2 8 True\nRecStatus tinyint 1 False ((1))\nRecStatusDate datetime2 8 True\nRecStatusModifiedBy bigint 8 True",
+  "index_section": "Key\nKey Name Columns Unique Page Locks Fill Factor\nPK_Statistics Id True 80\nIdx_InboundPatientStatistics_PatientId Patient_Id False 80",
+  "fk_section": "Name Columns\nFK_Statistics_Patient Patient_Id->[Integrations].[InboundPatient].[Id]\nPage 443 of 1918\nCTDOLTPDBDD Proprietary and Confidential\nCopyright\u00a9 2017 - Mediware Information Systems, Inc.\\nCareTend OLTP DB Data Dictionary\n2016 R2 SP1"
+}
