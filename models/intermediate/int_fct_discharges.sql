@@ -24,14 +24,12 @@ SELECT
     ds.discharge_reason_id,
     ds.discharge_acuity_id,
     p.patient_id,
-    p.team_id
-FROM DEV_DB.stg.discharge_summary ds
+    p.team_id -- Assuming team_id is available in patient_dimension
+FROM DEV_DB.stg.discharge_summary ds -- Source documentation missing
+JOIN DEV_DB.stg.encounter_patient_encounter pe 
+    ON ds.patient_encounter_id = pe.encounter_id -- Join based on encounter ID
 JOIN DEV_DB.stg.patient_dimension p
-    ON ds.patient_encounter_id IN (
-        SELECT pe.encounter_id 
-        FROM DEV_DB.stg.encounter_patient_encounter pe 
-        WHERE pe.patient_id = p.patient_id
-        AND pe.record_status = 1
-    )
+    ON pe.patient_id = p.patient_id -- Join based on patient ID
 WHERE ds.record_status = 1
-AND p.record_status = 1;
+  AND pe.record_status = 1
+  AND p.record_status = 1;

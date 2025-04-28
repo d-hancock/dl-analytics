@@ -18,11 +18,11 @@ SELECT
     ci.inventory_item_id AS product_id,
     c.patient_id,
     c.patient_policy_id, 
-    c.billing_provider_id,
+    c.billing_provider_id, -- Assuming this is correctly joined in stg_billing_claim
     ci.service_from_date AS transaction_date,
     ci.quantity,
-    ci.unit_price,
-    ci.total_expected_price AS total_price
+    ci.ExpectedPrice AS unit_price, -- Corrected alias to use ExpectedPrice
+    ci.TotalExpectedPrice AS total_price -- Corrected alias to use TotalExpectedPrice
 FROM DEV_DB.stg.billing_claim_item ci
 JOIN DEV_DB.stg.billing_claim c ON ci.claim_id = c.claim_id
 WHERE ci.record_status = 1
