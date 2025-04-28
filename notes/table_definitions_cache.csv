@@ -1,0 +1,70 @@
+TableName,PageNumber,Definition,ExtractedDate
+[Insurance].[Carrier],86,"[Billing].[BatchPrintGroup]
+
+Columns
+Key Name Data TypeMax
+Length
+(Bytes)Allow
+Nulls Identity Default
+Id bigint 8 False 500001 -
+1
+PatientPolicy_Id bigint 8 False
+InventoryItem_Id bigint 8 True
+InventoryItemType_Id int 4 True
+Hcpc_Id int 4 True
+AuthorizationType_Id int 4 False
+AuthorizationNumber varchar(50) 50 True
+IsActive bit 1 False ((1))
+IsAuthorizationOverride bit 1 False ((0))
+IsDoNotRenew bit 1 False ((0))
+AuthorizationStartDate datetime2 8 True
+AuthorizationInstructions varchar(250) 250 True
+AuthorizationExpireDate datetime2 8 True
+QuantityLimit numeric(19,5) 9 True
+BillingFrequency_Id int 4 True
+BillingMethod int 4 True
+Units numeric(19,5) 9 True
+ListPrice numeric(19,5) 9 True
+BillPrice numeric(19,5) 9 True
+ExpectedPrice numeric(19,5) 9 True
+AuthorizedQuantity numeric(19,5) 9 True
+AuthorizedRefills numeric(19,5) 9 True
+BillingAuthorizationLineOf-
+Business_Idint 4 True
+CaseManagerName varchar(30) 30 True
+CaseManagerPhoneNumber varchar(20) 20 True
+CaseManagerPhoneNumber- varchar(10) 10 True
+2016 R2 SP1
+CTDOLTPDBDD
+Proprietary and Confidential
+
+Indexes
+Foreign KeysKey Name Data
+TypeMax Length
+(Bytes) Allow
+Nulls Identity Default
+Id bigint 8 False 500001
+- 1
+BatchNumber bigint 8 False
+Carrier_Id bigint 8 False
+ClaimType_Id int 4 False
+CreatedBy bigint 8 False
+CreatedDate datetime2 8 False (sysutcdatet
+ime())
+ModifiedBy bigint 8 True
+ModifiedDate datetime2 8 True
+RecStatus tinyint 1 False ((1))
+RecStatusDate datetime2 8 True
+RecStatusModifiedBy bigint 8 True
+Key Name Key Columns Unique Fill Factor
+PK_Batch
+PrintGroup Id True 80
+IX_Billing_BatchPrintGroup_Carrier Carrier_Id
+IX_Billing_BatchPrintGroup_ClaimType ClaimType_Id
+Name Columns
+FK_BatchPrintGroup_Carrier Carrier_Id->[Insurance].[Carrier].[Id]
+FK_BatchPrintGroup_ClaimType ClaimType_Id->[Lookups].[ClaimType].[Id]
+2016 R2 SP1
+CTDOLTPDBDD
+Proprietary and Confidential
+",2025-04-28 06:39:47

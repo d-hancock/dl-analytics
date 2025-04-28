@@ -23,4 +23,4 @@ SELECT
   OrderSource_Id           AS order_source_id,
   PatientEncounter_Id      AS patient_encounter_id
 FROM OLTP_DB.Prescription.PatientOrder
-WHERE Record_Status_Id = 1;
+WHERE RecStatus = 1;

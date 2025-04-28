@@ -1,0 +1,242 @@
+{
+  "Insurance": {
+    "Carrier": {
+      "columns": [
+        {"name": "Id", "type": "bigint NOT NULL"},
+        {"name": "CarrierType_Id", "type": "int NOT NULL"},
+        {"name": "PayorType_Id", "type": "int NULL"},
+        {"name": "Identifier", "type": "varchar(50) NULL"},
+        {"name": "AutomaticBillingMethod_Id", "type": "int NULL"},
+        {"name": "AutomaticBillingMethodPerDiemType_Id", "type": "int NULL"},
+        {"name": "PrescriptionBillingMethod_Id", "type": "int NOT NULL"},
+        {"name": "Collector_Id", "type": "bigint NULL"},
+        {"name": "Biller_Id", "type": "bigint NULL"},
+        {"name": "BatchBillingMethod_Id", "type": "int NULL"},
+        {"name": "NumberOfDaysAfterForBillingFollowupNote", "type": "int NOT NULL DEFAULT ((0))"},
+        {"name": "NumberOfDaysOutForTimelyFiling", "type": "int NOT NULL DEFAULT ((0))"},
+        {"name": "UseMedicareModifiersForRecurringRentals", "type": "bit NOT NULL DEFAULT ((0))"},
+        {"name": "DefaultTypeOfService", "type": "int NOT NULL DEFAULT ((0))"},
+        {"name": "AutoSplitPerDiemsForDailyBilling", "type": "bit NOT NULL DEFAULT ((0))"},
+        {"name": "GenerateDocumentationForNonBillable-", "type": "bit NOT NULL DEFAULT ((0))"}, 
+        {"name": "DefaultPercentageOfCoverage", "type": "numeric(19,5) NOT NULL DEFAULT ((0))"},
+        {"name": "IsSupplementary", "type": "bit NOT NULL DEFAULT ((0))"},
+        {"name": "IsIncludedIn340BExport", "type": "bit NOT NULL DEFAULT ((0))"},
+        {"name": "OptionalOrganizationName", "type": "varchar(255) NULL"},
+        {"name": "BillingOrganizationName", "type": "varchar(255) NULL"},
+        {"name": "ProviderNumberQualifier_Id", "type": "int NULL"},
+        {"name": "AuthorizationRequirement_Id", "type": "int NOT NULL"},
+        {"name": "UseMedicareRules", "type": "bit NOT NULL DEFAULT ((0))"},
+        {"name": "ClaimInsuranceType_Id", "type": "int NULL"},
+        {"name": "ElectronicClaimType_Id", "type": "int NULL"},
+        {"name": "UseICD9DiagnosisCodes", "type": "bit NOT NULL DEFAULT ((0))"},
+        {"name": "UpdateRecurringRentalPricingOnBillable-", "type": "bit NULL DEFAULT ((0))"}, 
+        {"name": "IsOneClaimRecurringRental", "type": "bit NULL DEFAULT ((0))"},
+        {"name": "HoldClaimFromRRForInitialPayment", "type": "bit NOT NULL DEFAULT ((0))"},
+        {"name": "IsBilledInHcpcUnits", "type": "bit NOT NULL DEFAULT ((0))"},
+        {"name": "LegacyId", "type": "bigint NULL"},
+        {"name": "IsAlwaysBilledForDenial", "type": "bit NOT NULL DEFAULT ((0))"},
+        {"name": "IsMedicareCBAProvider", "type": "bit NOT NULL DEFAULT ((0))"},
+        {"name": "UseMedicareCPAPBiPAPCoverageRules", "type": "bit NOT NULL DEFAULT ((0))"},
+        {"name": "TaxAssessment_Id", "type": "int NULL"},
+        {"name": "TaxClaimOption_Id", "type": "int NULL"},
+        {"name": "TaxHcpc_Id", "type": "int NULL"},
+        {"name": "UseBenefitsVerification", "type": "bit NULL DEFAULT ((0))"},
+        {"name": "IsCoPayAssistanceFunder", "type": "bit NULL DEFAULT ((0))"},
+        {"name": "IsTrackGrantFunds", "type": "bit NULL DEFAULT ((0))"}
+      ]
+    }
+  },
+  "Prescription": {
+    "PatientOrder": {
+      "columns": [
+        {"name": "Id", "type": "bigint NOT NULL"},
+        {"name": "Patient_Id", "type": "bigint NOT NULL"},
+        {"name": "TherapyType_Id", "type": "int NOT NULL"},
+        {"name": "PatientOrderStatus_Id", "type": "int NOT NULL"},
+        {"name": "OrderedDate", "type": "datetime2 NOT NULL"},
+        {"name": "StartDate", "type": "datetime2 NULL"},
+        {"name": "StopDate", "type": "datetime2 NULL"},
+        {"name": "DiscontinuedDate", "type": "datetime2 NULL"},
+        {"name": "InventoryItem_Id", "type": "bigint NULL"},
+        {"name": "InventoryItemType_Id", "type": "int NULL"},
+        {"name": "Provider_Id", "type": "bigint NULL"},
+        {"name": "OrderSource_Id", "type": "int NULL"},
+        {"name": "PatientEncounter_Id", "type": "bigint NULL"},
+        {"name": "BillingProvider_Id", "type": "bigint NULL"},
+        {"name": "ReferringProvider_Id", "type": "bigint NULL"},
+        {"name": "RefillsAllowed", "type": "int NULL"},
+        {"name": "RefillsUsed", "type": "int NULL"},
+        {"name": "LastFillDate", "type": "datetime2 NULL"},
+        {"name": "CreatedBy", "type": "bigint NOT NULL"},
+        {"name": "CreatedDate", "type": "datetime2 NOT NULL"},
+        {"name": "ModifiedBy", "type": "bigint NULL"},
+        {"name": "ModifiedDate", "type": "datetime2 NULL"},
+        {"name": "RecStatus", "type": "tinyint NOT NULL DEFAULT ((1))"} 
+      ]
+    }
+  },
+  "Common": {
+    "CompanyLocation": {
+      "columns": [
+        {"name": "ID", "type": "bigint NOT NULL"},
+        {"name": "Company_Id", "type": "bigint NOT NULL"},
+        {"name": "Location_Id", "type": "bigint NOT NULL"},
+        {"name": "CreatedBy", "type": "bigint NOT NULL"},
+        {"name": "CreatedDate", "type": "datetime2 NOT NULL"},
+        {"name": "ModifiedBy", "type": "bigint NULL"},
+        {"name": "ModifiedDate", "type": "datetime2 NULL"},
+        {"name": "RecStatus", "type": "tinyint NOT NULL DEFAULT ((1))"},
+        {"name": "RecStatusDate", "type": "datetime2 NULL"},
+        {"name": "RecStatusModifiedBy", "type": "bigint NULL"}
+      ]
+    }
+  },
+  "Patient": {
+    "Patient": {
+      "columns": [
+        {"name": "Id", "type": "bigint NOT NULL"},
+        {"name": "MedicalRecordNo", "type": "varchar(50) NULL"}, 
+        {"name": "DateOfBirth", "type": "datetime2 NULL"}, 
+        {"name": "Gender_Id", "type": "int NULL"}, 
+        {"name": "ReferralDate", "type": "datetime2 NULL"}, 
+        {"name": "PrimaryRN_Id", "type": "bigint NULL"}, 
+        {"name": "CodeStatus_Id", "type": "int NULL"}, 
+        {"name": "PatientDateOfDeath", "type": "datetime2 NULL"}, 
+        {"name": "Team_Id", "type": "bigint NULL"}, 
+        {"name": "InsuranceCoordinator_Id", "type": "bigint NULL"}, 
+        {"name": "AdvanceDirectives", "type": "varchar(max) NULL"}, 
+        {"name": "InformationComplete", "type": "bit NOT NULL"}, 
+        {"name": "Person_Id", "type": "bigint NOT NULL"}, 
+        {"name": "PatientStatus_Id", "type": "int NULL"}, 
+        {"name": "MaritalStatus_Id", "type": "int NULL"}, 
+        {"name": "Language_Id", "type": "int NULL"}, 
+        {"name": "IsReferable", "type": "bit NOT NULL"}, 
+        {"name": "CreatedBy", "type": "bigint NOT NULL"},
+        {"name": "CreatedDate", "type": "datetime2 NOT NULL"},
+        {"name": "ModifiedBy", "type": "bigint NULL"},
+        {"name": "ModifiedDate", "type": "datetime2 NULL"},
+        {"name": "RecStatus", "type": "tinyint NOT NULL DEFAULT ((1))"}
+      ]
+    },
+    "PatientPolicy": {
+      "columns": [
+        {"name": "Id", "type": "bigint NOT NULL"},
+        {"name": "Patient_Id", "type": "bigint NOT NULL"},
+        {"name": "Carrier_Id", "type": "bigint NOT NULL"},
+        {"name": "PolicyOwner_Id", "type": "bigint NULL"},
+        {"name": "PolicyNumber", "type": "varchar(50) NULL"}, 
+        {"name": "GroupNumber", "type": "varchar(50) NULL"}, 
+        {"name": "InsuredIDNumber", "type": "varchar(50) NULL"}, 
+        {"name": "PolicyStatus_Id", "type": "int NULL"}, 
+        {"name": "Employer_Id", "type": "bigint NULL"}, 
+        {"name": "PolicyContact_Id", "type": "bigint NULL"}, 
+        {"name": "InsuranceProgram_Id", "type": "int NULL"}, 
+        {"name": "PatientRelationToInsured_Id", "type": "int NULL"}, 
+        {"name": "Sequence", "type": "int NOT NULL"}, 
+        {"name": "SecondaryPatientPolicy_Id", "type": "bigint NULL"}, 
+        {"name": "EffectiveDate", "type": "datetime2 NULL"}, 
+        {"name": "ExpirationDate", "type": "datetime2 NULL"}, 
+        {"name": "MedicareSecondaryProviderType_Id", "type": "int NULL"}, 
+        {"name": "SignatureSource_Id", "type": "int NULL"}, 
+        {"name": "ReleaseofInformation_Id", "type": "int NULL"}, 
+        {"name": "IsBilledForDenial", "type": "bit NOT NULL"}, 
+        {"name": "CreatedBy", "type": "bigint NOT NULL"},
+        {"name": "CreatedDate", "type": "datetime2 NOT NULL"},
+        {"name": "ModifiedBy", "type": "bigint NULL"},
+        {"name": "ModifiedDate", "type": "datetime2 NULL"},
+        {"name": "RecStatus", "type": "tinyint NOT NULL DEFAULT ((1))"}
+      ]
+    },
+    "PatientReferrals": {
+      "columns": [
+        {"name": "Id", "type": "bigint NOT NULL"},
+        {"name": "PhysicianFirstName", "type": "varchar(50) NULL"},
+        {"name": "PhysicianLastName", "type": "varchar(50) NULL"},
+        {"name": "PhysicianPhoneNumber", "type": "varchar(15) NULL"},
+        {"name": "InsuranceCompany", "type": "varchar(100) NULL"},
+        {"name": "InsurancePhoneNumber", "type": "varchar(15) NULL"},
+        {"name": "InsurancePolicyOwner", "type": "varchar(100) NULL"},
+        {"name": "InsurancePolicyNumber", "type": "varchar(50) NULL"},
+        {"name": "InsurancePolicyGroupNumber", "type": "varchar(50) NULL"},
+        {"name": "ReferralNotes", "type": "varchar(max) NULL"},
+        {"name": "MedicalHistory", "type": "varchar(max) NULL"},
+        {"name": "DiagnosisCode1Description", "type": "varchar(50) NULL"},
+        {"name": "DiagnosisCode2Description", "type": "varchar(50) NULL"},
+        {"name": "ReferralRequest", "type": "varchar(max) NULL"},
+        {"name": "Patient_Id", "type": "bigint NOT NULL"}, 
+        {"name": "ReferralSource_Id", "type": "bigint NULL"}, 
+        {"name": "ReferralDate", "type": "datetime2 NULL"}, 
+        {"name": "ReferralResponseDate", "type": "datetime2 NULL"}, 
+        {"name": "ResponseStatus_Id", "type": "int NULL"}, 
+        {"name": "ProviderType_Id", "type": "int NULL"}, 
+        {"name": "Provider_Id", "type": "bigint NULL"}, 
+        {"name": "DiagnosisCode_Id", "type": "bigint NULL"}, 
+        {"name": "Notes", "type": "varchar(max) NULL"}, 
+        {"name": "CreatedBy", "type": "bigint NOT NULL"}, 
+        {"name": "CreatedDate", "type": "datetime2 NOT NULL"}, 
+        {"name": "ModifiedBy", "type": "bigint NULL"}, 
+        {"name": "ModifiedDate", "type": "datetime2 NULL"}, 
+        {"name": "RecStatus", "type": "tinyint NOT NULL DEFAULT ((1))"} 
+      ]
+    }
+  },
+  "Encounter": {
+    "DischargeSummary": {
+      "columns": [
+        {"name": "Id", "type": "bigint NOT NULL"},
+        {"name": "PatientEncounter_Id", "type": "bigint NOT NULL"},
+        {"name": "CopyMD", "type": "bit NOT NULL DEFAULT ((0))"},
+        {"name": "DischargeDate", "type": "datetime2 NULL"},
+        {"name": "CarePlanReviewDate", "type": "datetime2 NULL"},
+        {"name": "DischargeStatus_Id", "type": "int NOT NULL"},
+        {"name": "PatientStatus_Id", "type": "int NULL"},
+        {"name": "DischargeInstructionsGiven", "type": "bit NOT NULL DEFAULT ((0))"},
+        {"name": "DischargeReason_Id", "type": "int NULL"},
+        {"name": "DischargeAcuity_Id", "type": "int NULL"},
+        {"name": "CreatedBy", "type": "bigint NOT NULL"},
+        {"name": "CreatedDate", "type": "datetime2 NOT NULL"},
+        {"name": "ModifiedBy", "type": "bigint NULL"},
+        {"name": "ModifiedDate", "type": "datetime2 NULL"},
+        {"name": "RecStatus", "type": "tinyint NOT NULL DEFAULT ((1))"},
+        {"name": "RecStatusDate", "type": "datetime2 NULL"},
+        {"name": "RecStatusModifiedBy", "type": "bigint NULL"}
+      ]
+    },
+    "PatientEncounter": {
+      "columns": [
+        {"name": "Id", "type": "bigint NOT NULL"},
+        {"name": "Patient_Id", "type": "bigint NOT NULL"},
+        {"name": "StartDate", "type": "datetime2 NOT NULL"},
+        {"name": "EndDate", "type": "datetime2 NOT NULL"}, 
+        {"name": "CreatedBy", "type": "bigint NOT NULL"},
+        {"name": "CreatedDate", "type": "datetime2 NOT NULL"},
+        {"name": "ModifiedBy", "type": "bigint NULL"},
+        {"name": "ModifiedDate", "type": "datetime2 NULL"},
+        {"name": "RecStatus", "type": "tinyint NOT NULL DEFAULT ((1))"},
+        {"name": "RecStatusDate", "type": "datetime2 NULL"},
+        {"name": "RecStatusModifiedBy", "type": "bigint NULL"}
+      ]
+    }
+  },
+  "Inventory": {
+    "InventoryTransfer": {
+      "columns": [
+        {"name": "Id", "type": "bigint NOT NULL"},
+        {"name": "InventoryTransferStatus_Id", "type": "int NOT NULL"},
+        {"name": "Requester_Id", "type": "bigint NULL"},
+        {"name": "Source_Id", "type": "bigint NULL"}, 
+        {"name": "Destination_Id", "type": "bigint NOT NULL"}, 
+        {"name": "DateRequested", "type": "datetime2 NULL"},
+        {"name": "DateCompleted", "type": "datetime2 NULL"},
+        {"name": "DateShipped", "type": "datetime2 NULL"}, 
+        {"name": "CreatedBy", "type": "bigint NOT NULL"},
+        {"name": "CreatedDate", "type": "datetime2 NOT NULL"},
+        {"name": "ModifiedBy", "type": "bigint NULL"},
+        {"name": "ModifiedDate", "type": "datetime2 NULL"},
+        {"name": "RecStatus", "type": "tinyint NOT NULL DEFAULT ((1))"},
+        {"name": "RecStatusDate", "type": "datetime2 NULL"},
+        {"name": "RecStatusModifiedBy", "type": "bigint NULL"}
+      ]
+    }
+  }
+}

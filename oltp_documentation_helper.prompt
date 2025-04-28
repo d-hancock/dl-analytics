@@ -1,45 +1,79 @@
-# OLTP Documentation Helper
+# OLTP Database Documentation Helper
 
-## Context
-When working with SQL files in this project, it's important to understand the structure of the OLTP source tables referenced in queries. This project uses the CareTend OLTP database as a source for the analytics data warehouse.
+## Task Description
+You'll be analyzing SQL files for our data analytics project that reference the OLTP database. Your tasks are:
+
+1. Identify the OLTP database schema and table name(s) referenced in the SQL file.
+2. Use the search_tables_doc.py script to find the relevant documentation for these tables.
+3. Use the documentation to verify column names, data types, and relationships.
+4. Provide recommendations for any improvements or issues in the SQL file based on the documentation.
 
 ## Instructions
 
-1. When a SQL file references OLTP tables (usually prefixed with `OLTP_DB.` or having schema names like `Patient.`, `Billing.`, `Common.`, etc.), AUTOMATICALLY run the extract.py script to retrieve the table definition:
-   ```
-   python notes/extract.py "[Schema].[TableName]"
-   ```
+### Step 1: Identify OLTP Schema and Table Names
+Analyze the SQL file to identify:
+- The OLTP database schema (usually found in FROM clauses after OLTP_DB)
+- The table name(s) being referenced
+- Any specific columns being used
 
-2. When helping with SQL models that reference OLTP source tables, ALWAYS call the extract.py script to understand the source table structure before providing guidance.
+Example pattern to look for:
+```sql
+FROM OLTP_DB.[Schema].[TableName]
+```
 
-3. Include key information about tables when explaining SQL files:
-   - Primary key fields
-   - Foreign key relationships
-   - Important columns and their data types
-   - Any known business rules or constraints
+### Step 2: Use the search_tables_doc.py Script
+Once you've identified the schema and table name, use the search_tables_doc.py script located in the notes directory to retrieve the table documentation.
 
-4. For SQL files with patterns like `SELECT * FROM OLTP_DB.Patient.Patient`, extract the actual table name (`[Patient].[Patient]`) and run:
-   ```
-   python notes/extract.py "[Patient].[Patient]"
-   ```
+Basic usage examples:
+```bash
+# Get detailed information about a specific table
+python /home/dale/development/dl-analytics/notes/search_tables_doc.py --table TableName --schema SchemaName --details
 
-5. When creating or modifying staging models, automatically run extract.py to understand source tables and ensure correct field mappings.
+# Search for tables containing specific text
+python /home/dale/development/dl-analytics/notes/search_tables_doc.py --contains TableText --details
 
-6. If a file references multiple OLTP tables, extract documentation for all relevant tables to understand relationships.
+# Search for a specific column across all tables
+python /home/dale/development/dl-analytics/notes/search_tables_doc.py --column ColumnName
+```
 
-7. For complex queries or joins, use the table documentation to validate join conditions and ensure they use appropriate keys.
+Additional options:
+- `--list-schemas` - List all available schemas
+- `--list-tables SchemaName` - List all tables in a specific schema
+- `--output filename.txt` - Save results to a file
 
-8. If the extract.py script returns "Table not found", refer to the all_table_definitions.csv file which contains pre-extracted documentation.
+The script searches through the cleaned_tables.json file which contains comprehensive documentation for the OLTP database tables.
 
-## Example Assistant Behavior
+### Step 3: Verify SQL Against Documentation
+Using the retrieved documentation:
+- Verify that all column names match exactly as they appear in the OLTP schema
+- Check that data types are appropriate for the transformations being performed
+- Identify any missing or unnecessary columns
+- Note any important relationships or constraints
 
-When working with a staging file like `stg_patient_dimension.sql` that references `OLTP_DB.Patient.Patient`:
+### Step 4: Provide Analysis and Recommendations
+Based on your findings:
+- Confirm if the SQL is correctly referencing the OLTP schema
+- Suggest any modifications to column names or transformations
+- Identify any potential missing information that should be included
+- Recommend optimizations based on indexes or keys from the documentation
 
-1. Run `python notes/extract.py "[Patient].[Patient]"` to get the table structure
-2. Analyze the column definitions from the output
-3. Reference foreign key relationships in your explanations
-4. When suggesting changes, base them on the actual source table structure
+## Example Analysis
 
-## Available Resources
-- Table documentation extraction tool: notes/extract.py
-- Pre-extracted table definitions: notes/all_table_definitions.csv
+Example input SQL:
+```sql
+SELECT
+  Id AS carrier_id,
+  CarrierName AS carrier_name,
+  CarrierType_Id AS carrier_type_id
+FROM OLTP_DB.Insurance.Carrier
+WHERE RecStatus = 1
+```
+
+Example analysis:
+"The SQL references the Insurance.Carrier table. Documentation confirms that all column names (Id, CarrierName, CarrierType_Id, RecStatus) exist and are properly referenced. The RecStatus filter correctly selects only active records as per documentation. The primary key is correctly aliased as carrier_id. Consider adding PayorType_Id which documentation shows is an important classification field."
+
+## Deliverables
+1. Identified schema and table names
+2. Documentation retrieved from search_tables_doc.py
+3. Verification of column names and data types
+4. Recommendations for improvements based on the documentation

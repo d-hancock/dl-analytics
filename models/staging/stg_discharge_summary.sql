@@ -11,17 +11,21 @@
 -- =================================================================================
 CREATE OR REPLACE VIEW DEV_DB.stg.discharge_summary AS
 SELECT 
-    Id                   AS discharge_id,
-    PatientEncounter_Id  AS patient_encounter_id,
-    DischargeDate        AS discharge_date,
-    DischargeStatus_Id   AS discharge_status_id,
-    PatientStatus_Id     AS patient_status_id,
-    DischargeReason_Id   AS discharge_reason_id,
-    DischargeAcuity_Id   AS discharge_acuity_id,
-    CreatedBy            AS created_by,
-    CreatedDate          AS created_date,
-    ModifiedBy           AS modified_by,
-    ModifiedDate         AS modified_date,
-    RecStatus            AS record_status
+    Id                          AS discharge_id,
+    PatientEncounter_Id         AS patient_encounter_id,
+    DischargeDate               AS discharge_date,
+    DischargeStatus_Id          AS discharge_status_id,
+    PatientStatus_Id            AS patient_status_id,
+    DischargeReason_Id          AS discharge_reason_id,
+    DischargeAcuity_Id          AS discharge_acuity_id,
+    -- Added columns based on source documentation
+    CopyMD                      AS copy_md_flag,
+    CarePlanReviewDate          AS care_plan_review_date,
+    DischargeInstructionsGiven  AS discharge_instructions_given_flag,
+    CreatedBy                   AS created_by,
+    CreatedDate                 AS created_date,
+    ModifiedBy                  AS modified_by,
+    ModifiedDate                AS modified_date,
+    RecStatus                   AS record_status
 FROM OLTP_DB.Encounter.DischargeSummary
 WHERE RecStatus = 1;

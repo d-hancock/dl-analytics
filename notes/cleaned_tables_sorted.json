@@ -1,0 +1,264 @@
+{
+    "Unknown": {
+        "Auditing": {
+            "table_name": "Auditing",
+            "schema": "Unknown",
+            "table": "Auditing",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "Billing": {
+            "table_name": "Billing",
+            "schema": "Unknown",
+            "table": "Billing",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "CareTendMobile": {
+            "table_name": "CareTendMobile",
+            "schema": "Unknown",
+            "table": "CareTendMobile",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "Common": {
+            "table_name": "Common",
+            "schema": "Unknown",
+            "table": "Common",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "Delivery": {
+            "table_name": "Delivery",
+            "schema": "Unknown",
+            "table": "Delivery",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "Documents": {
+            "table_name": "Documents",
+            "schema": "Unknown",
+            "table": "Documents",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "Drug": {
+            "table_name": "Drug",
+            "schema": "Unknown",
+            "table": "Drug",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "Employees": {
+            "table_name": "Employees",
+            "schema": "Unknown",
+            "table": "Employees",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "Encounter": {
+            "table_name": "Encounter",
+            "schema": "Unknown",
+            "table": "Encounter",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "Equipment": {
+            "table_name": "Equipment",
+            "schema": "Unknown",
+            "table": "Equipment",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "Erx": {
+            "table_name": "Erx",
+            "schema": "Unknown",
+            "table": "Erx",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "Insurance": {
+            "table_name": "Insurance",
+            "schema": "Unknown",
+            "table": "Insurance",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "Integrations": {
+            "table_name": "Integrations",
+            "schema": "Unknown",
+            "table": "Integrations",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "Inventory": {
+            "table_name": "Inventory",
+            "schema": "Unknown",
+            "table": "Inventory",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "Lookups": {
+            "table_name": "Lookups",
+            "schema": "Unknown",
+            "table": "Lookups",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "Outcomes": {
+            "table_name": "Outcomes",
+            "schema": "Unknown",
+            "table": "Outcomes",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "Patient": {
+            "table_name": "Patient",
+            "schema": "Unknown",
+            "table": "Patient",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "PointOfSale": {
+            "table_name": "PointOfSale",
+            "schema": "Unknown",
+            "table": "PointOfSale",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "Prescription": {
+            "table_name": "Prescription",
+            "schema": "Unknown",
+            "table": "Prescription",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "Pricing": {
+            "table_name": "Pricing",
+            "schema": "Unknown",
+            "table": "Pricing",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "Provider": {
+            "table_name": "Provider",
+            "schema": "Unknown",
+            "table": "Provider",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "PurchaseOrder": {
+            "table_name": "PurchaseOrder",
+            "schema": "Unknown",
+            "table": "PurchaseOrder",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "Security": {
+            "table_name": "Security",
+            "schema": "Unknown",
+            "table": "Security",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "Template": {
+            "table_name": "Template",
+            "schema": "Unknown",
+            "table": "Template",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "Utilities": {
+            "table_name": "Utilities",
+            "schema": "Unknown",
+            "table": "Utilities",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        },
+        "Workflow": {
+            "table_name": "Workflow",
+            "schema": "Unknown",
+            "table": "Workflow",
+            "doc_page": null,
+            "pdf_page": null,
+            "columns": [],
+            "indexes": [],
+            "foreign_keys": []
+        }
+    }
+}

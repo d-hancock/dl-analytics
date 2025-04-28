@@ -74,9 +74,16 @@ def reformat_consolidated_tables(input_file: str, output_file: str, make_backup:
                 "foreign_keys": table_data.get("foreign_keys", [])
             }
 
+        # Sort tables alphabetically within each schema
+        sorted_schemas = {}
+        for schema in reformatted_data:
+            # Create a dictionary with tables sorted by table name
+            sorted_tables = dict(sorted(reformatted_data[schema].items()))
+            sorted_schemas[schema] = sorted_tables
+
         # Save the reformatted data to a new file
         with open(output_file, 'w') as file:
-            json.dump(reformatted_data, file, indent=4)
+            json.dump(sorted_schemas, file, indent=4)
             
         print(f"Successfully created reformatted data in '{output_file}'")
         print(f"Original data preserved in '{input_file}'")

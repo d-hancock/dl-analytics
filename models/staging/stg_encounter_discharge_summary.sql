@@ -4,15 +4,21 @@
 
 CREATE OR REPLACE VIEW DEV_DB.stg.encounter_discharge_summary AS
 SELECT 
-    Id as discharge_id, -- Unique identifier for the discharge event
-    PatientEncounter_Id as patient_encounter_id, -- Unique identifier for the patient encounter (renamed to match downstream)
-    DischargeDate as discharge_date, -- Date of discharge
-    DischargeStatus_Id as discharge_status_id, -- Status of the discharge (renamed to match downstream)
-    PatientStatus_Id as patient_status_id, -- Status of the patient at discharge (renamed to match downstream)
-    DischargeReason_Id as discharge_reason_id, -- Reason for discharge (renamed to match downstream)
-    DischargeAcuity_Id as discharge_acuity_id, -- Acuity level at discharge (renamed to match downstream)
-    CreatedDate as created_date, -- Record creation timestamp
-    ModifiedDate as modified_date, -- Record modification timestamp
-    RecStatus as record_status -- Record status flag (renamed to match downstream)
+    Id                          AS discharge_id,
+    PatientEncounter_Id         AS patient_encounter_id,
+    DischargeDate               AS discharge_date,
+    DischargeStatus_Id          AS discharge_status_id,
+    PatientStatus_Id            AS patient_status_id,
+    DischargeReason_Id          AS discharge_reason_id,
+    DischargeAcuity_Id          AS discharge_acuity_id,
+    -- Added columns based on source documentation
+    CopyMD                      AS copy_md_flag,
+    CarePlanReviewDate          AS care_plan_review_date,
+    DischargeInstructionsGiven  AS discharge_instructions_given_flag,
+    CreatedBy                   AS created_by, -- Added missing column
+    CreatedDate                 AS created_date,
+    ModifiedBy                  AS modified_by, -- Added missing column
+    ModifiedDate                AS modified_date,
+    RecStatus                   AS record_status
 FROM OLTP_DB.Encounter.DischargeSummary
 WHERE RecStatus = 1;
