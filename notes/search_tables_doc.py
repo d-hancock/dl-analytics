@@ -169,7 +169,7 @@ def format_table_info(table_data: Dict, show_details: bool = False) -> str:
 
     # Use .get with defaults for safer access
     schema_name = table_data.get('schema', 'UnknownSchema')
-    table_name = table_data.get('table_name', 'UnknownTable')
+    table_name = table_data.get('table_name', 'UnknownTable').split('.')[-1]  # Extract only the table name
     output.append(f"=== Table: {schema_name}.{table_name} ===")
 
     output.append(f"Schema: {schema_name}")
